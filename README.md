@@ -12,4 +12,4 @@
 > En este enlace se encontrarán las tareas del curso.
 
 > [!IMPORTANT]
-> Estas tareas son compartidas con el fin de que se vean mis trabajos realizados a lo largo del curso. No usar para copiar.
+> Estas tareas son compartidas con el fin de que se vean mis trabajos realizados a lo largo del curso. No copiar.
