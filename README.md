@@ -5,7 +5,7 @@
 
 ---
 ## BAE .- Base de Datos 
- - ##   [Tareas](https://github.com/ResetMeNow/DAW/blob/5e58a1e85519582f854256e676684cde5306c94b/BAE/Tareas) [^1]
+ - ##   [Tareas](https://github.com/ResetMeNow/DAW/tree/33a7dcd6a801c1f5f687946b60518f64ddde89b8/BAE/Tareas) [^1]  
    [^1]: Tareas realizadas de la asignatura de Base de Datos.
 
 > [!NOTE]
