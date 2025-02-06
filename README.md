@@ -5,9 +5,10 @@
 
 ---
 ## BAE .- Base de Datos 
- - ##   [Tareas](https://github.com/ResetMeNow/DAW/tree/eefae3b9c98eceb847d94d4e8c4b391d7e74e6cc/BAE/Tareas) [^1]  
-   [^1]: Tareas realizadas de la asignatura de Base de Datos.
-
+- ###  [Unidad 1](https://github.com/ResetMeNow/DAW/tree/main/BAE/Tareas/Unidad1) [^1]  
+   [^1]: Tareas realizadas de la Unidad 1, de la asignatura de Base de Datos.
+- ###  [Unidad 2](https://github.com/ResetMeNow/DAW/tree/main/BAE/Tareas/Unidad2)  [^2]
+   [^2]: Tareas realizadas de de la Unidad 2, de la asignatura de Base de Datos.
 > [!NOTE]
 > En este enlace se encontrarán las tareas del curso.
 
