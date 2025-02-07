@@ -19,6 +19,7 @@ Por último se quiere almacenar, en la base de datos, los datos de los president
  <details>
  <summary>Respuesta</summary>
    <div align="center">
-     <br>
+    
+  ![image](https://github.com/user-attachments/assets/81ab81fa-d5f0-45cc-9ad9-17f166846952)
      </div>
  </details>
