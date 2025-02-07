@@ -16,6 +16,7 @@ Una empresa necesita organizar la siguiente información referente a su organiza
  <details>
  <summary>Respuesta</summary>
    <div align="center">
-     <br>
+       
+  ![image](https://github.com/user-attachments/assets/c1e2403c-adfc-4852-8dc8-8d4fa2ea72d2)
      </div>
  </details>
