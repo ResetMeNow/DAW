@@ -7,7 +7,7 @@ Una empresa necesita organizar la siguiente información referente a su organiza
 - Cada departamento se ubica en un único centro de trabajo. Estos se componen de uno o más departamentos.
 - Un empleado puede tener varios hijos.
 - Un empleado puede tener varias habilidades, y una misma habilidad puede ser poseída por empleados diferentes.
-- Un centro de trabajo es dirigido por un empleado. Un mismo empleado puede
+- Un centro de trabajo es dirigido por un empleado. Un mismo empleado puede dirigir centros de trabajo distintos.
     
 ***Construye a través de diagrams.io.***
 
