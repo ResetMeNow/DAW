@@ -67,6 +67,32 @@
  <details>
  <summary>Respuesta ✨</summary>
    <div align="center">
+
+### 1. Primera Forma Normal (1FN)
+
+**Clientes**
+| ID_Cliente | Nombre     | Dirección     |
+|------------|------------|---------------|
+| 1          | Juan Pérez | Calle 123     |
+| 2          | Ana López  | Av. Central   |
+
+**Pedidos**
+| ID_Pedido | ID_Cliente | ID_Producto | Cantidad |
+|-----------|------------|-------------|----------|
+| 101       | 1          | 1           | 1        |
+| 102       | 2          | 2           | 2        |
+
+**Productos**
+| ID_Producto | Nombre  | Precio |
+|-------------|---------|--------|
+| 1           | Laptop  | 1000   |
+| 2           | Teclado | 50     |
+
+### 2. Segunda Forma Normal (2FN)
+ ```Se queda igual que en la (1FN) ya que no hay más dependencias que eliminar```
+ 
+![image](https://github.com/user-attachments/assets/d9204397-f11e-4f7b-8b8a-013df670d17e)
+
  </div>
  </details>
  
@@ -86,6 +112,31 @@
  <details>
  <summary>Respuesta ✨</summary>
    <div align="center">
+       
+### 1. Primera Forma Normal (1FN)
+
+**Empleados**
+| ID_Empleado | Nombre    | ID_Departamento |
+|-------------|-----------|-----------------|
+| 1           | Carlos R. | 1               |
+| 2           | Laura M.  | 2               |
+
+**Teléfonos**
+| ID_Empleado | Teléfono |
+|-------------|----------|
+| 1           | 12345    |
+| 1           | 67890    |
+| 2           | 54321    |
+
+**Departamentos**
+| ID_Departamento | Nombre   |
+|-----------------|----------|
+| 1               | Ventas   |
+| 2               | Finanzas |
+
+   ![image](https://github.com/user-attachments/assets/7901e271-6fd1-4903-b15e-e6c0dda5bc48)
+       
+
  </div>
  </details>
  
