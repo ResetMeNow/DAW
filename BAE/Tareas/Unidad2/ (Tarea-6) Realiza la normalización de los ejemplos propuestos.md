@@ -154,7 +154,9 @@
 
 ## Segunda Forma Normal (2FN)
 ```Se quedaria igual ya que en el primero pide separar los teléfonos y ya no se puede dividir en más```
----
+
+--- 
+
 ![image](https://github.com/user-attachments/assets/cf0607be-951a-40b0-a1af-5aa9c696eb77)
 
  </div>
