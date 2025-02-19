@@ -383,6 +383,7 @@
  <details>
  <summary>Respuesta ✨</summary>
    <div align="center">
+       
 ### 1FN (Primera Forma Normal):
 | id_vehiculo | marca  | modelo  | anio |
 |-------------|--------|---------|------|
