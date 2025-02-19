@@ -109,8 +109,7 @@
 | 2           | Teclado         | 50     |
 
 ---
- 
-![image](https://github.com/user-attachments/assets/d9204397-f11e-4f7b-8b8a-013df670d17e)
+
 
  </div>
  </details>
@@ -174,17 +173,25 @@
  <summary>Respuesta ✨</summary>
    <div align="center">
 
-##  Primera Forma Normal (1FN)
 
-**Tabla: Reservas**
+### 1FN (Primera Forma Normal):
+| id_reserva | cliente  | habitacion | fecha      | precio |
+|------------|----------|------------|------------|--------|
+| 5001       | Pedro G. | 101        | 2025-02-01 | 300    |
+| 5001       | Pedro G. | 101        | 2025-02-02 | 300    |
+| 5001       | Pedro G. | 101        | 2025-02-03 | 300    |
+| 5002       | María T. | 202        | 2025-03-10 | 200    |
+| 5002       | María T. | 202        | 2025-03-11 | 200    |
 
-| id_reserva | cliente | habitacion | precio |
-|------------|---------|------------|--------|
-| 5001       | Pedro G.| 101        | 300    |
-| 5002       | María T.| 202        | 200    |
+### 2FN (Segunda Forma Normal):
 
-**Tabla: Fechas_Reservas**
+#### Tabla Reservas:
+| id_reserva | cliente  | habitacion | precio |
+|------------|----------|------------|--------|
+| 5001       | Pedro G. | 101        | 300    |
+| 5002       | María T. | 202        | 200    |
 
+#### Tabla Fechas_Reserva:
 | id_reserva | fecha      |
 |------------|------------|
 | 5001       | 2025-02-01 |
@@ -192,11 +199,6 @@
 | 5001       | 2025-02-03 |
 | 5002       | 2025-03-10 |
 | 5002       | 2025-03-11 |
-
----
-
-## Segunda Forma Normal (2FN)
-```No es necesario crear mas divisiones```
        
  </div>
  </details>
