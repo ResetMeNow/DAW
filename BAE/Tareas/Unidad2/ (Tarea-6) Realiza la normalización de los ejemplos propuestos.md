@@ -41,6 +41,9 @@
 | 1           | HP        |
 | 2           | Logitech  |
 
+---
+![image](https://github.com/user-attachments/assets/3a504921-8031-4d05-bb47-f19b78090ff1)
+
  </div>
  </details>
  
@@ -110,6 +113,7 @@
 
 ---
 
+![image](https://github.com/user-attachments/assets/bb481ce6-9ea3-4c37-9307-59b27477a422)
 
  </div>
  </details>
@@ -148,10 +152,10 @@
 | 1           | 67890    |
 | 2           | 54321    |
 
----
-
 ## Segunda Forma Normal (2FN)
 ```Se quedaria igual ya que en el primero pide separar los teléfonos y ya no se puede dividir en más```
+---
+![image](https://github.com/user-attachments/assets/cf0607be-951a-40b0-a1af-5aa9c696eb77)
 
  </div>
  </details>
@@ -199,7 +203,10 @@
 | 5001       | 2025-02-03 |
 | 5002       | 2025-03-10 |
 | 5002       | 2025-03-11 |
-       
+
+---
+![image](https://github.com/user-attachments/assets/9aa02c13-7e9e-4d16-acc4-b84d05ad3f35)
+
  </div>
  </details>
  
@@ -241,7 +248,11 @@
 |----------|-------------|-------------|----------------|
 | 1        | Matemáticas | Prof. Pérez | Lunes 10AM     |
 | 1        | Matemáticas | Prof. Pérez | Miércoles 2PM  |
-| 2        | Física      | Prof. Gómez | Martes 3PM     |
+| 2        | Física      | Prof. Gómez | Martes 3PM     | 
+
+---
+![image](https://github.com/user-attachments/assets/d89cd71d-5a2c-4f82-b42e-0b8ad358baa2)
+
  </div>
  </details>
  
@@ -283,8 +294,12 @@
 |----------|--------------------|
 | 8001     | Celular            |
 | 8001     | Funda              |
-| 8002     | Laptop             |
-       
+| 8002     | Laptop             |  
+
+--- 
+
+![image](https://github.com/user-attachments/assets/d3d69b04-9ec5-4df3-be12-9a00e250d771)
+
  </div>
  </details>
  
@@ -324,7 +339,10 @@
 |----------|-----------|
 | 101      | Cervantes |
 | 102      | Orwell    |
-       
+
+---
+![image](https://github.com/user-attachments/assets/ceae08d8-2f14-40f6-8dc2-2fa98a7ebdc5)
+
  </div>
  </details>
  
@@ -365,6 +383,10 @@
 | 9001       | Internet            |
 | 9001       | TV                  |
 | 9002       | Teléfono            |  
+
+---
+![image](https://github.com/user-attachments/assets/c7c93962-7b39-495e-8dc0-5a0f85b359b7)
+
  </div>
  </details>
  
@@ -405,7 +427,9 @@
 | 5001        | Corolla |
 | 5001        | Yaris   |
 | 5002        | Civic   |
-       
+---
+![image](https://github.com/user-attachments/assets/eef74e5f-52f4-4464-8d33-eeb4e6e68a54)
+
  </div>
  </details>
  
@@ -447,7 +471,10 @@
 | 7001        | Juan    |
 | 7001        | Ana     |
 | 7002        | Pedro   |
-| 7002        | María   | 
+| 7002        | María   |  
+---
+![image](https://github.com/user-attachments/assets/e57cb317-b240-40e1-b6f5-7e35d4bdb175)
+
  </div>
  </details>
  
