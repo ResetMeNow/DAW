@@ -19,34 +19,27 @@
  <summary>Respuesta ✨</summary>
    <div align="center">
 
-   ## Primera Forma Normal (1FN)
+### 1FN (Primera Forma Normal):
+| ID_Producto | Nombre_Producto | Proveedor | Categoría   | Precio |
+|-------------|-----------------|-----------|-------------|--------|
+| 1           | Laptop          | Dell      | Tecnología  | 1000   |
+| 1           | Laptop          | HP        | Tecnología  | 1000   |
+| 2           | Mouse           | Logitech  | Accesorios  | 25     |
 
-| ID_Producto | Nombre_Producto | Proveedor | Categoría  | Precio |
-|-------------|-----------------|-----------|------------|--------|
-| 1           | Laptop          | Dell      | Tecnología | 1000   |
-| 1           | Laptop          | HP        | Tecnología | 1000   |
-| 2           | Mouse           | Logitech  | Accesorios | 25     |
+### 2FN (Segunda Forma Normal):
 
----
+#### Tabla Productos:
+| ID_Producto | Nombre_Producto | Categoría   | Precio |
+|-------------|-----------------|-------------|--------|
+| 1           | Laptop          | Tecnología  | 1000   |
+| 2           | Mouse           | Accesorios  | 25     |
 
-## Segunda Forma Normal (2FN)
-
-✨ **Tabla Productos (2FN)**
-
-| ID_Producto | Nombre_Producto | Categoría  | Precio |
-|-------------|-----------------|------------|--------|
-| 1           | Laptop          | Tecnología | 1000   |
-| 2           | Mouse           | Accesorios | 25     |
-
-✨ **Tabla Proveedores_Productos (2FN)**
-
+#### Tabla Proveedores:
 | ID_Producto | Proveedor |
 |-------------|-----------|
 | 1           | Dell      |
 | 1           | HP        |
 | 2           | Logitech  |
-
-![image](https://github.com/user-attachments/assets/737a2e8e-1f99-4c43-8288-3829f9aa381f)
 
  </div>
  </details>
@@ -67,6 +60,57 @@
  <details>
  <summary>Respuesta ✨</summary>
    <div align="center">
+
+### 1. Primera Forma Normal (1FN)
+
+**Clientes**
+| ID_Cliente | Nombre     | Dirección     |
+|------------|------------|---------------|
+| 1          | Juan Pérez | Calle 123     |
+| 2          | Ana López  | Av. Central   |
+
+**Pedidos**
+| ID_Pedido | ID_Cliente | ID_Producto | Cantidad |
+|-----------|------------|-------------|----------|
+| 101       | 1          | 1           | 1        |
+| 102       | 2          | 2           | 2        |
+
+**Productos**
+| ID_Producto | Nombre  | Precio |
+|-------------|---------|--------|
+| 1           | Laptop  | 1000   |
+| 2           | Teclado | 50     |
+
+### 2. Segunda Forma Normal (2FN)
+| ID_Pedido | ID_Cliente | Fecha_Pedido |
+|-----------|------------|--------------|
+| 101       | 1          | 2024-02-19  |
+| 102       | 2          | 2024-02-19  |
+
+**Tabla: Detalle_Pedido**
+
+| ID_Pedido | ID_Producto | Cantidad |
+|-----------|-------------|----------|
+| 101       | 1           | 1        |
+| 102       | 2           | 2        |
+
+**Tabla: Clientes**
+
+| ID_Cliente | Nombre     | Dirección   |
+|------------|------------|-------------|
+| 1          | Juan Pérez | Calle 123   |
+| 2          | Ana López  | Av. Central |
+
+**Tabla: Productos**
+
+| ID_Producto | Nombre_Producto | Precio |
+|-------------|-----------------|--------|
+| 1           | Laptop          | 1000   |
+| 2           | Teclado         | 50     |
+
+---
+
+
  </div>
  </details>
  
@@ -86,6 +130,29 @@
  <details>
  <summary>Respuesta ✨</summary>
    <div align="center">
+       
+### 1. Primera Forma Normal (1FN)
+
+**Tabla: Empleados**
+
+| ID_Empleado | Nombre   | Departamento |
+|-------------|----------|--------------|
+| 1           | Carlos R.| Ventas       |
+| 2           | Laura M. | Finanzas     |
+
+**Tabla: Telefonos_Empleados**
+
+| ID_Empleado | Teléfono |
+|-------------|----------|
+| 1           | 12345    |
+| 1           | 67890    |
+| 2           | 54321    |
+
+---
+
+## Segunda Forma Normal (2FN)
+```Se quedaria igual ya que en el primero pide separar los teléfonos y ya no se puede dividir en más```
+
  </div>
  </details>
  
@@ -105,6 +172,34 @@
  <details>
  <summary>Respuesta ✨</summary>
    <div align="center">
+
+
+### 1FN (Primera Forma Normal):
+| id_reserva | cliente  | habitacion | fecha      | precio |
+|------------|----------|------------|------------|--------|
+| 5001       | Pedro G. | 101        | 2025-02-01 | 300    |
+| 5001       | Pedro G. | 101        | 2025-02-02 | 300    |
+| 5001       | Pedro G. | 101        | 2025-02-03 | 300    |
+| 5002       | María T. | 202        | 2025-03-10 | 200    |
+| 5002       | María T. | 202        | 2025-03-11 | 200    |
+
+### 2FN (Segunda Forma Normal):
+
+#### Tabla Reservas:
+| id_reserva | cliente  | habitacion | precio |
+|------------|----------|------------|--------|
+| 5001       | Pedro G. | 101        | 300    |
+| 5002       | María T. | 202        | 200    |
+
+#### Tabla Fechas_Reserva:
+| id_reserva | fecha      |
+|------------|------------|
+| 5001       | 2025-02-01 |
+| 5001       | 2025-02-02 |
+| 5001       | 2025-02-03 |
+| 5002       | 2025-03-10 |
+| 5002       | 2025-03-11 |
+       
  </div>
  </details>
  
@@ -124,6 +219,29 @@
  <details>
  <summary>Respuesta ✨</summary>
    <div align="center">
+       
+ ### 1FN (Primera Forma Normal):
+| id_inscripcion | estudiante | curso       | profesor    | horario        |
+|----------------|------------|-------------|-------------|----------------|
+| 3001           | Luis R.    | Matemáticas | Prof. Pérez | Lunes 10AM     |
+| 3001           | Luis R.    | Matemáticas | Prof. Pérez | Miércoles 2PM  |
+| 3002           | Ana S.     | Física      | Prof. Gómez | Martes 3PM     |
+
+### 2FN (Segunda Forma Normal):
+
+#### Tabla Inscripciones:
+| id_inscripcion | estudiante | id_curso |
+|----------------|------------|----------|
+| 3001           | Luis R.    | 1        |
+| 3001           | Luis R.    | 1        |
+| 3002           | Ana S.     | 2        |
+
+#### Tabla Cursos:
+| id_curso | curso       | profesor    | horario        |
+|----------|-------------|-------------|----------------|
+| 1        | Matemáticas | Prof. Pérez | Lunes 10AM     |
+| 1        | Matemáticas | Prof. Pérez | Miércoles 2PM  |
+| 2        | Física      | Prof. Gómez | Martes 3PM     |
  </div>
  </details>
  
@@ -143,6 +261,30 @@
  <details>
  <summary>Respuesta ✨</summary>
    <div align="center">
+
+
+### 1FN (Primera Forma Normal):
+| id_venta | cliente   | producto_comprado | costo_total |
+|----------|-----------|--------------------|-------------|
+| 8001     | Juan P.   | Celular            | 500         |
+| 8001     | Juan P.   | Funda              | 500         |
+| 8002     | Andrea M. | Laptop             | 1000        |
+
+### 2FN (Segunda Forma Normal):
+
+#### Tabla Ventas:
+| id_venta | cliente   | costo_total |
+|----------|-----------|-------------|
+| 8001     | Juan P.   | 500         |
+| 8002     | Andrea M. | 1000        |
+
+#### Tabla Productos:
+| id_venta | producto_comprado |
+|----------|--------------------|
+| 8001     | Celular            |
+| 8001     | Funda              |
+| 8002     | Laptop             |
+       
  </div>
  </details>
  
@@ -162,6 +304,27 @@
  <details>
  <summary>Respuesta ✨</summary>
    <div align="center">
+
+### 1FN (Primera Forma Normal):
+| ID_Libro | Título    | Autor     | Género           |
+|----------|-----------|-----------|------------------|
+| 101      | El Quijote| Cervantes | Novela           |
+| 102      | 1984      | Orwell    | Ciencia Ficción  |
+
+### 2FN (Segunda Forma Normal):
+
+#### Tabla Libros:
+| ID_Libro | Título    | Género           |
+|----------|-----------|------------------|
+| 101      | El Quijote| Novela           |
+| 102      | 1984      | Ciencia Ficción  |
+
+#### Tabla Autores:
+| ID_Libro | Autor     |
+|----------|-----------|
+| 101      | Cervantes |
+| 102      | Orwell    |
+       
  </div>
  </details>
  
@@ -180,6 +343,28 @@
  <details>
  <summary>Respuesta ✨</summary>
    <div align="center">
+
+### 1FN (Primera Forma Normal):
+| ID_Factura | Cliente | Servicio Contratado | Costo Total |
+|------------|---------|---------------------|-------------|
+| 9001       | Juan P. | Internet            | 50          |
+| 9001       | Juan P. | TV                  | 50          |
+| 9002       | Ana M.  | Teléfono            | 20          |
+
+### 2FN (Segunda Forma Normal):
+
+#### Tabla Facturas:
+| ID_Factura | Cliente | Costo Total |
+|------------|---------|-------------|
+| 9001       | Juan P. | 50          |
+| 9002       | Ana M.  | 20          |
+
+#### Tabla Servicios:
+| ID_Factura | Servicio Contratado |
+|------------|---------------------|
+| 9001       | Internet            |
+| 9001       | TV                  |
+| 9002       | Teléfono            |  
  </div>
  </details>
  
@@ -198,6 +383,28 @@
  <details>
  <summary>Respuesta ✨</summary>
    <div align="center">
+### 1FN (Primera Forma Normal):
+| id_vehiculo | marca  | modelo  | anio |
+|-------------|--------|---------|------|
+| 5001        | Toyota | Corolla | 2022 |
+| 5001        | Toyota | Yaris   | 2022 |
+| 5002        | Honda  | Civic   | 2023 |
+
+### 2FN (Segunda Forma Normal):
+
+#### Tabla Vehículos:
+| id_vehiculo | marca  | anio |
+|-------------|--------|------|
+| 5001        | Toyota | 2022 |
+| 5002        | Honda  | 2023 |
+
+#### Tabla Modelos:
+| id_vehiculo | modelo  |
+|-------------|---------|
+| 5001        | Corolla |
+| 5001        | Yaris   |
+| 5002        | Civic   |
+       
  </div>
  </details>
  
@@ -216,6 +423,30 @@
  <details>
  <summary>Respuesta ✨</summary>
    <div align="center">
+      
+### 1FN (Primera Forma Normal):
+| id_proyecto | nombre     | miembro | presupuesto |
+|-------------|------------|---------|-------------|
+| 7001        | Web App    | Juan    | 5000        |
+| 7001        | Web App    | Ana     | 5000        |
+| 7002        | E-commerce | Pedro   | 10000       |
+| 7002        | E-commerce | María   | 10000       |
+
+### 2FN (Segunda Forma Normal):
+
+#### Tabla Proyectos:
+| id_proyecto | nombre     | presupuesto |
+|-------------|------------|-------------|
+| 7001        | Web App    | 5000        |
+| 7002        | E-commerce | 10000       |
+
+#### Tabla Miembros:
+| id_proyecto | miembro |
+|-------------|---------|
+| 7001        | Juan    |
+| 7001        | Ana     |
+| 7002        | Pedro   |
+| 7002        | María   | 
  </div>
  </details>
  
