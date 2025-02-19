@@ -89,7 +89,33 @@
 | 2           | Teclado | 50     |
 
 ### 2. Segunda Forma Normal (2FN)
- ```Se queda igual que en la (1FN) ya que no hay más dependencias que eliminar```
+| ID_Pedido | ID_Cliente | Fecha_Pedido |
+|-----------|------------|--------------|
+| 101       | 1          | 2024-02-19  |
+| 102       | 2          | 2024-02-19  |
+
+**Tabla: Detalle_Pedido**
+
+| ID_Pedido | ID_Producto | Cantidad |
+|-----------|-------------|----------|
+| 101       | 1           | 1        |
+| 102       | 2           | 2        |
+
+**Tabla: Clientes**
+
+| ID_Cliente | Nombre     | Dirección   |
+|------------|------------|-------------|
+| 1          | Juan Pérez | Calle 123   |
+| 2          | Ana López  | Av. Central |
+
+**Tabla: Productos**
+
+| ID_Producto | Nombre_Producto | Precio |
+|-------------|-----------------|--------|
+| 1           | Laptop          | 1000   |
+| 2           | Teclado         | 50     |
+
+---
  
 ![image](https://github.com/user-attachments/assets/d9204397-f11e-4f7b-8b8a-013df670d17e)
 
