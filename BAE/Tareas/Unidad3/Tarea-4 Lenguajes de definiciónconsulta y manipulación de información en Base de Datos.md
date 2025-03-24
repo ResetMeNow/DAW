@@ -99,6 +99,6 @@ Realiza las siguientes consultas, y muestra el resultado obtenido:
 - Calcular el total de ventas para cada producto en la fecha '2024-01-17'.
 - Mostrar los productos cuyo nombre tiene al menos 5 caracteres.
 - Encontrar los productos que tienen un precio superior al precio máximo en la tabla "productos".
-- 
+ 
 ## Generación Informe
 Genera un informe con cada una de las consultas y los resuldos obtenidos tras su ejecución. El informe se debe de realizar en markdown, y enviar el enlace.
