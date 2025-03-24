@@ -11,18 +11,17 @@
       sqlite3 tarea2.db
  
 **2. Dentro de SQLite3, crea las siguientes tablas**
-
 - Propietarios: Almacena información de los propietarios.
-- id INTEGER ENTERO clave primaria y AUTOINCREMENT.
-- nombre TEXT no nulo.
-- apellido TEXT no nulo.
-- dni TEXT Valor único.
-- Vehiculos: Almacena información sobre los propietarios de los vehículos.
-- id INTEGER ENTERO clave primaria y AUTOINCREMENT.
-- marca TEXT no nulo.
-- modelo TEXT no nulo.
-- anio INTEGER no nulo.
-- id_propietario INTEGER, FK propietarios(id_propietario).
+  - id INTEGER ENTERO clave primaria y AUTOINCREMENT.
+  - nombre TEXT no nulo.
+  - apellido TEXT no nulo.
+  - dni TEXT Valor único.
+  - Vehiculos: Almacena información sobre los propietarios de los vehículos.
+  - id INTEGER ENTERO clave primaria y AUTOINCREMENT.
+  - marca TEXT no nulo.
+  - modelo TEXT no nulo.
+  - anio INTEGER no nulo.
+  - id_propietario INTEGER, FK propietarios(id_propietario).
 > Nota: Un propietario puede tener varios vehículos, pero un vehículo pertenece a un único propietario.
 
 Asegúrate de cerrar SQLite3 al finalizar.
