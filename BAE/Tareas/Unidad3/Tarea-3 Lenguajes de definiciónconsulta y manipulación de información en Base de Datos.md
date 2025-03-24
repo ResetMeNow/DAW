@@ -3,7 +3,7 @@
 # Objetivo
 Practicar la creación y manipulación de una base de datos SQLite3 desde la línea de comandos.
 
-Descripción
+## Descripción
 ## Pasos
 ### Paso 1: Creación de la BBDD
 **Crea con el siguente contenido el fichero empleados-dump.sql.**
