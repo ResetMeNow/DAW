@@ -6,11 +6,11 @@
 # Descripción
 ### Pasos
 **Paso 1: Crear una tabla con un campo de cada tipo** 
-1. Utilizando la terminal o línea de comandos, abre SQLite3 y crea una base de datos llamada tarea2.db.
+**1. Utilizando la terminal o línea de comandos, abre SQLite3 y crea una base de datos llamada tarea2.db.**
 
       sqlite3 tarea2.db
  
-2. Dentro de SQLite3, crea las siguientes tablas
+**2. Dentro de SQLite3, crea las siguientes tablas**
 
 - Propietarios: Almacena información de los propietarios.
 - id INTEGER ENTERO clave primaria y AUTOINCREMENT.
@@ -58,7 +58,8 @@ Dado el siguiente conjunto de información:
 | 19             | Sergio    | Mendoza    | 17171717S  | Honda       | Odyssey    | 2016 |
 | 20             | Patricia  | Navarro    | 18181818T  | Nissan      | Murano     | 2019 |
  </details>
-*Realiza la inserción en la tablas de modo que la información quede almacenada.*
+ 
+***Realiza la inserción en la tablas de modo que la información quede almacenada.***
 
 Guarda algunas de las entradas para el informe.
 
