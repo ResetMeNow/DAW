@@ -73,7 +73,7 @@ Haciendo un .read del fichero sql, de nombre supermercado-db.sql, realiza la cre
 
 - Indica si la BBDD esta normalizada hasta la 3ª forma normal, justificando la respuesta.
 > [!NOTE]
->La base de datos si está normalizada hasta la tercera forma normal (3FN). Cumple la 1FN porque todos los datos son atómicos, no hay listas ni datos compuestos, cada campo tiene un solo dato y no se repiten columnas similares. También cumple la 2FN porque las tablas están en 1FN y cada campo depende completamente de la clave primaria de su tabla. Por último, cumple la tercera forma normal (3FN) porque ningún campo depende de otro que no sea la clave primaria, por ejemplo en la tabla productos el nombre, la categoría y el precio dependen solo del id y en la tabla ventas todos los datos dependen solo del id de la venta.
+>La base de datos si está normalizada hasta la tercera forma normal (3FN). Cumple la 1FN porque todos los datos son atómicos, no hay listas ni datos compuestos, cada campo tiene un solo dato y no se repiten columnas. También cumple la 2FN porque las tablas están en 1FN y cada campo depende completamente de la clave primaria de su tabla y por último, cumple la tercera forma normal (3FN) porque ningún campo depende de otro que no sea la clave primaria, por ejemplo en la tabla productos el nombre, la categoría y el precio dependen solo del id y en la tabla ventas todos los datos dependen solo del id de la venta.
 
 ## Paso 4: Responde a las siguientes cuestiones
 Realiza las siguientes consultas, y muestra el resultado obtenido:
