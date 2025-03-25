@@ -103,6 +103,7 @@ Realiza la inserción en la tabla Ejemplo de las 50 entradas.
 > Nota: Ayudate de los apuntes.
 
 ![image](https://github.com/user-attachments/assets/3d5fa692-7b48-4fda-8ae9-23f84d7f577c)
+![image](https://github.com/user-attachments/assets/081179dc-631d-455b-9b0d-23028803c2ec)
 
 
 ### Paso 4: Realizar 3 eliminaciones y 3 modificaciones
@@ -116,9 +117,9 @@ Realiza la inserción en la tabla Ejemplo de las 50 entradas.
 4. Incrementa en 10 el valor del campo entero para las entradas donde el campo booleano es igual a False.
 
 > Nota: Ayudate de los apuntes.
-![image](https://github.com/user-attachments/assets/7df24b66-5653-4a6b-98cf-892992a14814)
-
 
 5. Elimina las entradas donde el campo decimal es menor a 50.
 
 6. Actualiza el campo fecha de todas las entradas a la fecha actual.
+
+![image](https://github.com/user-attachments/assets/7df24b66-5653-4a6b-98cf-892992a14814)
