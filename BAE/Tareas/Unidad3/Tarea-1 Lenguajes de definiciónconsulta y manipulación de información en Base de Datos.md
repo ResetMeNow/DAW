@@ -98,11 +98,11 @@ Realiza la inserción en la tabla Ejemplo de las 50 entradas.
 ### Paso 3: Realizar 5 consultas de datos
 1. Obtén todas las entradas de la tabla Ejemplo.
 > Nota: Ayudate de los apuntes.
-
+![image](https://github.com/user-attachments/assets/3d5fa692-7b48-4fda-8ae9-23f84d7f577c)
 2. Obtén las entradas con el campo entero mayor a 50.
 > Nota: Ayudate de los apuntes.
 
-![image](https://github.com/user-attachments/assets/3d5fa692-7b48-4fda-8ae9-23f84d7f577c)
+
 ![image](https://github.com/user-attachments/assets/081179dc-631d-455b-9b0d-23028803c2ec)
 
 
