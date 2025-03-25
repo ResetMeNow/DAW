@@ -55,12 +55,15 @@
     (14, 7, '2024-01-19'),
     (16, 3, '2024-01-19'),
     (18, 6, '2024-01-20');
+ ![image](https://github.com/user-attachments/assets/a24e6c1a-a5fa-4ca8-8f9c-98f7a15d4b0f)
+
 ## Paso 2 Lectura del fichero sql.
 **Entra en sqlite a través del siguiente comando:**
 
     sqlite3 tarea4.db  
 
 Haciendo un .read del fichero sql, de nombre supermercado-db.sql, realiza la creación e inserción de información de la BBDD.
+![image](https://github.com/user-attachments/assets/092b1994-087b-4d17-825e-e50ef8e0b76b)
 
 ## Paso 3: Responde a las siguientes cuestiones
 - Realiza el diagrama ER de la BBDD supermercado.
@@ -74,12 +77,16 @@ Realiza las siguientes consultas, y muestra el resultado obtenido:
 - Listar los productos ordenados por precio de forma descendente.
 - Calcular el precio total de todos los productos en la tabla "productos".
 - Encontrar los productos con un nombre que contenga la letra 'a'.
+- ![image](https://github.com/user-attachments/assets/48013880-015d-405f-9f76-6306f84e626d)
+
 - Obtener la cantidad total de productos vendidos en todas las fechas.
 - Encontrar el producto más caro en cada categoría.
 - Listar los productos que no han sido vendidos.
 - Calcular el precio promedio de los productos en la categoría "Snacks".
 - Encontrar los productos que han sido vendidos más de 5 veces.
 - Mostrar la fecha y la cantidad de ventas para cada producto.
+- ![image](https://github.com/user-attachments/assets/f5d6b697-e170-4b23-8d8a-b687076c12b3)
+
 - Encontrar los productos que tienen un precio menor o igual a 2.
 - Calcular la cantidad total de ventas para cada fecha.
 - Listar los productos cuyo nombre comienza con la letra 'P'.
@@ -87,9 +94,13 @@ Realiza las siguientes consultas, y muestra el resultado obtenido:
 - Mostrar los productos que fueron vendidos en la fecha '2024-01-18'.
 - Calcular el total de ventas para cada producto.
 - Encontrar los productos con un precio entre 3 y 4.
+- ![image](https://github.com/user-attachments/assets/65d2b153-89ad-4f47-a217-4a3f664daada)
+
 - Listar los productos y sus categorías ordenados alfabéticamente por categoría.
 - Calcular el precio total de los productos vendidos en la fecha '2024-01-19'.
 - Mostrar los productos que no pertenecen a la categoría "Higiene".
+- ![image](https://github.com/user-attachments/assets/527f2c8f-d1f1-4518-b2e9-ef53bad5cafe)
+
 - Encontrar la cantidad total de productos en cada categoría.
 - Listar los productos que tienen un precio igual a la media de precios.
 - Calcular el precio total de los productos vendidos en cada fecha.
@@ -97,8 +108,12 @@ Realiza las siguientes consultas, y muestra el resultado obtenido:
 - Encontrar los productos que han sido vendidos en más de una fecha.
 - Listar los productos cuya categoría comienza con la letra 'L'.
 - Calcular el total de ventas para cada producto en la fecha '2024-01-17'.
+- ![image](https://github.com/user-attachments/assets/47f3f392-4c16-4ab2-9b5f-284421a16a8e)
+
 - Mostrar los productos cuyo nombre tiene al menos 5 caracteres.
 - Encontrar los productos que tienen un precio superior al precio máximo en la tabla "productos".
+- ![image](https://github.com/user-attachments/assets/f871ea24-e287-4b7a-82d5-aac24a829110)
+
  
 ## Generación Informe
 Genera un informe con cada una de las consultas y los resuldos obtenidos tras su ejecución. El informe se debe de realizar en markdown, y enviar el enlace.
