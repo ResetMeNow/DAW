@@ -10,6 +10,7 @@ Practicar la creación y manipulación de una base de datos SQLite3 desde la lí
 
       sqlite3 tarea1.db
 
+
 **2. Dentro de SQLite3, crea una tabla llamada Ejemplo con los siguientes campos:**
 
 - id (tipo INTEGER, clave primaria)
@@ -22,9 +23,13 @@ Practicar la creación y manipulación de una base de datos SQLite3 desde la lí
 
 > [!NOTE]
 > Ayudate de los apuntes.
-
+      
+ ![image](https://github.com/user-attachments/assets/b8a4b6fe-4b6a-41ab-830a-ef89c801191f)
+ 
 ### Paso 2: Insertar 50 entradas
 Dado el siguiente conjunto de información:
+![image](https://github.com/user-attachments/assets/4b038b3d-2998-4857-8c1b-9345aa88272b)
+
  <details>
  <summary>Tabla</summary>
    <div align="center">
@@ -97,6 +102,9 @@ Realiza la inserción en la tabla Ejemplo de las 50 entradas.
 2. Obtén las entradas con el campo entero mayor a 50.
 > Nota: Ayudate de los apuntes.
 
+![image](https://github.com/user-attachments/assets/3d5fa692-7b48-4fda-8ae9-23f84d7f577c)
+
+
 ### Paso 4: Realizar 3 eliminaciones y 3 modificaciones
 1. Elimina las entradas donde el campo booleano es igual a True.
 > Nota: Ayudate de los apuntes.
@@ -108,6 +116,8 @@ Realiza la inserción en la tabla Ejemplo de las 50 entradas.
 4. Incrementa en 10 el valor del campo entero para las entradas donde el campo booleano es igual a False.
 
 > Nota: Ayudate de los apuntes.
+![image](https://github.com/user-attachments/assets/7df24b66-5653-4a6b-98cf-892992a14814)
+
 
 5. Elimina las entradas donde el campo decimal es menor a 50.
 
