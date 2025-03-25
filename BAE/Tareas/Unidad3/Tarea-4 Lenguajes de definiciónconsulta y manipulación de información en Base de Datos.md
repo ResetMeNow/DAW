@@ -68,7 +68,11 @@ Haciendo un .read del fichero sql, de nombre supermercado-db.sql, realiza la cre
 ## Paso 3: Responde a las siguientes cuestiones
 - Realiza el diagrama ER de la BBDD supermercado.
 - Realiza el diagrama MR de la BBDD supermercado.
+  ![image](https://github.com/user-attachments/assets/91df905e-b79b-4b48-acfb-76be8a78b967)
+
 - Indica si la BBDD esta normalizada hasta la 3ª forma normal, justificando la respuesta.
+> [!NOTE]
+>La base de datos está normalizada hasta la tercera forma normal (3FN). Cumple la primera forma normal (1FN) porque todos los datos son atómicos, no hay listas ni datos compuestos, cada campo tiene un solo dato y no se repiten columnas similares. También cumple la segunda forma normal (2FN) porque las tablas están en 1FN y cada campo depende completamente de la clave primaria de su tabla, en la tabla ventas la cantidad y la fecha dependen de la clave primaria id y no solo del id_producto. Por último, cumple la tercera forma normal (3FN) porque ningún campo depende de otro que no sea la clave primaria, por ejemplo en la tabla productos el nombre, la categoría y el precio dependen solo del id y en la tabla ventas todos los datos dependen solo del id de la venta.
 
 ## Paso 4: Responde a las siguientes cuestiones
 Realiza las siguientes consultas, y muestra el resultado obtenido:
