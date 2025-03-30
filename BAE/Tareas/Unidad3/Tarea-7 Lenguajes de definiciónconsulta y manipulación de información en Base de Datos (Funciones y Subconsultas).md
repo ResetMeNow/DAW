@@ -8,7 +8,7 @@
  <summary>Tarea realizada aquí.</summary>
     <div align="center">
     
-  ```sql
+   ```sql
 
 sqlite> .mode table
 sqlite> SELECT * FROM Clientes;
