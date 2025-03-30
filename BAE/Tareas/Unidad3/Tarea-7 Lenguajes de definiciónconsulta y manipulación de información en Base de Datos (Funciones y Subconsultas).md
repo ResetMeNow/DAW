@@ -6,10 +6,9 @@
 ### Realiza la lectura de la base de datos a través del fichero base datos de clientes.
  <details>
  <summary>Tarea realizada aquí.</summary>
-    <div align="center">
+     <div align="center">
     
-   ```sql
-
+```sql
 sqlite> .mode table
 sqlite> SELECT * FROM Clientes;
 +------------+-----------------+------+----------------+
