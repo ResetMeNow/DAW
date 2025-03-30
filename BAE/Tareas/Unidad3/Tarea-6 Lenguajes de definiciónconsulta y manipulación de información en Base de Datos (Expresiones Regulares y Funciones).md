@@ -171,7 +171,7 @@ JOIN Pedidos p ON c.id = p.id_cliente
 WHERE p.fecha_pedido BETWEEN '2024-02-01' AND '2024-02-29'
 GROUP BY c.id
 HAVING COUNT(p.id_pedido) > 1;
-<--Solo sale 1 y deberia salir más-->
+<!--Solo sale 1 y deberia salir más-->
 
 
 -- Obtener los productos con precio entre 100 y 500.
@@ -210,7 +210,7 @@ SELECT id_cliente, SUM(cantidad) AS total_productos FROM Pedidos GROUP BY id_cli
 
 -- Obtener los clientes cuyos nombres no contienen la letra 'i':
 SELECT * FROM Clientes WHERE nombre NOT LIKE '%i%' AND nombre NOT LIKE '%I%';
-<--No cuenta los acentos-->
+<--!No cuenta los acentos-->
 
 -- Obtener los pedidos realizados por el cliente con ID 2 en febrero de 2024.
 SELECT * FROM Pedidos WHERE id_cliente = 2 AND fecha_pedido BETWEEN '2024-02-01' AND '2024-02-29';
