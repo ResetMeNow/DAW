@@ -90,6 +90,12 @@ JOIN Clases c ON i.id_clase = c.id;
 SELECT a.nombre AS alumno, a.direccion
 FROM Inscripciones i
 JOIN Alumnos a ON i.id_alumno = a.id;
+--LEER-- Así sería la consulta si me ciño en lo que se pide, aunque no devuelve nada.
+SELECT a.nombre AS alumno, c.direccion
+FROM Inscripciones i
+JOIN Alumnos a ON i.id_alumno = a.id
+JOIN Clases c ON i.id_clase = c.id;
+
 
 5 - Obtener el nombre del alumno y el nombre de la clase junto con el profesor.
 SELECT a.nombre AS alumno, c.nombre AS clase, c.profesor
