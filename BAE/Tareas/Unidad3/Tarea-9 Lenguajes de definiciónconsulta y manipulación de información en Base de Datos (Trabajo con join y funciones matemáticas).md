@@ -86,7 +86,7 @@ JOIN Clases c ON i.id_clase = c.id;
 
 4 - Obtener el nombre del alumno y la dirección de las clases en las que está inscrito.
 
---IMPORTANTE-- Las clases no tienen nombre, asi qué puse la dirección de los alumnos.
+--IMPORTANTE-- Las clases no tienen dirección, asi qué puse la dirección de los alumnos.
 SELECT a.nombre AS alumno, a.direccion
 FROM Inscripciones i
 JOIN Alumnos a ON i.id_alumno = a.id;
