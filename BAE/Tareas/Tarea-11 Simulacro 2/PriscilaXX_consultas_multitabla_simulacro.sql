@@ -1,24 +1,35 @@
 -- 1. Consultas Básicas (8 consultas - 1.6 puntos)
 -- Listar todos los libros disponibles
+   SELECT * FROM libros;
 
 -- Mostrar socios de Madrid ordenados por apellido
+   SELECT * FROM socio WHERE ciudad = "Madrid" ORDER BY apellido1, apellido2;
 
 -- Libros publicados después de 1950
+   SELECT * FROM libro where año_publicacion > 1950;
 
 -- Bibliotecarios con más de 3 años de antigüedad
+   SELECT * FROM bibliotecario where antiguedad > 3;
 
 -- Préstamos realizados en 2023
+   SELECT * FROM prestamo where fecha_prestamo > 2023;
 
 -- Socios sin segundo apellido
+   SELECT * FROM socio WHERE apellido2 IS NULL;
 
 -- Libros del género "Realismo mágico"
+   SELECT * FROM libro WHERE genero = "Realismo mágico";
 
 -- Préstamos no devueltos (fecha_devolucion IS NULL)
+   SELECT * FROM prestamo WHERE fecha_devolucion IS NULL;
+
+
 
 -- 2. Consultas Multitabla (WHERE) (8 consultas - 2.4 puntos)
 -- Préstamos con nombres de socio y libro (sin JOIN)
 
 -- Libros prestados a socios de Barcelona (sin JOIN)
+  SELECT * FROM id_libros, id_socio WHERE ciudad = "Barcelona";
 
 -- Socios que han tomado prestado "Cien años de soledad" (sin JOIN)
 
@@ -31,6 +42,9 @@
 -- Libros más prestados (sin JOIN)
 
 -- Autores cuyos libros han sido prestados (sin JOIN)
+
+
+
 
 -- 3. Consultas Multitabla (JOIN) (8 consultas - 2.4 puntos)
 -- Préstamos con nombres de socio y libro (JOIN)
@@ -49,6 +63,9 @@
 
 -- Autores con número de libros prestados (JOIN + GROUP BY)
 
+
+
+
 -- 4. Consultas Resumen (8 consultas - 2.4 puntos)
 -- Número de socios por ciudad
 
@@ -65,6 +82,8 @@
 -- Días promedio de préstamo
 
 -- Número de préstamos por categoría de socio
+
+
 
 -- 5. Subconsultas (8 consultas - 1.2 puntos)
 
