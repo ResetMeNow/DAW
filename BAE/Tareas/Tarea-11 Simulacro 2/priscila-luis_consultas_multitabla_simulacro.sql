@@ -1,8 +1,15 @@
+```sql
 -- 1. Consultas Básicas (8 consultas - 1.6 puntos)
 -- Listar todos los libros disponibles
-   SELECT * FROM libro;
+
+SELECT * FROM libro;     
+    ```  
+
 
 -- Mostrar socios de Madrid ordenados por apellido
+
+
+
 
 -- Libros publicados después de 1950
 
@@ -95,4 +102,5 @@
 -- Socios con préstamos en todas las categorías de libros
 
 -- Bibliotecarios que han gestionado préstamos de todos los socios de Madrid
-
+     
+ ```  
