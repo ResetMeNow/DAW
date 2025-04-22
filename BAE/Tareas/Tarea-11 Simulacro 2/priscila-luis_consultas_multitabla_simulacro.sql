@@ -1,5 +1,6 @@
 -- 1. Consultas Básicas (8 consultas - 1.6 puntos)
 -- Listar todos los libros disponibles
+   SELECT * FROM libro;
 
 -- Mostrar socios de Madrid ordenados por apellido
 
