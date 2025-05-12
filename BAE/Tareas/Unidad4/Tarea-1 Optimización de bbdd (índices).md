@@ -16,25 +16,89 @@ Se pide:
 
 - Elimine la tabla "alumno" si existe.
   > Nota:Muestra el comando y la salida.
+  <details>
+  <summary>Respuesta</summary>
+    
+   ![image](https://github.com/user-attachments/assets/39806458-90d7-4dad-bb1f-a475fd8cc1c8)
+   </details>
 
+
+---
 - Cree la tabla definiendo una clave primaria compuesta (año de inscripción y número de inscripción).
   > Nota:Muestra el comando y la salida.
+  <details>
+  <summary>Respuesta</summary>
+    
+     ![image](https://github.com/user-attachments/assets/a3ffa3ec-0ad3-4e2f-a3b6-540150588492)
+   </details>
 
+
+---
 - Define los siguientes indices:
   - Un índice único por el campo "documento" y un índice común por ciudad y provincia.
     > Nota:Muestra el comando y la salida. Justifica el tipo de indice en un comentario.
+  <details>
+  <summary>Respuesta</summary>
+    
+   ![image](https://github.com/user-attachments/assets/9d3bb09f-33b3-4e8b-bf6e-019f24036d17)
 
+   </details>
+
+
+---
   - Vea los índices de la tabla.
     > Nota:Muestra el comando y la salida "show index".
+   <details>
+   <summary>Respuesta</summary>
+    
+   ![image](https://github.com/user-attachments/assets/30291b4b-8edb-4622-92a6-ddcd20c820b4)
 
+   </details>
+
+
+---
 - Intente ingresar un alumno con clave primaria repetida.
   > Nota:Muestra el comando y la salida.
+  <details>
+  <summary>Respuesta</summary>
+    
+   ![image](https://github.com/user-attachments/assets/2beb0f0a-cca4-46ca-8f52-fd7213322fb4)
 
+   </details>
+
+
+---
 - Intente ingresar un alumno con documento repetido.
   > Nota:Muestra el comando y la salida.
+  <details>
+  <summary>Respuesta</summary>
+    
+   ![image](https://github.com/user-attachments/assets/e5ee8f28-aa2d-440b-b616-835d31dad0ab)
 
+   </details>
+
+
+---
 - Ingrese varios alumnos de la misma ciudad y provincia.
   > Nota:Muestra el comando y la salida.
+  <details>
+  <summary>Respuesta</summary>
+    
+   ![image](https://github.com/user-attachments/assets/58505ab4-fbad-4981-b3b4-73cdeb57d0ce)
 
+  </details>
+
+
+---
 - Elimina los indices creados, y muestra que ya no se encuentran.
   > Nota:Muestra el comando y la salida.
+  <details>
+  <summary>Respuesta</summary>
+
+    ![image](https://github.com/user-attachments/assets/8000c7f3-05ce-491e-87b7-f257850190e9)
+  
+    ![image](https://github.com/user-attachments/assets/a946ce56-73fa-40ec-8804-ab8c79d54bf3)
+
+
+  </details>
+
