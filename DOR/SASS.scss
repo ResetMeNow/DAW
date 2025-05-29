@@ -100,3 +100,59 @@ p{
         font-size: 2em;
     }
 }
+
+
+
+
+// Mixin para Grid✔️
+
+main{ //Sin mixin✖️
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:2em;
+}
+
+section{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:2em;
+}
+
+
+@mixin grid($columnas, $espacio){ //Con mixin☑️
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $espacio;
+
+    @media screen and (max-width:480px){
+        grid-template-columns : 1fr;
+        gap: 0em;
+    }
+
+}
+
+main{
+  @include grid(4,1em );
+}
+
+section{
+    @include grid(3,2em );
+}
+
+
+//Mixin para Responsive Design🟠
+@mixin mv($medida: 480px){
+    @media screen and(max-width: $medida) {
+        @content;
+        
+    }
+
+}
+
+article{
+    width: 25%;
+    @include mv(768px){width: 50%}
+    @include mv(){width: 100%}
+}
+
+
