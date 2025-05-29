@@ -1,0 +1,102 @@
+/*
+
+¿Que es un mixin CSS? 📍
+ Es como una "función" o "método" que nos permite agrupar y reutilizar propiedades CSS
+ para evitar la repetición de código y facilitar la organización de las hojas de estilo.
+
+No existen mixin en CSS pero si en SASS.
+
+
+¿Y que es SASS? ♦️
+Es un preprocesador de CSS que añade características de programación a las hojas de estilo, 
+en resumen, SASS escribe un código que luego se traduce a CSS.
+
+
+Entonces, ¿Qué es SCSS? 🧩
+Es una sintaxis de SASS, un preprocesador de CSS, en esencia SCSS es una forma más legible
+y potente de escribir CSS.
+
+Tipos de mixin:
+Mixin sin argumentos✔️
+Mixin con argumentos✔️
+Mixin con la regla @content✔️
+
+*/
+
+
+
+//Mixin sin argumentos.✔️
+@mixin nombreMixin(){
+    background-color: black;
+}
+header{
+    @include nombreMixin()//Usamos en mixin (*aqui dentro estaran las propiedades que le hayamos dado*)
+}
+
+
+@mixin otroMixin{
+    background: black;
+}
+header{
+    @include otroMixin;//Sin () - Otra manera de usarlo
+}
+
+
+
+
+
+/* 
+Mixin con argumentos.✔️
+➡️Siempre con los "()"
+➡️Los argumentos son como las variables 
+*/
+
+
+// Mixin con solo 1 argumento✔️
+@mixin nombre($argumento1){
+    color: $argumento1;
+}
+
+p{
+    @include nombre(black);
+}
+
+
+
+// Mixin con más de 1 argumento✔️
+@mixin nombre($argumento1, $argumento2, $argumento3){
+    color: $argumento1;
+    font-size: $argumento2;
+    font-weight: $argumento3;
+}
+p{
+    @include nombre(black, bold, 2em);
+}
+
+@mixin nombre($argumento1: red){
+    color: $argumento1;
+
+}
+
+p{
+    @include nombre(); //El color red puesto se pondra por defecto pero..
+    @include nombre(black); //Aqui se reescribe por el color negro
+}
+
+/*
+Mixin con la regla @content✔️
+➡️Nos permite usar multiples propiedades CSS dentro de un mixin.
+➡️Muy usado para Responsive Design
+*/
+@mixin movil(){
+   @media screen and (max-width: 480px) {
+    @content;
+   } 
+}
+
+p{
+    font-size: 4em;
+    @include movil(){
+        font-size: 2em;
+    }
+}
