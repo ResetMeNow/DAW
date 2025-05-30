@@ -136,7 +136,7 @@ section{
 ```
 
 ### Mixin para Responsive Design🟠
-```sql
+```css
 @mixin mv($medida: 480px){
     @media screen and(max-width: $medida) {
         @content;
@@ -159,14 +159,14 @@ article{
 
 |Contenedor HTML	  |  Puedes meter dentro|
 |---------------------|---------------------|
-|```<div>```	               Todo (es una caja general) ✅|
-|```<body>```	               Todo el contenido de la web ✅|
-|```<section>```           	<h1>, <p>, <img>, <article> ✅|
-|```<nav>```	                <ul>, <li>, <a> ✅|
-|```<ul>``` o ```<ol>```	                 Solo <li> ✅|
-|```<li>```	                Puedes meter <a> o texto ✅|
-|``<button>`` 	              Texto, íconos, <span> ✅|
-|``<form>``	                 <input>, <label>, <button> ✅|
+|```<div>```	       |        Todo (es una caja general) ✅|
+|```<body>```	        |       Todo el contenido de la web ✅|
+|```<section>```         |  	<h1>, <p>, <img>, <article> ✅|
+|```<nav>```	          |      <ul>, <li>, <a> ✅|
+|```<ul>``` o ```<ol>```	|                 Solo <li> ✅|
+|```<li>```	               | Puedes meter <a> o texto ✅|
+|``<button>`` 	            |  Texto, íconos, <span> ✅|
+|``<form>``	               |  <input>, <label>, <button> ✅|
 
 ```sql
 ❌ COSAS QUE NO SE PUEDEN METER DENTRO DE OTRAS EN HTML
@@ -223,8 +223,9 @@ Los operadores en SCSS permiten hacer cálculos dentro del estilo sin escribir n
 💡 Cosas importantes al usar operadores:
 Siempre incluye unidades (px, %, em, etc.)
 ```
+
+### ✅ 1. ¿Hay reglas para aplicar operadores en SCSS?
 > [!TIP]
->✅ 1. ¿Hay reglas para aplicar operadores en SCSS?
 >✔️ No hay reglas "obligatorias", pero sí buenas prácticas:
 
 | ✅ ÚSALOS CUANDO...                                            | ❌ EVÍTALOS SI...                                      |
