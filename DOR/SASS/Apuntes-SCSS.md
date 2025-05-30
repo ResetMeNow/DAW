@@ -154,21 +154,21 @@ article{
 ---
 
 # ✅ COSAS QUE SÍ PUEDES ANIDAR 
-(y por tanto en SCSS también)
+>(y por tanto en SCSS también)
+
+
+|Contenedor HTML	  |  Puedes meter dentro|
+|---------------------|---------------------|
+|```<div>```	               Todo (es una caja general) ✅|
+|```<body>```	               Todo el contenido de la web ✅|
+|```<section>```           	<h1>, <p>, <img>, <article> ✅|
+|```<nav>```	                <ul>, <li>, <a> ✅|
+|```<ul>``` o ```<ol>```	                 Solo <li> ✅|
+|```<li>```	                Puedes meter <a> o texto ✅|
+|``<button>`` 	              Texto, íconos, <span> ✅|
+|``<form>``	                 <input>, <label>, <button> ✅|
 
 ```sql
-
-Contenedor HTML	        Puedes meter dentro
-
-<div>	               Todo (es una caja general) ✅
-<body>	               Todo el contenido de la web ✅
-<section>           	<h1>, <p>, <img>, <article> ✅
-<nav>	                <ul>, <li>, <a> ✅
-<ul> o <ol>	                 Solo <li> ✅
-<li>	                Puedes meter <a> o texto ✅
-<button>	              Texto, íconos, <span> ✅
-<form>	                 <input>, <label>, <button> ✅
-
 ❌ COSAS QUE NO SE PUEDEN METER DENTRO DE OTRAS EN HTML
           (¡y por tanto tampoco en SCSS!)
 
@@ -188,46 +188,44 @@ dentro de etiquetas de texto como <p>, <h1>, etc.
 
 # 🧩📚 CUÁNDO PUEDES Y NO PUEDES ANIDAR EN SCSS (según HTML)
 ✅ PUEDES anidar cuando:
-```sql
-Situación HTML	                                   Ejemplo SCSS correcto
 
-Un elemento está dentro de otro	                .container contiene .row, .btn, etc.
-Usas pseudoclases o pseudoelementos	             &:hover, &::after, &:first-child
-Un selector depende jerárquicamente del otro	 nav > ul > li > a
-Es parte del mismo bloque visual	            .card dentro de .grid, li dentro de ul
+|Situación HTML	                        |           Ejemplo SCSS correcto|
+|---------------------------------------|--------------------------------|
+|Un elemento está dentro de otro	              |  .container contiene .row, .btn, etc.|
+|Usas pseudoclases o pseudoelementos	         |    &:hover, &::after, &:first-child|
+|Un selector depende jerárquicamente del otro|	 nav > ul > li > a|
+|Es parte del mismo bloque visual	       |     .card dentro de .grid, li dentro de ul|
 
-❌ NO PUEDES anidar cuando:
+> [!CAUTION] >❌ NO PUEDES anidar cuando:
 
-Situación HTML	                                   ❌ No hagas esto
+|Situación HTML	                     |              ❌ No hagas esto|
+|------------------------------------|------------------------------|
+|Metes un p dentro de un h1               	  |   h1 { p { ... } } ❌|
+|Pones botones dentro de etiquetas de texto	   |  p { button { ... } } ❌|
+|Rompe el HTML y el diseño                      |Pones div, section, o ul dentro de un p	❌  |    
+|Anidas etiquetas que no están realmente dentro	| Anidar footer dentro de h1, por ejemplo ❌|
 
-Metes un p dentro de un h1               	     h1 { p { ... } } ❌
-Pones botones dentro de etiquetas de texto	     p { button { ... } } ❌
-Pones div, section, o ul dentro de un p	❌      Rompe el HTML y el diseño
-Anidas etiquetas que no están realmente dentro	 Anidar footer dentro de h1, por ejemplo ❌
-
-📌 Siempre piensa en cómo se estructura el HTML real.
-```
+> [!TIP]>📌 Siempre piensa en cómo se estructura el HTML real.
 
 
 # 📘OPERADORES SASS (SassScript)
 ✨ ¿Qué son?
 Los operadores en SCSS permiten hacer cálculos dentro del estilo sin escribir números manualmente.
-```sql
 ✅ Tipos de operadores que puedes usar:
 
-Tipo     	         Ejemplo en SCSS                Resultado en CSS
-
-Suma +              width: 100px + 20px;	       width: 120px;
-Resta - 	        margin: 20px - 5px;	             margin: 15px;
-Multiplicación *	height: 25px * 2;	            height: 50px;
-División /	      font-size: 40px / 2;          	font-size: 20px;
-
+|Tipo     	       |  Ejemplo en SCSS           |     Resultado en CSS|
+|------------------|----------------------------|---------------------|
+|Suma +              |width: 100px + 20px;	|       width: 120px;|
+|Resta - 	        |margin: 20px - 5px;	 |            margin: 15px;|
+|Multiplicación *	|height: 25px * 2;	      |      height: 50px;|
+|División /	 |     font-size: 40px / 2;        |  	font-size: 20px;|
+```sql
 💡 Cosas importantes al usar operadores:
 Siempre incluye unidades (px, %, em, etc.)
-
-✅ 1. ¿Hay reglas para aplicar operadores en SCSS?
-✔️ No hay reglas "obligatorias", pero sí buenas prácticas:
 ```
+> [!TIP]
+>✅ 1. ¿Hay reglas para aplicar operadores en SCSS?
+>✔️ No hay reglas "obligatorias", pero sí buenas prácticas:
 
 | ✅ ÚSALOS CUANDO...                                            | ❌ EVÍTALOS SI...                                      |
 | ----------------------------------------------------------------|------------------------------------------------------- |
@@ -241,7 +239,7 @@ Siempre incluye unidades (px, %, em, etc.)
 
 --- 
 ## 🧠 ¿Qué hace #{}?
-> [!NOTE] 
+> [!IMPORTANT]
 >Le dice a Sass:
 >“Haz esta cuenta y pon el resultado como texto plano”.
 >Muy útil para @media, content:, rutas, etc.
