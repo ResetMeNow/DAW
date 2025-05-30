@@ -9,8 +9,7 @@
 
 
 ### Entonces, ¿Qué es SCSS? 🧩
- > [!NOTE]
- >Es una sintaxis de SASS, un preprocesador de CSS, en esencia SCSS es una forma más legible y potente de escribir CSS.
+ Es una sintaxis de SASS, un preprocesador de CSS, en esencia SCSS es una forma más legible y potente de escribir CSS.
 
 ### Tipos de mixin:
 ```
