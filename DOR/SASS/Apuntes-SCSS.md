@@ -229,14 +229,14 @@ Siempre incluye unidades (px, %, em, etc.)
 ✔️ No hay reglas "obligatorias", pero sí buenas prácticas:
 
 
-| ✅ ÚSALOS CUANDO...                                                                | ❌ EVÍTALOS SI...                                      |
-| -----------------------------------------------------------------------------------|------------------------------------------------------- |
+| ✅ ÚSALOS CUANDO...                                            | ❌ EVÍTALOS SI...                                      |
+| ----------------------------------------------------------------|------------------------------------------------------- |
 | Necesitas calcular tamaños o proporciones 
-  (ej: columnas, paddings, etc.)                                                    | Solo estás copiando estilos fijos como `font-size: 16px` |
-| Usas variables (`$padding`, `$gutter`, `$base`)                                   | Son valores únicos que **no cambian ni se repiten**      |
-| Quieres mantener consistencia y hacer escalas                                     | Es más fácil escribir el número directamente             |
+  (ej: columnas, paddings, etc.)                                  | Solo estás copiando estilos fijos como `font-size: 16px` |
+| Usas variables (`$padding`, `$gutter`, `$base`)                 | Son valores únicos que **no cambian ni se repiten**      |
+| Quieres mantener consistencia y hacer escalas                   | Es más fácil escribir el número directamente             |
 | Tu diseño tiene lógica matemática 
- (ej: grid, módulos, separación entre elementos)                                    | El cálculo no aporta claridad y solo complica            |
+ (ej: grid, módulos, separación entre elementos)                  | El cálculo no aporta claridad y solo complica            |
 ```
 
 --- 
