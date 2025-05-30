@@ -8,7 +8,7 @@ Apuntes y ejercicios correspondientes al temario del CFGS de Desarrollo de Aplic
   
 
 ## DOR .- Diseño de Interfaces Web 🎨
-- ### [SASS](https://github.com/ResetMeNow/DAW/tree/main/DOR)
+- ### [SASS](https://github.com/ResetMeNow/DAW/tree/main/DOR/SASS)
 
 ---
 > [!IMPORTANT]
