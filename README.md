@@ -1,6 +1,6 @@
 # DAW 📍
 ### Repositorio de DAW
-Apuntes y ejercicios correspondientes al temario del CFGS de Desarrollo de Aplicaciones Web (DAW).
+Apuntes y ejercicios correspondientes al temario del CFGS de Desarrollo de Aplicaciones Web.
 
 ## BAE .- Base de Datos 🧮
 - ###  [SQL](https://github.com/ResetMeNow/DAW/tree/main/BAE/Consultas%20SQL%20-%20Apuntes)   
