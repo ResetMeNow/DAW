@@ -151,7 +151,7 @@ article{
     @include mv(){width: 100%}
 }
 ```
---
+---
 
 # ✅ COSAS QUE SÍ PUEDES ANIDAR 
 (y por tanto en SCSS también)
@@ -230,17 +230,18 @@ Siempre incluye unidades (px, %, em, etc.)
 
 
 | ✅ ÚSALOS CUANDO...                                                                | ❌ EVÍTALOS SI...                                      |
-| --------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| -----------------------------------------------------------------------------------|------------------------------------------------------- |
 | Necesitas calcular tamaños o proporciones 
-  (ej: columnas, paddings, etc.)          | Solo estás copiando estilos fijos como `font-size: 16px` |
+  (ej: columnas, paddings, etc.)                                                    | Solo estás copiando estilos fijos como `font-size: 16px` |
 | Usas variables (`$padding`, `$gutter`, `$base`)                                   | Son valores únicos que **no cambian ni se repiten**      |
 | Quieres mantener consistencia y hacer escalas                                     | Es más fácil escribir el número directamente             |
 | Tu diseño tiene lógica matemática 
- (ej: grid, módulos, separación entre elementos) | El cálculo no aporta claridad y solo complica            |
+ (ej: grid, módulos, separación entre elementos)                                    | El cálculo no aporta claridad y solo complica            |
 ```
 
 --- 
-### 🧠 ¿Qué hace #{}?
-Le dice a Sass:
-“Haz esta cuenta y pon el resultado como texto plano”.
-Muy útil para @media, content:, rutas, etc.
+## 🧠 ¿Qué hace #{}?
+> [!NOTE] 
+>Le dice a Sass:
+>“Haz esta cuenta y pon el resultado como texto plano”.
+>Muy útil para @media, content:, rutas, etc.
