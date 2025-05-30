@@ -1,0 +1,406 @@
+@charset "UTF-8";
+/*
+ENUNCIADO
+Convierte los siguientes códigos CSS a SCSS haciendo uso de lo operadores
+SassScript:
+EJERCICIOS
+*/
+.box {
+  width: 100px;
+  height: 50px;
+  margin-top: 10px;
+}
+
+.box {
+  width: 100px;
+  height: 50px;
+  margin-top: 20px \ 2;
+}
+
+@media (min-width: 800px) {
+  p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 799px) {
+  p {
+    font-size: 12px;
+  }
+}
+@media (min-width: 800px) {
+  p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 799px) {
+  p {
+    font-size: 12px;
+  }
+}
+@media (min-width: 800px) {
+  button {
+    background-color: #333;
+    color: #fff;
+  }
+}
+@media (max-width: 799px) {
+  button {
+    background-color: #fff;
+    color: #333;
+  }
+}
+@media (min-width: 800px) {
+  button {
+    background-color: #333;
+    color: #fff;
+  }
+}
+@media (max-width: 799px) {
+  button {
+    background-color: #fff;
+    color: #333;
+  }
+}
+.content::before {
+  content: "Hello World";
+}
+
+.content::before {
+  content: "Hello World";
+}
+
+.content::before {
+  content: "Hello World";
+}
+
+/*Ejercicio 5
+Existe una cadena que tiene el texto “Hola. Bienvenido al aula
+Click”. Y quiero que se genere el código:*/
+p::before {
+  content: "Bienvenido";
+}
+
+p:before {
+  content: "Bienvenido";
+}
+
+/*Ejercicio 6
+Haciendo uso de la Interpolación. Plantea una solución para que nos de
+el código CSS siguiente:*/
+h1::before {
+  content: "Welcome to SASS!";
+}
+
+h1::before {
+  content: Welcome to SASS;
+}
+
+/*Ejercicio 7
+Haciendo uso de la Interpolación. Proponga un código SCSS que tras
+precompilar genere:*/
+.link {
+  color: #333;
+  background-color: #fff;
+}
+
+.link {
+  color: #333;
+  background-color: #fff;
+}
+
+/*Ejercicio 8
+Haciendo uso de la Interpolación. Proponga un código SCSS, donde el
+elemento p sea interpolado:*/
+.box p {
+  font-size: 16px;
+}
+
+.box p {
+  font-size: 16px;
+}
+
+/*Ejercicio 9
+Dado el código CSS siguiente aplica todo lo aprendido hasta ahora,
+incluido del tema anterior de Referencias:*/
+.box {
+  width: 200px;
+  height: 100px;
+  margin-top: 20px;
+}
+.box p {
+  font-size: 16px;
+}
+
+@media (min-width: 800px) {
+  .box {
+    margin-top: 40px;
+  }
+  .box p {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1200px) {
+  .box {
+    margin-top: 60px;
+  }
+  .box p {
+    font-size: 20px;
+  }
+}
+.box {
+  width: 200px;
+  height: 100px;
+  margin-top: 20px;
+}
+.box p {
+  font-size: 16px;
+}
+@media (min-width: 800px) {
+  .box {
+    margin-top: 40px;
+  }
+  .box p {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1200px) {
+  .box {
+    margin-top: 60px;
+  }
+  .box p {
+    font-size: 20px;
+  }
+}
+
+.card::after {
+  content: "Leer más";
+}
+
+.card p {
+  font-size: 16px;
+}
+
+@media (min-width: 1024px) {
+  .card p {
+    font-size: 20px;
+  }
+}
+.card::after {
+  content: Leer más;
+}
+.card p {
+  font-size: 16px;
+}
+@media (min-width: 1024px) {
+  .card p {
+    font-size: 20px;
+  }
+}
+
+/*🎯 Ejercicio 11 -
+Convierte el siguiente código CSS en SCSS aplicando:
+Interpolación de clase y contenido
+Operadores aritméticos
+Media queries anidadas dentro del selector
+Pseudoelemento ::before*/
+.card::before {
+  content: "Importante";
+}
+
+.card .info {
+  padding: 20px;
+  font-size: 14px;
+}
+
+@media (min-width: 1024px) {
+  .card .info {
+    padding: 30px;
+    font-size: 16px;
+  }
+}
+.card::before {
+  content: "Importante";
+}
+.card .info {
+  padding: 20px;
+  font-size: 14px;
+}
+@media (min-width: 1024px) {
+  .card .info {
+    padding: 30px;
+    font-size: 16px;
+  }
+}
+
+/*🧩 Ejercicio 12
+✅ Requisitos:
+Interpolación de .alert
+Interpolación de contenido
+División o suma en padding y font-size
+Anidamiento correcto
+*/
+.alert::before {
+  content: "¡Atención!";
+}
+
+.alert .text {
+  padding: 15px;
+  font-size: 12px;
+}
+
+@media (min-width: 1024px) {
+  .alert .text {
+    padding: 30px;
+    font-size: 14px;
+  }
+}
+.alert::before {
+  content: "¡Atención!";
+}
+.alert .text {
+  padding: 15px;
+  font-size: 12px;
+}
+@media (min-width: 1024px) {
+  .alert .text {
+    padding: 30px;
+    font-size: 14px;
+  }
+}
+
+/*📦 Ejercicio 13 
+Objetivo final (CSS esperado):
+*/
+.card {
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+.card h2 {
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 30px;
+  }
+  .card h2 {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .card {
+    padding: 40px;
+  }
+  .card h2 {
+    font-size: 22px;
+  }
+}
+.card {
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+.card h2 {
+  font-size: 18px;
+}
+@media (min-width: 768px) {
+  .card {
+    padding: 30px;
+  }
+  .card h2 {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .card {
+    padding: 40px;
+  }
+  .card h2 {
+    font-size: 22px;
+  }
+}
+
+/*🧾 Ejercicio 14
+Objetivo final (CSS esperado):*/
+.btn {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+@media (min-width: 600px) {
+  .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .btn {
+    padding: 14px 28px;
+    font-size: 18px;
+  }
+}
+.btn {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+@media (min-width: 600px) {
+  .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .btn {
+    padding: 14px 28px;
+    font-size: 18px;
+  }
+}
+
+/*📂 Ejercicio 15
+CSS esperado:*/
+.content {
+  margin: 20px;
+}
+.content p {
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .content {
+    margin: 30px;
+  }
+  .content p {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1280px) {
+  .content {
+    margin: 40px;
+  }
+  .content p {
+    font-size: 18px;
+  }
+}
+.content {
+  margin: 20px;
+}
+.content p {
+  line-height: 1.4;
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  .content {
+    margin: 30px;
+  }
+  .content p {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1280px) {
+  .content {
+    margin: 40px;
+  }
+  .content p {
+    font-size: 18px;
+  }
+}/*# sourceMappingURL=Ejercicios2_SASS.css.map */
