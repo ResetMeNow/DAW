@@ -154,19 +154,18 @@ article{
 ---
 
 # ✅ COSAS QUE SÍ PUEDES ANIDAR 
->(y por tanto en SCSS también)
-
+```(y por tanto en SCSS también)```
 
 |Contenedor HTML	  |  Puedes meter dentro|
 |---------------------|---------------------|
-|```<div>```	       |        Todo (es una caja general) ✅|
-|```<body>```	        |       Todo el contenido de la web ✅|
-|```<section>```         |  	<h1>, <p>, <img>, <article> ✅|
-|```<nav>```	          |      <ul>, <li>, <a> ✅|
-|```<ul>``` o ```<ol>```	|                 Solo <li> ✅|
-|```<li>```	               | Puedes meter <a> o texto ✅|
-|``<button>`` 	            |  Texto, íconos, <span> ✅|
-|``<form>``	               |  <input>, <label>, <button> ✅|
+|```<div>```	       |     Todo (es una caja general) ✅|
+|```<body>```	       |    Todo el contenido de la web ✅|
+|```<section>```       | 	<h1>, <p>, <img>, <article> ✅|
+|```<nav>```	        |     <ul>, <li>, <a> ✅|
+|``<ul>`` o ``<ol>``|               Solo <li> ✅|
+|```<li>```	            | Puedes meter <a> o texto ✅|
+|``<button>`` 	        |  Texto, íconos, <span> ✅|
+|``<form>``	            |  <input>, <label>, <button> ✅|
 
 ```sql
 ❌ COSAS QUE NO SE PUEDEN METER DENTRO DE OTRAS EN HTML
@@ -186,7 +185,7 @@ dentro de etiquetas de texto como <p>, <h1>, etc.
 ```
 
 
-# 🧩📚 CUÁNDO PUEDES Y NO PUEDES ANIDAR EN SCSS (según HTML)
+## 🧩📚 CUÁNDO PUEDES Y NO PUEDES ANIDAR EN SCSS (según HTML)
 ✅ PUEDES anidar cuando:
 
 |Situación HTML	                        |           Ejemplo SCSS correcto|
@@ -196,7 +195,8 @@ dentro de etiquetas de texto como <p>, <h1>, etc.
 |Un selector depende jerárquicamente del otro|	 nav > ul > li > a|
 |Es parte del mismo bloque visual	       |     .card dentro de .grid, li dentro de ul|
 
-> [!CAUTION] >❌ NO PUEDES anidar cuando:
+> [!CAUTION] 
+>❌ NO PUEDES anidar cuando:
 
 |Situación HTML	                     |              ❌ No hagas esto|
 |------------------------------------|------------------------------|
@@ -205,7 +205,8 @@ dentro de etiquetas de texto como <p>, <h1>, etc.
 |Rompe el HTML y el diseño                      |Pones div, section, o ul dentro de un p	❌  |    
 |Anidas etiquetas que no están realmente dentro	| Anidar footer dentro de h1, por ejemplo ❌|
 
-> [!TIP]>📌 Siempre piensa en cómo se estructura el HTML real.
+> [!TIP]
+>📌 Siempre piensa en cómo se estructura el HTML real.
 
 
 # 📘OPERADORES SASS (SassScript)
@@ -219,10 +220,11 @@ Los operadores en SCSS permiten hacer cálculos dentro del estilo sin escribir n
 |Resta - 	        |margin: 20px - 5px;	 |            margin: 15px;|
 |Multiplicación *	|height: 25px * 2;	      |      height: 50px;|
 |División /	 |     font-size: 40px / 2;        |  	font-size: 20px;|
-```sql
-💡 Cosas importantes al usar operadores:
-Siempre incluye unidades (px, %, em, etc.)
-```
+
+> [!IMPORTANT]
+>💡 Cosas importantes al usar operadores:
+>Siempre incluye unidades (px, %, em, etc.)
+
 
 ### ✅ 1. ¿Hay reglas para aplicar operadores en SCSS?
 > [!TIP]
