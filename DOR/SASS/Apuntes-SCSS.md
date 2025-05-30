@@ -12,12 +12,12 @@
  > [!NOTE]
  >Es una sintaxis de SASS, un preprocesador de CSS, en esencia SCSS es una forma más legible y potente de escribir CSS.
 
+```
 >Tipos de mixin:
 >Mixin sin argumentos✔️
 >Mixin con argumentos✔️
 >Mixin con la regla @content✔️
-
----
+```
 
 ### Mixin sin argumentos.✔️
 ```css
@@ -38,8 +38,8 @@ header{
 ```
 
 ### Mixin con argumentos.✔️
->➡️Siempre con los "()"
->➡️Los argumentos son como las variables 
+➡️Siempre con los "()"
+➡️Los argumentos son como las variables 
 
 
 ### Mixin con solo 1 argumento✔️
@@ -76,8 +76,8 @@ p{
 ```
 
 ### Mixin con la regla @content✔️
->➡️Nos permite usar multiples propiedades CSS dentro de un mixin.
->➡️Muy usado para Responsive Design
+➡️Nos permite usar multiples propiedades CSS dentro de un mixin.
+➡️Muy usado para Responsive Design
 ```css
 @mixin movil(){
    @media screen and (max-width: 480px) {
@@ -132,18 +132,18 @@ article{
 ```
 
 # ✅ COSAS QUE SÍ PUEDES ANIDAR 
-```(y por tanto en SCSS también)```
+>(y por tanto en SCSS también)
 
 |Contenedor HTML	  |  Puedes meter dentro|
 |---------------------|---------------------|
 |```<div>```	       |     Todo (es una caja general) ✅|
 |```<body>```	       |    Todo el contenido de la web ✅|
-|```<section>```       | 	<h1>, <p>, <img>, <article> ✅|
-|```<nav>```	        |     <ul>, <li>, <a> ✅|
-|``<ul>`` o ``<ol>``|               Solo <li> ✅|
-|```<li>```	            | Puedes meter <a> o texto ✅|
-|``<button>`` 	        |  Texto, íconos, <span> ✅|
-|``<form>``	            |  <input>, <label>, <button> ✅|
+|```<section>```       | 	``<h1>, <p>, <img>, <article>`` ✅|
+|```<nav>```	        |     ``<ul>, <li>, <a>`` ✅|
+|``<ul>`` o ``<ol>``|               Solo ``<li>`` ✅|
+|```<li>```	            | Puedes meter`` <a>`` o texto ✅|
+|``<button>`` 	        |  Texto, íconos,`` <span>`` ✅|
+|``<form>``	            | `` <input>, <label>, <button> ``✅|
 
 ```sql
 ❌ COSAS QUE NO SE PUEDEN METER DENTRO DE OTRAS EN HTML
