@@ -13,10 +13,10 @@
  >Es una sintaxis de SASS, un preprocesador de CSS, en esencia SCSS es una forma más legible y potente de escribir CSS.
 
 ```
->Tipos de mixin:
->Mixin sin argumentos✔️
->Mixin con argumentos✔️
->Mixin con la regla @content✔️
+Tipos de mixin:
+Mixin sin argumentos✔️
+Mixin con argumentos✔️
+Mixin con la regla @content✔️
 ```
 
 ### Mixin sin argumentos.✔️
@@ -38,7 +38,7 @@ header{
 ```
 
 ### Mixin con argumentos.✔️
-➡️Siempre con los "()"
+➡️Siempre con los "()" 
 ➡️Los argumentos son como las variables 
 
 
@@ -76,7 +76,7 @@ p{
 ```
 
 ### Mixin con la regla @content✔️
-➡️Nos permite usar multiples propiedades CSS dentro de un mixin.
+➡️Nos permite usar multiples propiedades CSS dentro de un mixin. 
 ➡️Muy usado para Responsive Design
 ```css
 @mixin movil(){
@@ -132,6 +132,7 @@ article{
 ```
 
 # ✅ COSAS QUE SÍ PUEDES ANIDAR 
+> [!IMPORTANT]
 >(y por tanto en SCSS también)
 
 |Contenedor HTML	  |  Puedes meter dentro|
@@ -146,7 +147,8 @@ article{
 |``<form>``	            | `` <input>, <label>, <button> ``✅|
 
 ```sql
-❌ COSAS QUE NO SE PUEDEN METER DENTRO DE OTRAS EN HTML
+> [!WARNING]
+>❌ COSAS QUE NO SE PUEDEN METER DENTRO DE OTRAS EN HTML
           (¡y por tanto tampoco en SCSS!)
 
 ❌ 1. No puedes meter un <p> dentro de un <h1>, <h2>, etc.
