@@ -1,5 +1,5 @@
 
-# ¿Que es un mixin CSS? 📍
+# ¿Qué es un mixin CSS? 📍
  Es como una "función" o "método" que nos permite agrupar y reutilizar propiedades CSS para evitar la repetición de código y facilitar la organización de las hojas de estilo.
 > No existen mixin en CSS pero si en SASS.
 
