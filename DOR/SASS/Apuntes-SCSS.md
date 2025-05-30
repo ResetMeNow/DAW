@@ -227,7 +227,7 @@ Siempre incluye unidades (px, %, em, etc.)
 
 ✅ 1. ¿Hay reglas para aplicar operadores en SCSS?
 ✔️ No hay reglas "obligatorias", pero sí buenas prácticas:
-
+```
 
 | ✅ ÚSALOS CUANDO...                                            | ❌ EVÍTALOS SI...                                      |
 | ----------------------------------------------------------------|------------------------------------------------------- |
@@ -237,7 +237,7 @@ Siempre incluye unidades (px, %, em, etc.)
 | Quieres mantener consistencia y hacer escalas                   | Es más fácil escribir el número directamente             |
 | Tu diseño tiene lógica matemática 
  (ej: grid, módulos, separación entre elementos)                  | El cálculo no aporta claridad y solo complica            |
-```
+
 
 --- 
 ## 🧠 ¿Qué hace #{}?
