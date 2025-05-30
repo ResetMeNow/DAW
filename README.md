@@ -3,9 +3,8 @@
 Apuntes y ejercicios correspondientes al temario del CFGS de Desarrollo de Aplicaciones Web (DAW).
 
 ## BAE .- Base de Datos 🧮
-- ###  [Unidad 1](https://github.com/ResetMeNow/DAW/tree/main/BAE/Tareas/Unidad1)   
-- ###  [Unidad 2](https://github.com/ResetMeNow/DAW/tree/main/BAE/Tareas/Unidad2) 
-- ###  [Unidad 3](https://github.com/ResetMeNow/DAW/tree/main/BAE/Tareas/Unidad3) 
+- ###  [Apuntes SQL](https://github.com/ResetMeNow/DAW/tree/main/BAE/Consultas%20SQL%20-%20Apuntes)   
+- ###  [Tareas](https://github.com/ResetMeNow/DAW/tree/main/BAE/Tareas) 
   
 
 ## DOR .- Diseño de Interfaces Web 🎨
