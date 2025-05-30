@@ -147,8 +147,8 @@ article{
 
 
 > [!WARNING]
->❌ COSAS QUE NO SE PUEDEN METER DENTRO DE OTRAS EN HTML 
->        (¡y por tanto tampoco en SCSS!)
+>❌ COSAS QUE NO SE PUEDEN METER DENTRO DE OTRAS EN HTML  
+>(¡y por tanto tampoco en SCSS!)
 ```sql
 ❌ 1. No puedes meter un <p> dentro de un <h1>, <h2>, etc.
 
