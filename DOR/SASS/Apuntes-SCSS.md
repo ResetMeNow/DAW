@@ -130,7 +130,7 @@ article{
     @include mv(){width: 100%}
 }
 ```
-
+---
 # ✅ COSAS QUE SÍ PUEDES ANIDAR 
 > [!IMPORTANT]
 >(y por tanto en SCSS también)
@@ -148,7 +148,7 @@ article{
 
 
 > [!WARNING]
->❌ COSAS QUE NO SE PUEDEN METER DENTRO DE OTRAS EN HTML
+>❌ COSAS QUE NO SE PUEDEN METER DENTRO DE OTRAS EN HTML 
 >        (¡y por tanto tampoco en SCSS!)
 ```sql
 ❌ 1. No puedes meter un <p> dentro de un <h1>, <h2>, etc.
@@ -163,7 +163,7 @@ dentro de etiquetas de texto como <p>, <h1>, etc.
 ❌ 5. No metas secciones estructurales 
 (como <header>, <section>, <article>) dentro de un <p> o <h1>
 ```
-
+---
 
 ## 🧩📚 CUÁNDO PUEDES Y NO PUEDES ANIDAR EN SCSS (según HTML)
 ✅ PUEDES anidar cuando:
@@ -188,7 +188,7 @@ dentro de etiquetas de texto como <p>, <h1>, etc.
 > [!TIP]
 >📌 Siempre piensa en cómo se estructura el HTML real.
 
-
+--- 
 # 📘OPERADORES SASS (SassScript)
 ✨ ¿Qué son?
 Los operadores en SCSS permiten hacer cálculos dentro del estilo sin escribir números manualmente.
@@ -205,7 +205,7 @@ Los operadores en SCSS permiten hacer cálculos dentro del estilo sin escribir n
 >💡 Cosas importantes al usar operadores:
 >Siempre incluye unidades (px, %, em, etc.)
 
-
+---
 ## ✅ 1. ¿Hay reglas para aplicar operadores en SCSS?
 > [!TIP]
 >✔️ No hay reglas "obligatorias", pero sí buenas prácticas:
