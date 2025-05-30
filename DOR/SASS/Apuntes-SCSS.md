@@ -38,7 +38,8 @@ header{
 ```
 
 ### Mixin con argumentos.✔️
-➡️Siempre con los "()" 
+➡️Siempre con los "()"  
+
 ➡️Los argumentos son como las variables 
 
 
@@ -76,7 +77,8 @@ p{
 ```
 
 ### Mixin con la regla @content✔️
-➡️Nos permite usar multiples propiedades CSS dentro de un mixin. 
+➡️Nos permite usar multiples propiedades CSS dentro de un mixin.  
+
 ➡️Muy usado para Responsive Design
 ```css
 @mixin movil(){
@@ -132,7 +134,8 @@ article{
 ```
 ---
 # ✅ COSAS QUE SÍ PUEDES ANIDAR 
-> [!IMPORTANT]
+> [!IMPORTANT] 
+
 >(y por tanto en SCSS también)
 
 |Contenedor HTML	  |  Puedes meter dentro|
@@ -149,6 +152,7 @@ article{
 
 > [!WARNING]
 >❌ COSAS QUE NO SE PUEDEN METER DENTRO DE OTRAS EN HTML 
+
 >        (¡y por tanto tampoco en SCSS!)
 ```sql
 ❌ 1. No puedes meter un <p> dentro de un <h1>, <h2>, etc.
@@ -191,7 +195,7 @@ dentro de etiquetas de texto como <p>, <h1>, etc.
 --- 
 # 📘OPERADORES SASS (SassScript)
 ✨ ¿Qué son?
-Los operadores en SCSS permiten hacer cálculos dentro del estilo sin escribir números manualmente.
+Los operadores en SCSS permiten hacer cálculos dentro del estilo sin escribir números manualmente.  
 ✅ Tipos de operadores que puedes usar:
 
 |Tipo     	       |  Ejemplo en SCSS           |     Resultado en CSS|
