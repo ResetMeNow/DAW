@@ -153,7 +153,7 @@ article{
     @include mv(){width: 100%}
 }
 ```
-
+```sql
 ✅ COSAS QUE SÍ PUEDES ANIDAR 
 (y por tanto en SCSS también)
 
@@ -242,3 +242,4 @@ Siempre incluye unidades (px, %, em, etc.)
 Le dice a Sass:
 “Haz esta cuenta y pon el resultado como texto plano”.
 Muy útil para @media, content:, rutas, etc.
+```
