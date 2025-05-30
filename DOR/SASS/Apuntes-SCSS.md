@@ -146,7 +146,7 @@ article{
 |``<button>`` 	        |  Texto, íconos,`` <span>`` ✅|
 |``<form>``	            | `` <input>, <label>, <button> ``✅|
 
-```sql
+
 > [!WARNING]
 >❌ COSAS QUE NO SE PUEDEN METER DENTRO DE OTRAS EN HTML
           (¡y por tanto tampoco en SCSS!)
@@ -162,7 +162,7 @@ dentro de etiquetas de texto como <p>, <h1>, etc.
 
 ❌ 5. No metas secciones estructurales 
 (como <header>, <section>, <article>) dentro de un <p> o <h1>
-```
+
 
 
 ## 🧩📚 CUÁNDO PUEDES Y NO PUEDES ANIDAR EN SCSS (según HTML)
