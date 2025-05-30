@@ -12,8 +12,8 @@
  > [!NOTE]
  >Es una sintaxis de SASS, un preprocesador de CSS, en esencia SCSS es una forma más legible y potente de escribir CSS.
 
+### Tipos de mixin:
 ```
-Tipos de mixin:
 Mixin sin argumentos✔️
 Mixin con argumentos✔️
 Mixin con la regla @content✔️
@@ -39,7 +39,6 @@ header{
 
 ### Mixin con argumentos.✔️
 ➡️Siempre con los "()"  
-
 ➡️Los argumentos son como las variables 
 
 
@@ -78,7 +77,6 @@ p{
 
 ### Mixin con la regla @content✔️
 ➡️Nos permite usar multiples propiedades CSS dentro de un mixin.  
-
 ➡️Muy usado para Responsive Design
 ```css
 @mixin movil(){
