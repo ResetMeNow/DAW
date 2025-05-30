@@ -1,18 +1,15 @@
 
 # ¿Que es un mixin CSS? 📍
- Es como una "función" o "método" que nos permite agrupar y reutilizar propiedades CSS
- para evitar la repetición de código y facilitar la organización de las hojas de estilo.
+ Es como una "función" o "método" que nos permite agrupar y reutilizar propiedades CSS para evitar la repetición de código y facilitar la organización de las hojas de estilo.
 > No existen mixin en CSS pero si en SASS.
 
 
 ## ¿Y que es SASS? ♦️
-Es un preprocesador de CSS que añade características de programación a las hojas de estilo, 
-en resumen, SASS escribe un código que luego se traduce a CSS.
+ Es un preprocesador de CSS que añade características de programación a las hojas de estilo, en resumen, SASS escribe un código que luego se traduce a CSS.
 
 
 ### Entonces, ¿Qué es SCSS? 🧩
-Es una sintaxis de SASS, un preprocesador de CSS, en esencia SCSS es una forma más legible
-y potente de escribir CSS.
+ Es una sintaxis de SASS, un preprocesador de CSS, en esencia SCSS es una forma más legible y potente de escribir CSS.
 
 ```
 Tipos de mixin:
@@ -25,12 +22,12 @@ Mixin con la regla @content✔️
 ---
 
 ### Mixin sin argumentos.✔️
-```sql
+```css
 @mixin nombreMixin(){
     background-color: black;
 }
 header{
-    @include nombreMixin()//Usamos en mixin (*aqui dentro estaran las propiedades que le hayamos dado*)
+    @include nombreMixin()/* en "()" estaran las propiedades que le hayamos dado*/
 }
 
 
@@ -38,17 +35,17 @@ header{
     background: black;
 }
 header{
-    @include otroMixin;//Sin () - Otra manera de usarlo
+    @include otroMixin;//Sin () /*Otra manera de usarlo*/
 }
 ```
 
 ### Mixin con argumentos.✔️
-➡️Siempre con los "()"
-➡️Los argumentos son como las variables 
+>➡️Siempre con los "()"
+>➡️Los argumentos son como las variables 
 
 
 ### Mixin con solo 1 argumento✔️
-```sql
+```css
 @mixin nombre($argumento1){
     color: $argumento1;
 }
@@ -60,7 +57,7 @@ p{
 
 
 ### Mixin con más de 1 argumento✔️
-```sql
+```css
 @mixin nombre($argumento1, $argumento2, $argumento3){
     color: $argumento1;
     font-size: $argumento2;
@@ -74,23 +71,21 @@ p{
     color: $argumento1;
 
 }
-
 p{
-    @include nombre(); //El color red puesto se pondra por defecto pero..
-    @include nombre(black); //Aqui se reescribe por el color negro
+    @include nombre(); /*El color red puesto se pondra por defecto pero..*/
+    @include nombre(black); /*Aqui se reescribe por el color negro*/
 }
 ```
 
 ### Mixin con la regla @content✔️
-➡️Nos permite usar multiples propiedades CSS dentro de un mixin.
-➡️Muy usado para Responsive Design
-```sql
+>➡️Nos permite usar multiples propiedades CSS dentro de un mixin.
+>➡️Muy usado para Responsive Design
+```css
 @mixin movil(){
    @media screen and (max-width: 480px) {
     @content;
    } 
 }
-
 p{
     font-size: 4em;
     @include movil(){
@@ -100,21 +95,8 @@ p{
 ```
 
 ### Mixin para Grid✔️
-```sql
-main{ //Sin mixin✖️
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap:2em;
-}
-
-section{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap:2em;
-}
-
-
-@mixin grid($columnas, $espacio){ //Con mixin☑️
+```css
+@mixin grid($columnas, $espacio){ 
     display: grid;
     grid-template-columns: repeat($columnas, 1fr);
     gap: $espacio;
@@ -123,7 +105,6 @@ section{
         grid-template-columns : 1fr;
         gap: 0em;
     }
-
 }
 
 main{
@@ -151,7 +132,6 @@ article{
     @include mv(){width: 100%}
 }
 ```
----
 
 # ✅ COSAS QUE SÍ PUEDES ANIDAR 
 ```(y por tanto en SCSS también)```
@@ -226,7 +206,7 @@ Los operadores en SCSS permiten hacer cálculos dentro del estilo sin escribir n
 >Siempre incluye unidades (px, %, em, etc.)
 
 
-### ✅ 1. ¿Hay reglas para aplicar operadores en SCSS?
+## ✅ 1. ¿Hay reglas para aplicar operadores en SCSS?
 > [!TIP]
 >✔️ No hay reglas "obligatorias", pero sí buenas prácticas:
 
