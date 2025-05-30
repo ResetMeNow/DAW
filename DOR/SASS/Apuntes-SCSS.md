@@ -4,20 +4,18 @@
 > No existen mixin en CSS pero si en SASS.
 
 
-## ¿Y que es SASS? ♦️
+## ¿Y qué es SASS? ♦️
  Es un preprocesador de CSS que añade características de programación a las hojas de estilo, en resumen, SASS escribe un código que luego se traduce a CSS.
 
 
 ### Entonces, ¿Qué es SCSS? 🧩
- Es una sintaxis de SASS, un preprocesador de CSS, en esencia SCSS es una forma más legible y potente de escribir CSS.
+ > [!NOTE]
+ >Es una sintaxis de SASS, un preprocesador de CSS, en esencia SCSS es una forma más legible y potente de escribir CSS.
 
-```
-Tipos de mixin:
-Mixin sin argumentos✔️
-Mixin con argumentos✔️
-Mixin con la regla @content✔️
-```
-
+>Tipos de mixin:
+>Mixin sin argumentos✔️
+>Mixin con argumentos✔️
+>Mixin con la regla @content✔️
 
 ---
 
