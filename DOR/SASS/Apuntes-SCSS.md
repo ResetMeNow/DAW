@@ -18,7 +18,7 @@ Mixin con argumentos✔️
 Mixin con la regla @content✔️
 ```
 
-### Mixin sin argumentos.✔️
+## Mixin sin argumentos.✔️
 ```css
 @mixin nombreMixin(){
     background-color: black;
@@ -36,7 +36,7 @@ header{
 }
 ```
 
-### Mixin con argumentos.✔️
+## Mixin con argumentos.✔️
 ➡️Siempre con los "()"  
 ➡️Los argumentos son como las variables 
 
@@ -74,7 +74,7 @@ p{
 }
 ```
 
-### Mixin con la regla @content✔️
+## Mixin con la regla @content✔️
 ➡️Nos permite usar multiples propiedades CSS dentro de un mixin.  
 ➡️Muy usado para Responsive Design
 ```css
@@ -91,7 +91,7 @@ p{
 }
 ```
 
-### Mixin para Grid✔️
+## Mixin para Grid✔️
 ```css
 @mixin grid($columnas, $espacio){ 
     display: grid;
@@ -113,7 +113,7 @@ section{
 }
 ```
 
-### Mixin para Responsive Design🟠
+## Mixin para Responsive Design🟠
 ```css
 @mixin mv($medida: 480px){
     @media screen and(max-width: $medida) {
@@ -148,7 +148,7 @@ article{
 
 > [!WARNING]
 >❌ COSAS QUE NO SE PUEDEN METER DENTRO DE OTRAS EN HTML  
->(¡y por tanto tampoco en SCSS!)
+>¡y por tanto tampoco en SCSS!
 ```sql
 ❌ 1. No puedes meter un <p> dentro de un <h1>, <h2>, etc.
 
