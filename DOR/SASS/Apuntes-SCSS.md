@@ -1,29 +1,30 @@
-/*
-¿Que es un mixin CSS? 📍
+
+# ¿Que es un mixin CSS? 📍
  Es como una "función" o "método" que nos permite agrupar y reutilizar propiedades CSS
  para evitar la repetición de código y facilitar la organización de las hojas de estilo.
+> No existen mixin en CSS pero si en SASS.
 
-No existen mixin en CSS pero si en SASS.
 
-
-¿Y que es SASS? ♦️
+## ¿Y que es SASS? ♦️
 Es un preprocesador de CSS que añade características de programación a las hojas de estilo, 
 en resumen, SASS escribe un código que luego se traduce a CSS.
 
 
-Entonces, ¿Qué es SCSS? 🧩
+### Entonces, ¿Qué es SCSS? 🧩
 Es una sintaxis de SASS, un preprocesador de CSS, en esencia SCSS es una forma más legible
 y potente de escribir CSS.
 
+```
 Tipos de mixin:
 Mixin sin argumentos✔️
 Mixin con argumentos✔️
 Mixin con la regla @content✔️
-*/
+```
 
 
+---
 
-//Mixin sin argumentos.✔️
+### Mixin sin argumentos.✔️
 ```sql
 @mixin nombreMixin(){
     background-color: black;
@@ -41,14 +42,13 @@ header{
 }
 ```
 
-
-/* 
-Mixin con argumentos.✔️
+### Mixin con argumentos.✔️
 ➡️Siempre con los "()"
 ➡️Los argumentos son como las variables 
-*/
+
+
+### Mixin con solo 1 argumento✔️
 ```sql
-// Mixin con solo 1 argumento✔️
 @mixin nombre($argumento1){
     color: $argumento1;
 }
@@ -59,7 +59,7 @@ p{
 ```
 
 
-// Mixin con más de 1 argumento✔️
+### Mixin con más de 1 argumento✔️
 ```sql
 @mixin nombre($argumento1, $argumento2, $argumento3){
     color: $argumento1;
@@ -80,11 +80,10 @@ p{
     @include nombre(black); //Aqui se reescribe por el color negro
 }
 ```
-/*
-Mixin con la regla @content✔️
+
+### Mixin con la regla @content✔️
 ➡️Nos permite usar multiples propiedades CSS dentro de un mixin.
 ➡️Muy usado para Responsive Design
-*/
 ```sql
 @mixin movil(){
    @media screen and (max-width: 480px) {
@@ -100,9 +99,7 @@ p{
 }
 ```
 
-
-
-// Mixin para Grid✔️
+### Mixin para Grid✔️
 ```sql
 main{ //Sin mixin✖️
     display: grid;
@@ -136,9 +133,10 @@ main{
 section{
     @include grid(3,2em );
 }
+```
 
-
-//Mixin para Responsive Design🟠
+### Mixin para Responsive Design🟠
+```sql
 @mixin mv($medida: 480px){
     @media screen and(max-width: $medida) {
         @content;
@@ -153,10 +151,12 @@ article{
     @include mv(){width: 100%}
 }
 ```
-```sql
-✅ COSAS QUE SÍ PUEDES ANIDAR 
+--
+
+# ✅ COSAS QUE SÍ PUEDES ANIDAR 
 (y por tanto en SCSS también)
 
+```sql
 
 Contenedor HTML	        Puedes meter dentro
 
@@ -183,12 +183,12 @@ dentro de etiquetas de texto como <p>, <h1>, etc.
 
 ❌ 5. No metas secciones estructurales 
 (como <header>, <section>, <article>) dentro de un <p> o <h1>
+```
 
 
-
-🧩📚 CUÁNDO PUEDES Y NO PUEDES ANIDAR EN SCSS (según HTML)
+# 🧩📚 CUÁNDO PUEDES Y NO PUEDES ANIDAR EN SCSS (según HTML)
 ✅ PUEDES anidar cuando:
-
+```sql
 Situación HTML	                                   Ejemplo SCSS correcto
 
 Un elemento está dentro de otro	                .container contiene .row, .btn, etc.
@@ -206,13 +206,13 @@ Pones div, section, o ul dentro de un p	❌      Rompe el HTML y el diseño
 Anidas etiquetas que no están realmente dentro	 Anidar footer dentro de h1, por ejemplo ❌
 
 📌 Siempre piensa en cómo se estructura el HTML real.
+```
 
 
-
-📘OPERADORES SASS (SassScript)
+# 📘OPERADORES SASS (SassScript)
 ✨ ¿Qué son?
 Los operadores en SCSS permiten hacer cálculos dentro del estilo sin escribir números manualmente.
-
+```sql
 ✅ Tipos de operadores que puedes usar:
 
 Tipo     	         Ejemplo en SCSS                Resultado en CSS
@@ -231,15 +231,16 @@ Siempre incluye unidades (px, %, em, etc.)
 
 | ✅ ÚSALOS CUANDO...                                                                | ❌ EVÍTALOS SI...                                      |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| Necesitas calcular tamaños o proporciones (ej: columnas, paddings, etc.)          | Solo estás copiando estilos fijos como `font-size: 16px` |
+| Necesitas calcular tamaños o proporciones 
+  (ej: columnas, paddings, etc.)          | Solo estás copiando estilos fijos como `font-size: 16px` |
 | Usas variables (`$padding`, `$gutter`, `$base`)                                   | Son valores únicos que **no cambian ni se repiten**      |
 | Quieres mantener consistencia y hacer escalas                                     | Es más fácil escribir el número directamente             |
-| Tu diseño tiene lógica matemática (ej: grid, módulos, separación entre elementos) | El cálculo no aporta claridad y solo complica            |
+| Tu diseño tiene lógica matemática 
+ (ej: grid, módulos, separación entre elementos) | El cálculo no aporta claridad y solo complica            |
+```
 
-
-
-🧠 ¿Qué hace #{}?
+--- 
+### 🧠 ¿Qué hace #{}?
 Le dice a Sass:
 “Haz esta cuenta y pon el resultado como texto plano”.
 Muy útil para @media, content:, rutas, etc.
-```
