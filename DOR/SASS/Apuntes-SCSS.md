@@ -135,7 +135,6 @@ article{
 ---
 # ✅ COSAS QUE SÍ PUEDES ANIDAR 
 > [!IMPORTANT] 
-
 >(y por tanto en SCSS también)
 
 |Contenedor HTML	  |  Puedes meter dentro|
@@ -152,7 +151,6 @@ article{
 
 > [!WARNING]
 >❌ COSAS QUE NO SE PUEDEN METER DENTRO DE OTRAS EN HTML 
-
 >        (¡y por tanto tampoco en SCSS!)
 ```sql
 ❌ 1. No puedes meter un <p> dentro de un <h1>, <h2>, etc.
