@@ -1,24 +1,11 @@
-<!--
+
   # 🌟 Modelado ER, Transformación Relacional y Normalización
--->
-
-
-<div align="center">
-  <h1>📚 Resumen Unidades 2, 3 y 4</h1>
-  <h3>Modelado Entidad–Relación, Transformación Relacional y Normalización</h3>
-</div>
-
----
-<div align="right">
-  <strong>Autor:</strong> Tu Nombre  
-  <strong>Formato:</strong> Markdown para VS Code / GitHub  
-</div>
 
 ---
 
 ## 📑 Contenidos
 
-1. [Unidad 2 – Modelado Entidad–Relación (ER)](#unidad-2––modelado-entidadrelación-er)  
+ [Unidad 2 – Modelado Entidad–Relación (ER)](#unidad-2––modelado-entidadrelación-er)  
    1. [🔍 Conceptos Básicos](#21-🔍-conceptos-básicos)  
    2. [🏷 Entidades y Atributos](#22-🏷 entidades-y-atributos)  
    3. [🔗 Relaciones y Cardinalidades](#23-🔗 relaciones-y-cardinalidades)  
@@ -27,7 +14,7 @@
    6. [✅ Reglas de Diseño ER](#26-✅ reglas-de-diseño-er)  
    7. [📝 Repaso de Relaciones (REPASO-RELACIONES.md)](#27-📝 repaso-de-relaciones-repaso-relacionesmd)
 
-2. [Unidad 3 – Transformación ER → Modelo Relacional](#unidad-3––transformación-er-→-modelo-relacional)  
+[Unidad 3 – Transformación ER → Modelo Relacional](#unidad-3––transformación-er-→-modelo-relacional)  
    1. [🔄 Paso a Esquema Relacional](#31-🔄 paso-a-esquema-relacional)  
    2. [📋 Mapeo de Entidades a Tablas](#32-📋 mapeo-de-entidades-a-tablas)  
    3. [🔄 Mapeo de Relaciones 1:1, 1:N y M:N](#33-🔄 mapeo-de-relaciones-11-1n-y-mn)  
@@ -35,7 +22,7 @@
    5. [🔗 Entidades Débiles en Relacional](#35-🔗 entidades-débiles-en-relacional)  
    6. [💡 Ejemplos Prácticos y Reglas](#36-💡 ejemplos-prácticos-y-reglas)
 
-3. [Unidad 4 – Normalización (REPASO.md)](#unidad-4––normalización-repasomd)  
+[Unidad 4 – Normalización (REPASO.md)](#unidad-4––normalización-repasomd)  
    1. [🎯 Objetivos de la Normalización](#41-🎯 objetivos-de-la-normalización)  
    2. [🕹️ Forma Normal 1 (1FN)](#42-🕹️ forma-normal-1-1fn)  
    3. [⚙️ Forma Normal 2 (2FN)](#43-⚙️ forma-normal-2-2fn)  
@@ -222,8 +209,8 @@ Este apartado amplía el uso de SQL para combinar tablas, centrado en:
 
 ### 3.1 🔄 Paso a Esquema Relacional
 
-- **Esquema Relacional**: Conjunto de tablas(tuplas) + sus atributos + restricciones (PK, FK, UNIQUE).  
-- **Pasos Generales**:  
+**Esquema Relacional**: Conjunto de tablas(tuplas) + sus atributos + restricciones (PK, FK, UNIQUE).  
+***Pasos Generales***:  
   1. **Entidades Fuertes** → crear una tabla por entidad con todos sus atributos.  
   2. **Entidades Débiles** → tabla con PK compuesta (PK_de_entidad_fuerte + identificador_parcial) + FK.  
   3. **Relaciones 1:1** → incluir la PK de un lado como FK en la otra, o crear tabla adicional para la relación.  
