@@ -5,7 +5,7 @@
 
 ## 📑 Contenidos
 
- Modelado Entidad–Relación (ER)
+ ### Modelado Entidad–Relación (ER)
    1. [🔍 Conceptos Básicos](#21-🔍conceptos-básicos)  
    2. [🏷 Entidades y Atributos](#22-🏷entidades-y-atributos)  
    3. [🔗 Relaciones y Cardinalidades](#23-🔗relaciones-y-cardinalidades)  
@@ -14,7 +14,7 @@
    6. [✅ Reglas de Diseño ER](#26-✅reglas-de-diseño-er)  
    7. [📝 Repaso de Relaciones (REPASO-RELACIONES.md)](#27-📝repaso-de-relaciones-repaso-relacionesmd)
 
-Transformación ER → Modelo Relacional
+### Transformación ER → Modelo Relacional
    1. [🔄 Paso a Esquema Relacional](#31-🔄paso-a-esquema-relacional)  
    2. [📋 Mapeo de Entidades a Tablas](#32-📋mapeo-de-entidades-a-tablas)  
    3. [🔄 Mapeo de Relaciones 1:1, 1:N y M:N](#33-🔄mapeo-de-relaciones-11-1n-y-mn)  
@@ -22,7 +22,7 @@ Transformación ER → Modelo Relacional
    5. [🔗 Entidades Débiles en Relacional](#35-🔗entidades-débiles-en-relacional)  
    6. [💡 Ejemplos Prácticos y Reglas](#36-💡ejemplos-prácticos-y-reglas)
 
-Normalización
+### Normalización
    1. [🎯 Objetivos de la Normalización](#41-🎯objetivos-de-la-normalización)  
    2. [🕹️ Forma Normal 1 (1FN)](#42-🕹️forma-normal-1-1fn)  
    3. [⚙️ Forma Normal 2 (2FN)](#43-⚙️forma-normal-2-2fn)  
