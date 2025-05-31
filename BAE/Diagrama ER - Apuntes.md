@@ -121,8 +121,9 @@
      - **Parcial** (línea simple al triángulo): Solo algunas pertenecen.  
 
    **Ejemplo de Notación**:
-
+  
    <div align="center">
+     
    **Persona**  
    ▪ id (PK)  
    ▪ nombre  
@@ -132,7 +133,8 @@
    PersonaCliente   PersonaEmpleado  
    ▪ id (FK)       ▪ id (FK)  
    ▪ puntos        ▪ salario  
-   ▪ ciudad        ▪ departamento  
+   ▪ ciudad        ▪ departamento
+   
    </div>
 
 ---
@@ -276,7 +278,7 @@ CREATE TABLE Factura (
 
 ---
 
-### 3.3 🔄 Mapeo de Relaciones 1:1, 1\:N y M\:N
+### 3 🔄 Mapeo de Relaciones 1:1, 1\:N y M\:N
 
 | Tipo de Relación | Descripción y Ejemplo Relacional                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -289,7 +291,7 @@ CREATE TABLE Factura (
 
 ---
 
-### 3.4 🔄 Atributos Multivaluados y Compuestos
+### 4 🔄 Atributos Multivaluados y Compuestos
 
 #### Atributos Multivaluados (Ej. Teléfonos de Cliente)
 
@@ -328,7 +330,7 @@ CREATE TABLE Direccion (
 
 ---
 
-### 3.5 🔗 Entidades Débiles en Relacional
+### 5 🔗 Entidades Débiles en Relacional
 
 * **Ejemplo Recap**:
   La entidad `Factura` depende de `Cliente`. Ya se creó como:
@@ -350,7 +352,7 @@ CREATE TABLE Direccion (
 
 ---
 
-### 3.6 💡 Ejemplos Prácticos y Reglas
+### 6 💡 Ejemplos Prácticos y Reglas
 
 1. **Transformar una Relación M\:N con Atributos**
 
@@ -377,13 +379,13 @@ CREATE TABLE Direccion (
 
 ---
 
-## Unidad 4 – Normalización (REPASO.md)
+## Normalización (REPASO)
 
 > **Meta:** Eliminar redundancias y anomalías de inserción/actualización/borrado, garantizando integridad.
 
 ---
 
-### 4.1 🎯 Objetivos de la Normalización
+### 1 🎯 Objetivos de la Normalización
 
 1. **Eliminar Redundancia**: Evitar duplicar datos.
 2. **Prevenir Anomalías**:
@@ -395,12 +397,12 @@ CREATE TABLE Direccion (
 
 ---
 
-### 4.2 🕹️ Forma Normal 1 (1FN)
+### 2 🕹️ Forma Normal 1 (1FN)
 
 * **Definición**:
 
-  1. Todos los atributos son **atómicos** (sin grupos repetitivos ni multivaluados).
-  2. Cada celda tiene un único valor.
+1. Todos los atributos son **atómicos** (sin grupos repetitivos ni multivaluados).
+2. Cada celda tiene un único valor.
 
 * **Eliminar Atributos Multivaluados**:
 
@@ -412,14 +414,14 @@ CREATE TABLE Direccion (
 
 ---
 
-### 4.3 ⚙️ Forma Normal 2 (2FN)
+### 3 ⚙️ Forma Normal 2 (2FN)
 
 * **Definición**:
 
-  1. La tabla está en **1FN**.
-  2. **Ningún atributo no clave** depende solo de **parte** de la PK si ésta es compuesta.
+1. La tabla está en **1FN**.
+2. **Ningún atributo no clave** depende solo de **parte** de la PK si ésta es compuesta.
 
-* **Detectar Violaciones**:
+* **Detectar Prohibiciones**:
 
   * Si la PK = `(A,B)` y existe `C` que depende solo de `A`, no de `(A,B)`.
 
@@ -433,7 +435,7 @@ CREATE TABLE Direccion (
   MATRICULA (alumno_id, curso_id, curso_nombre, nota)
   ```
 
-  **Violación**: `curso_nombre` depende solo de `curso_id`.
+  **Prohibición**: `curso_nombre` depende solo de `curso_id`.
   **En 2FN:**
 
   ```sql
@@ -452,14 +454,14 @@ CREATE TABLE Direccion (
 
 ---
 
-### 4.4 🔒 Forma Normal 3 (3FN)
+### 4 🔒 Forma Normal 3 (3FN)
 
 * **Definición**:
 
-  1. La tabla está en **2FN**.
-  2. **No existe dependencia transitiva** de atributos no clave sobre la PK.
+1. La tabla está en **2FN**.
+2. **No existe dependencia transitiva** de atributos no clave sobre la PK.
 
-* **Detectar Violaciones**:
+* **Detectar Prohibiciones**:
 
   * Si `PK → B` y `B → C`, con `PK` clave primaria y `B`, `C` no claves.
 
@@ -469,7 +471,7 @@ CREATE TABLE Direccion (
 
   **Ejemplo**:
 
-  ```
+  ```sql
   EMPLEADO (id, nombre, depto_id, depto_nombre)
   ```
 
@@ -491,12 +493,12 @@ CREATE TABLE Direccion (
 
 ---
 
-### 4.5 🏆 BCNF (Boyce–Codd)
+### 5 🏆 BCNF (Boyce–Codd)
 
 * **Definición**:
 
-  1. La tabla está en **3FN**.
-  2. Para cada dependencia funcional `X → Y`, **X debe ser superclave** (determina toda la fila).
+1. La tabla está en **3FN**.
+2. Para cada dependencia funcional `X → Y`, **X debe ser superclave** (determina toda la fila).
 
 * **Ejemplo de Violación**:
 
@@ -516,7 +518,7 @@ CREATE TABLE Direccion (
 
 ---
 
-### 4.6 🔄 Dependencias Funcionales
+### 6 🔄 Dependencias Funcionales
 
 * **Definición**: `X → Y` indica que si dos filas tienen el mismo valor de **X**, necesariamente comparten el valor de **Y**.
 * **Clave candidata**: Mínimo conjunto de atributos que determina todos los demás.
@@ -526,7 +528,7 @@ CREATE TABLE Direccion (
 
 ---
 
-### 4.7 🧩 Descomposición y Dependencia Transitiva
+### 7 🧩 Descomposición y Dependencia Transitiva
 
 * **Descomposición**: Dividir una tabla en varias para eliminar problemas de dependencia.
 
@@ -537,14 +539,14 @@ CREATE TABLE Direccion (
 
 * **Propiedades de Descomposición**:
 
-  1. **Sin Pérdida (Lossless-Join)**: Al unir las tablas descompuestas, recuperamos la tabla original sin filas extra.
-  2. **Preservación de Dependencias**: Todas las dependencias funcionales originales deben poder comprobarse a partir de las nuevas tablas.
+1. **Sin Pérdida (Lossless-Join)**: Al unir las tablas descompuestas, recuperamos la tabla original sin filas extra.
+2. **Preservación de Dependencias**: Todas las dependencias funcionales originales deben poder comprobarse a partir de las nuevas tablas.
 
 ---
 
-### 4.8 📈 Ejemplos y Proceso de Normalización
+### 8 📈 Ejemplos y Proceso de Normalización
 
-1. **Ejemplo Completo**
+**Ejemplo Completo**
 
    * **Tabla inicial**:
 
@@ -579,8 +581,9 @@ CREATE TABLE Direccion (
    * **BCNF**:
 
      * Ambas tablas cumplen que cada determinante es superclave (✔).
-
-2. **Proceso Paso a Paso**
+       
+---
+**Proceso Paso a Paso**
 
    1. Identificar la **PK** y todas las **dependencias funcionales** (DFs).
    2. Verificar **1FN**: Atributos atómicos.
@@ -590,5 +593,3 @@ CREATE TABLE Direccion (
 
 ---
 
-```
-```
