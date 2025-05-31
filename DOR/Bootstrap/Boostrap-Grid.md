@@ -130,7 +130,8 @@ En el examen **podrás consultar la documentación**, pero necesitas **entender 
 
 ---
 
-## 💡 CONSEJOS PARA EL EXAMEN
+## 💡 CONSEJOS PARA EL EXAMEN 
+
 
 * ✅ Empieza por la estructura: `container > row > col`
 * ✅ Usa `d-flex` + `gap-*` para alinear elementos como iconos
