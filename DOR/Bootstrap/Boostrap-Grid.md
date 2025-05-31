@@ -130,7 +130,8 @@ En el examen **podrás consultar la documentación**, pero necesitas **entender 
 
 ---
 
-## 💡 CONSEJOS PARA EL EXAMEN
+## 💡 CONSEJOS PARA EL EXAMEN 
+
 
 * ✅ Empieza por la estructura: `container > row > col`
 * ✅ Usa `d-flex` + `gap-*` para alinear elementos como iconos
@@ -144,5 +145,4 @@ En el examen **podrás consultar la documentación**, pero necesitas **entender 
   * [Utilities (espaciado, color)](https://getbootstrap.com/docs/5.3/utilities/spacing/)
 
 ---
-
-Con esto, puedes entender qué estás haciendo y aplicar Bootstrap correctamente incluso con la documentación en mano 🚀
+ 
