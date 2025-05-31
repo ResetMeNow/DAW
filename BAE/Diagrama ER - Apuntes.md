@@ -232,3 +232,363 @@ Este apartado amplía el uso de SQL para combinar tablas, centrado en:
      fecha_nacimiento  DATE,
      salario           DECIMAL(10,2)
    );
+
+````markdown
+### 3.2 📋 Mapeo de Entidades a Tablas
+
+#### 2. Cliente (Entidad Fuerte)
+
+```sql
+CREATE TABLE Cliente (
+  id                INT         PRIMARY KEY,
+  nombre            VARCHAR(50) NOT NULL,
+  apellido1         VARCHAR(50) NOT NULL,
+  apellido2         VARCHAR(50),
+  ciudad            VARCHAR(50),
+  puntos_fidelidad  INT
+);
+````
+
+* **Explicación**:
+
+  * Creamos la tabla `Cliente` con sus atributos atómicos.
+  * `id` es la clave primaria.
+  * `apellido2` y demás campos pueden admitir valores NULL si no se especifica NOT NULL.
+
+---
+
+#### 3. Factura (Entidad Débil)
+
+```sql
+CREATE TABLE Factura (
+  cliente_id INT,
+  numero     INT,
+  fecha      DATE,
+  PRIMARY KEY (cliente_id, numero),
+  FOREIGN KEY (cliente_id) REFERENCES Cliente(id)
+);
+```
+
+* **Explicación**:
+
+  * `Factura` es una **entidad débil**, por eso su PK está compuesta de `cliente_id` (FK) y `numero` (identificador parcial).
+  * La restricción `FOREIGN KEY` asegura integridad referencial con `Cliente`.
+
+---
+
+### 3.3 🔄 Mapeo de Relaciones 1:1, 1\:N y M\:N
+
+| Tipo de Relación | Descripción y Ejemplo Relacional                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1:1**          | Si ambas participaciones son totales, pueden unirse en una sola tabla.<br>Si una es opcional, incluir la FK del lado opcional con `UNIQUE`.                                                                                                                                                                                                                                                                                               |
+| **Ejemplo 1:1**  | `sql<br>CREATE TABLE Departamento (  <br>  id INT PRIMARY KEY,  <br>  nombre VARCHAR(50),  <br>  director_id INT UNIQUE,  <br>  FOREIGN KEY (director_id) REFERENCES Empleado(id)<br>);`                                                                                                                                                                                                                                                  |
+| **1\:N**         | Incluir la PK de “lado 1” como FK en la tabla del “lado N”.                                                                                                                                                                                                                                                                                                                                                                               |
+| **Ejemplo 1\:N** | `sql<br>ALTER TABLE Empleado<br>  ADD COLUMN departamento_id INT,<br>  ADD FOREIGN KEY (departamento_id) REFERENCES Departamento(id);`                                                                                                                                                                                                                                                                                                    |
+| **M\:N**         | Crear una tabla intermedia con las PKs de ambas entidades como PK compuesta + FKs.                                                                                                                                                                                                                                                                                                                                                        |
+| **Ejemplo M\:N** | `sql<br>CREATE TABLE Alumno (  <br>  id INT PRIMARY KEY,  <br>  nombre VARCHAR(50)  <br>);  <br>CREATE TABLE Curso (  <br>  id INT PRIMARY KEY,  <br>  nombre VARCHAR(50)  <br>);  <br>CREATE TABLE Matricula (  <br>  alumno_id INT,  <br>  curso_id INT,  <br>  fecha DATE,  <br>  PRIMARY KEY (alumno_id, curso_id),  <br>  FOREIGN KEY (alumno_id) REFERENCES Alumno(id),  <br>  FOREIGN KEY (curso_id) REFERENCES Curso(id)  <br>);` |
+
+---
+
+### 3.4 🔄 Atributos Multivaluados y Compuestos
+
+#### Atributos Multivaluados (Ej. Teléfonos de Cliente)
+
+```sql
+CREATE TABLE TelefonoCliente (
+  cliente_id INT,
+  telefono   VARCHAR(15),
+  PRIMARY KEY (cliente_id, telefono),
+  FOREIGN KEY (cliente_id) REFERENCES Cliente(id)
+);
+```
+
+* **Explicación**:
+
+  * Cada fila almacena un número de teléfono asociado a un cliente.
+  * La PK compuesta evita duplicados del mismo número para un cliente específico.
+
+---
+
+#### Atributos Compuestos (Ej. Dirección)
+
+Aunque en ER se dibuje como compuesto, en relacional se descompone en columnas atómicas:
+
+```sql
+CREATE TABLE Direccion (
+  id     INT PRIMARY KEY,
+  calle  VARCHAR(100),
+  ciudad VARCHAR(50),
+  cp     VARCHAR(10)
+);
+```
+
+* **Explicación**:
+
+  * `Dirección` se divide en `calle`, `ciudad` y `cp` para cumplir 1FN (valores atómicos).
+
+---
+
+### 3.5 🔗 Entidades Débiles en Relacional
+
+* **Ejemplo Recap**:
+  La entidad `Factura` depende de `Cliente`. Ya se creó como:
+
+  ```sql
+  CREATE TABLE Factura (
+    cliente_id INT,
+    numero     INT,
+    fecha      DATE,
+    PRIMARY KEY (cliente_id, numero),
+    FOREIGN KEY (cliente_id) REFERENCES Cliente(id)
+  );
+  ```
+
+* **Explicación**:
+
+  * La PK incluye la FK hacia `Cliente`.
+  * Si `Cliente` se borra, todas sus facturas deben gestionarse según la política referencial (CASCADE, RESTRICT…).
+
+---
+
+### 3.6 💡 Ejemplos Prácticos y Reglas
+
+1. **Transformar una Relación M\:N con Atributos**
+
+   * Si la relación tiene atributos propios, la tabla intermedia también los incluirá.
+   * Ejemplo: `Matricula` con atributo `nota`:
+
+   ```sql
+   CREATE TABLE Matricula (
+     alumno_id INT,
+     curso_id  INT,
+     nota      DECIMAL(3,1),
+     PRIMARY KEY (alumno_id, curso_id),
+     FOREIGN KEY (alumno_id) REFERENCES Alumno(id),
+     FOREIGN KEY (curso_id) REFERENCES Curso(id)
+   );
+   ```
+
+2. **Regla Resumida**
+
+   > Cada **entidad** → **tabla**.
+   > Cada **relación M\:N** → **tabla intermedia**.
+   > Cada **atributo multivaluado** → **tabla aparte**.
+   > Los **atributos compuestos** se fragmentan en columnas atómicas.
+
+---
+
+## Unidad 4 – Normalización (REPASO.md)
+
+> **Meta:** Eliminar redundancias y anomalías de inserción/actualización/borrado, garantizando integridad.
+
+---
+
+### 4.1 🎯 Objetivos de la Normalización
+
+1. **Eliminar Redundancia**: Evitar duplicar datos.
+2. **Prevenir Anomalías**:
+
+   * **Inserción**: No requerir datos extra para insertar algo.
+   * **Actualización**: No obligar a cambiar el mismo dato en múltiples filas.
+   * **Borrado**: No perder información importante al eliminar registros.
+3. **Mantener Dependencias Funcionales Claras**: Cada atributo no clave depende de la PK completa.
+
+---
+
+### 4.2 🕹️ Forma Normal 1 (1FN)
+
+* **Definición**:
+
+  1. Todos los atributos son **atómicos** (sin grupos repetitivos ni multivaluados).
+  2. Cada celda tiene un único valor.
+
+* **Eliminar Atributos Multivaluados**:
+
+  * Crear tabla separada para cada atributo multivaluado (ej. `TelefonoCliente`).
+
+* **Descomponer Atributos Compuestos**:
+
+  * Separar en columnas atómicas (ej. `calle`, `ciudad`, `cp`).
+
+---
+
+### 4.3 ⚙️ Forma Normal 2 (2FN)
+
+* **Definición**:
+
+  1. La tabla está en **1FN**.
+  2. **Ningún atributo no clave** depende solo de **parte** de la PK si ésta es compuesta.
+
+* **Detectar Violaciones**:
+
+  * Si la PK = `(A,B)` y existe `C` que depende solo de `A`, no de `(A,B)`.
+
+* **Solución**:
+
+  * Descomponer la tabla en dos, separando esa dependencia parcial:
+
+  **Antes (1FN):**
+
+  ```
+  MATRICULA (alumno_id, curso_id, curso_nombre, nota)
+  ```
+
+  **Violación**: `curso_nombre` depende solo de `curso_id`.
+  **En 2FN:**
+
+  ```sql
+  CREATE TABLE Curso (
+    curso_id      INT PRIMARY KEY,
+    curso_nombre  VARCHAR(100)
+  );
+  CREATE TABLE Matricula (
+    alumno_id INT,
+    curso_id  INT,
+    nota      DECIMAL(3,1),
+    PRIMARY KEY (alumno_id, curso_id),
+    FOREIGN KEY (curso_id) REFERENCES Curso(curso_id)
+  );
+  ```
+
+---
+
+### 4.4 🔒 Forma Normal 3 (3FN)
+
+* **Definición**:
+
+  1. La tabla está en **2FN**.
+  2. **No existe dependencia transitiva** de atributos no clave sobre la PK.
+
+* **Detectar Violaciones**:
+
+  * Si `PK → B` y `B → C`, con `PK` clave primaria y `B`, `C` no claves.
+
+* **Solución**:
+
+  * Descomponer para eliminar la dependencia transitiva.
+
+  **Ejemplo**:
+
+  ```
+  EMPLEADO (id, nombre, depto_id, depto_nombre)
+  ```
+
+  * `depto_nombre` depende de `depto_id`, no directamente de `id`.
+    **En 3FN:**
+
+  ```sql
+  CREATE TABLE Departamento (
+    depto_id     INT PRIMARY KEY,
+    depto_nombre VARCHAR(50)
+  );
+  CREATE TABLE Empleado (
+    id           INT PRIMARY KEY,
+    nombre       VARCHAR(50),
+    depto_id     INT,
+    FOREIGN KEY (depto_id) REFERENCES Departamento(depto_id)
+  );
+  ```
+
+---
+
+### 4.5 🏆 BCNF (Boyce–Codd)
+
+* **Definición**:
+
+  1. La tabla está en **3FN**.
+  2. Para cada dependencia funcional `X → Y`, **X debe ser superclave** (determina toda la fila).
+
+* **Ejemplo de Violación**:
+
+  ```
+  HORARIO (profesor_id, hora, aula)
+  ```
+
+  * Dependencias:
+
+    * `(profesor_id, hora) → aula`
+    * `(aula, hora) → profesor_id`
+  * Ninguno de los determinantes `(profesor_id, hora)` ni `(aula, hora)` es superclave total, por lo que viola BCNF.
+
+* **Solución**:
+
+  * Descomponer en tablas más pequeñas que cumplan BCNF.
+
+---
+
+### 4.6 🔄 Dependencias Funcionales
+
+* **Definición**: `X → Y` indica que si dos filas tienen el mismo valor de **X**, necesariamente comparten el valor de **Y**.
+* **Clave candidata**: Mínimo conjunto de atributos que determina todos los demás.
+* **Clave primaria**: Elegida entre las claves candidatas.
+* **Determinante**: Conjunto de atributos en el lado izquierdo de una dependencia funcional.
+* **Cerradura (X⁺)**: Conjunto de atributos que se pueden derivar de X usando todas las dependencias funcionales disponibles.
+
+---
+
+### 4.7 🧩 Descomposición y Dependencia Transitiva
+
+* **Descomposición**: Dividir una tabla en varias para eliminar problemas de dependencia.
+
+* **Dependencia Transitiva**:
+
+  * Si `A → B` y `B → C`, entonces `A → C`.
+  * Indeseable en 3FN cuando `B` y `C` no son parte de la clave.
+
+* **Propiedades de Descomposición**:
+
+  1. **Sin Pérdida (Lossless-Join)**: Al unir las tablas descompuestas, recuperamos la tabla original sin filas extra.
+  2. **Preservación de Dependencias**: Todas las dependencias funcionales originales deben poder comprobarse a partir de las nuevas tablas.
+
+---
+
+### 4.8 📈 Ejemplos y Proceso de Normalización
+
+1. **Ejemplo Completo**
+
+   * **Tabla inicial**:
+
+     ```
+     PEDIDO (pedido_id, fecha, cliente_id, cliente_nombre, ciudad, total)
+     ```
+   * **1FN**:
+
+     * Todos los valores son atómicos (✔).
+   * **2FN**:
+
+     * `cliente_nombre` y `ciudad` dependen solo de `cliente_id`, no de `pedido_id`.
+     * → Descomponer en:
+
+       ```sql
+       CREATE TABLE Cliente (
+         cliente_id     INT PRIMARY KEY,
+         cliente_nombre VARCHAR(50),
+         ciudad         VARCHAR(50)
+       );
+       CREATE TABLE Pedido (
+         pedido_id   INT PRIMARY KEY,
+         fecha       DATE,
+         cliente_id  INT,
+         total       DECIMAL(10,2),
+         FOREIGN KEY (cliente_id) REFERENCES Cliente(cliente_id)
+       );
+       ```
+   * **3FN**:
+
+     * Después de la descomposición, no existen dependencias transitivas en `Cliente` ni en `Pedido` (✔).
+   * **BCNF**:
+
+     * Ambas tablas cumplen que cada determinante es superclave (✔).
+
+2. **Proceso Paso a Paso**
+
+   1. Identificar la **PK** y todas las **dependencias funcionales** (DFs).
+   2. Verificar **1FN**: Atributos atómicos.
+   3. Verificar **2FN**: Eliminar dependencias parciales → descomponer.
+   4. Verificar **3FN**: Eliminar dependencias transitivas → descomponer.
+   5. Verificar **BCNF**: Cada `X → Y`, X debe ser superclave; si no, descomponer.
+
+---
+
+```
+```
