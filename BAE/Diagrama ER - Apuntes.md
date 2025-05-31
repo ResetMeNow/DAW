@@ -5,42 +5,42 @@
 
 ## 📑 Contenidos
 
- [Unidad 2 – Modelado Entidad–Relación (ER)](#unidad-2––modelado-entidadrelación-er)  
-   1. [🔍 Conceptos Básicos](#21-🔍-conceptos-básicos)  
-   2. [🏷 Entidades y Atributos](#22-🏷 entidades-y-atributos)  
-   3. [🔗 Relaciones y Cardinalidades](#23-🔗 relaciones-y-cardinalidades)  
-   4. [⚡ Entidades Débiles y Especialización](#24-⚡ entidades-débiles-y-especialización)  
-   5. [🎨 Símbolos y Notación ER](#25-🎨 símbolos-y-notación-er)  
-   6. [✅ Reglas de Diseño ER](#26-✅ reglas-de-diseño-er)  
-   7. [📝 Repaso de Relaciones (REPASO-RELACIONES.md)](#27-📝 repaso-de-relaciones-repaso-relacionesmd)
+ [Modelado Entidad–Relación (ER)](#unidad-2––modelado-entidadrelación-er)  
+   1. [🔍 Conceptos Básicos](#21-🔍conceptos-básicos)  
+   2. [🏷 Entidades y Atributos](#22-🏷entidades-y-atributos)  
+   3. [🔗 Relaciones y Cardinalidades](#23-🔗relaciones-y-cardinalidades)  
+   4. [⚡ Entidades Débiles y Especialización](#24-⚡entidades-débiles-y-especialización)  
+   5. [🎨 Símbolos y Notación ER](#25-🎨símbolos-y-notación-er)  
+   6. [✅ Reglas de Diseño ER](#26-✅reglas-de-diseño-er)  
+   7. [📝 Repaso de Relaciones (REPASO-RELACIONES.md)](#27-📝repaso-de-relaciones-repaso-relacionesmd)
 
-[Unidad 3 – Transformación ER → Modelo Relacional](#unidad-3––transformación-er-→-modelo-relacional)  
-   1. [🔄 Paso a Esquema Relacional](#31-🔄 paso-a-esquema-relacional)  
-   2. [📋 Mapeo de Entidades a Tablas](#32-📋 mapeo-de-entidades-a-tablas)  
-   3. [🔄 Mapeo de Relaciones 1:1, 1:N y M:N](#33-🔄 mapeo-de-relaciones-11-1n-y-mn)  
-   4. [🔄 Atributos Multivaluados y Compuestos](#34-🔄 atributos-multivaluados-y-compuestos)  
-   5. [🔗 Entidades Débiles en Relacional](#35-🔗 entidades-débiles-en-relacional)  
-   6. [💡 Ejemplos Prácticos y Reglas](#36-💡 ejemplos-prácticos-y-reglas)
+[Transformación ER → Modelo Relacional](#unidad-3––transformación-er-→-modelo-relacional)  
+   1. [🔄 Paso a Esquema Relacional](#31-🔄paso-a-esquema-relacional)  
+   2. [📋 Mapeo de Entidades a Tablas](#32-📋mapeo-de-entidades-a-tablas)  
+   3. [🔄 Mapeo de Relaciones 1:1, 1:N y M:N](#33-🔄mapeo-de-relaciones-11-1n-y-mn)  
+   4. [🔄 Atributos Multivaluados y Compuestos](#34-🔄atributos-multivaluados-y-compuestos)  
+   5. [🔗 Entidades Débiles en Relacional](#35-🔗entidades-débiles-en-relacional)  
+   6. [💡 Ejemplos Prácticos y Reglas](#36-💡ejemplos-prácticos-y-reglas)
 
-[Unidad 4 – Normalización (REPASO.md)](#unidad-4––normalización-repasomd)  
-   1. [🎯 Objetivos de la Normalización](#41-🎯 objetivos-de-la-normalización)  
-   2. [🕹️ Forma Normal 1 (1FN)](#42-🕹️ forma-normal-1-1fn)  
-   3. [⚙️ Forma Normal 2 (2FN)](#43-⚙️ forma-normal-2-2fn)  
-   4. [🔒 Forma Normal 3 (3FN)](#44-🔒 forma-normal-3-3fn)  
-   5. [🏆 BCNF (Boyce–Codd)](#45-🏆 bcnf-boycecodd)  
-   6. [🔄 Dependencias Funcionales](#46-🔄 dependencias-funcionales)  
-   7. [🧩 Descomposición y Dependencia Transitiva](#47-🧩 descomposición-y-dependencia-transitiva)  
-   8. [📈 Ejemplos y Proceso de Normalización](#48-📈 ejemplos-y-proceso-de-normalización)
+[Normalización (REPASO.md)](#unidad-4––normalización-repasomd)  
+   1. [🎯 Objetivos de la Normalización](#41-🎯objetivos-de-la-normalización)  
+   2. [🕹️ Forma Normal 1 (1FN)](#42-🕹️forma-normal-1-1fn)  
+   3. [⚙️ Forma Normal 2 (2FN)](#43-⚙️forma-normal-2-2fn)  
+   4. [🔒 Forma Normal 3 (3FN)](#44-🔒forma-normal-3-3fn)  
+   5. [🏆 BCNF (Boyce–Codd)](#45-🏆bcnf-boycecodd)  
+   6. [🔄 Dependencias Funcionales](#46-🔄dependencias-funcionales)  
+   7. [🧩 Descomposición y Dependencia Transitiva](#47-🧩descomposición-y-dependencia-transitiva)  
+   8. [📈 Ejemplos y Proceso de Normalización](#48-📈ejemplos-y-proceso-de-normalización)
 
 ---
 
-## Unidad 2 – Modelado Entidad–Relación (ER)
+## Unidad – Modelado Entidad–Relación (ER)
 
 > **Objetivo:** Representar la realidad del dominio con diagramas ER, para luego llevarlo a un modelo lógico/relacional.
 
 ---
 
-### 2.1 🔍 Conceptos Básicos
+### 1 🔍 Conceptos Básicos
 
 - **Dato vs Información**  
   - **Dato**: Hecho aislado (ej. “1234”).  
@@ -56,7 +56,7 @@
 
 ---
 
-### 2.2 🏷 Entidades y Atributos
+### 2 🏷 Entidades y Atributos
 
 | Concepto          | Descripción                                                                                                 |
 |-------------------|-------------------------------------------------------------------------------------------------------------|
@@ -74,7 +74,7 @@
 
 ---
 
-### 2.3 🔗 Relaciones y Cardinalidades
+### 3 🔗 Relaciones y Cardinalidades
 
 - **Relación**: Asociación lógica entre entidades (ej. “Empleado trabaja en Departamento”).  
 - **Grado**: Número de entidades involucradas:  
@@ -102,7 +102,7 @@
 
 ---
 
-### 2.4 ⚡ Entidades Débiles y Especialización
+### 4 ⚡ Entidades Débiles y Especialización
 
 1. **Entidad Débil**  
    - No tiene PK propia; PK = (PK_entidad_fuerte, identificador_parcial).  
@@ -137,7 +137,7 @@
 
 ---
 
-### 2.5 🎨 Símbolos y Notación ER
+### 5 🎨 Símbolos y Notación ER
 
 | Símbolo                         | Representa                           |
 |---------------------------------|---------------------------------------|
@@ -159,7 +159,7 @@
 
 ---
 
-### 2.6 ✅ Reglas de Diseño ER
+### 6 ✅ Reglas de Diseño ER
 
 1. **Cada entidad** debe tener una **clave primaria** clara.  
 2. **Evitar redundancia** de atributos; si se repite información, seguramente necesites otra entidad.  
@@ -170,7 +170,7 @@
 
 ---
 
-### 2.7 📝 Repaso de Relaciones (REPASO-RELACIONES.md)
+### 7 📝 Repaso de Relaciones (REPASO-RELACIONES.md)
 
 Este apartado amplía el uso de SQL para combinar tablas, centrado en:
 
@@ -201,13 +201,13 @@ Este apartado amplía el uso de SQL para combinar tablas, centrado en:
 
 ---
 
-## Unidad 3 – Transformación ER → Modelo Relacional
+## Unidad – Transformación ER → Modelo Relacional
 
 > **Objetivo:** Convertir el diagrama ER en un conjunto de tablas relacionales, listo para implementarse en SQL.
 
 ---
 
-### 3.1 🔄 Paso a Esquema Relacional
+### 1 🔄 Paso a Esquema Relacional
 
 **Esquema Relacional**: Conjunto de tablas(tuplas) + sus atributos + restricciones (PK, FK, UNIQUE).  
 ***Pasos Generales***:  
@@ -221,7 +221,7 @@ Este apartado amplía el uso de SQL para combinar tablas, centrado en:
 
 ---
 
-### 3.2 📋 Mapeo de Entidades a Tablas
+### 2 📋 Mapeo de Entidades a Tablas
 
 1. **Empleado** *(entidad fuerte)*  
    ```sql
