@@ -1,4 +1,4 @@
-                --EMPLEADO
+sqlite> select * from empleado;      
 +----+-----------+-----------+-----------+----------+
 | id |  nombre   | apellido1 | apellido2 | comision |
 +----+-----------+-----------+-----------+----------+
@@ -47,4 +47,3 @@ sqlite> select * from cliente;
 | 9  | Patricia | Romero    | González  | Barcelona | 1100             |
 | 10 | Antonio  | Navarro   | Torres    | Valencia  | 400              |
 +----+----------+-----------+-----------+-----------+------------------+
-sqlite>
