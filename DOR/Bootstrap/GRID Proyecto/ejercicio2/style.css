@@ -1,0 +1,30 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .amarillo {
+    background-color: #FFD700; 
+    min-height: 150px;
+  }
+  .verde {
+    background-color: #40E0D0; 
+    min-height: 300px;
+  }
+  .violeta {
+    background-color: #DA70D6;
+    min-height: 300px;
+  }
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+  }
+  .comic-neue-bold-italic, .box {
+  font-family: "Comic Neue";
+  font-weight: 400;
+  font-style: normal;
+  }

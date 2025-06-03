@@ -1,0 +1,40 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .container-fluid {
+     flex-grow: 1;
+  }
+
+  .amarillo { background-color: #FFD700; min-height: 240px; }
+  .azul { background-color: #72c4ff; min-height: 250px; }
+  .rosa { background-color: #c1009a; min-height: 300px; } 
+  .naranja { background-color: #e0a040; min-height: 300px; } 
+  .verde { background-color: #40E0D0; min-height: 300px; } 
+  .roja { background-color: #f54141; min-height: 300px; }
+  .manzana { background-color: #50f458; min-height: 300px; }
+  .violeta { background-color: #DA70D6; min-height: 250px; }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem; 
+    color: white;
+    font-family: "Comic Neue", cursive; 
+    font-weight: 700; 
+    font-style: normal;
+  }
+
+  .row > [class^="col-"] {
+      display: flex;
+      flex-direction: column;
+  }
+  .row > [class^="col-"] > .box {
+      flex-grow: 1; 
+  }
