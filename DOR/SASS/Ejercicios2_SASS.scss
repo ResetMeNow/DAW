@@ -16,7 +16,7 @@ EJERCICIOS
 .box {
     width: 50px * 2;
     height: 25px * 2;
-    margin-top: 20px \ 2;
+    margin-top: (20px / 2);
 }
 
 
@@ -85,7 +85,7 @@ EJERCICIOS
     content: "Hello World";
 }
 
-//Respuesta
+/*Respuesta 4*/
 .content {
     &::before {
         content: "Hello World";
@@ -110,16 +110,14 @@ p::before {
     content: "Bienvenido";
 }
 
-//Respuesta
+/*Respuesta 5*/
+
+$texto: "Hola. Bienvenido al aula Click";
 $mensaje: "Bienvenido";
 
-p {
-    &:before {
-        content: "#{$mensaje}";
-    }
+p::before {
+    content: $mensaje;
 }
-
-
 
 /*Ejercicio 6
 Haciendo uso de la Interpolación. Plantea una solución para que nos de
@@ -134,7 +132,7 @@ $mensaje: "Welcome to SASS";
 
 h1 {
     &::before {
-        content: #{$mensaje};
+        content: "#{$mensaje}";
     }
 }
 
@@ -148,7 +146,9 @@ precompilar genere:*/
 }
 
 //Respuesta
-.#{"link"} {
+$clase: link;
+
+.#{$clase} {
     color: #333;
     background-color: #fff;
 }
@@ -163,8 +163,10 @@ elemento p sea interpolado:*/
 }
 
 //Respuesta
+$elemento: p;
+
 .box {
-    #{ "p" } {
+    #{$elemento } {
         font-size: 8px *2;
     }
 }
@@ -204,8 +206,7 @@ incluido del tema anterior de Referencias:*/
 }
 
 
-
-//Respuesta
+/*Respuesta*/
 $clase: "box"; //interpolacion usando string
 
 .#{$clase} {
@@ -408,9 +409,11 @@ Objetivo final (CSS esperado):
 
 //Respuesta
 $card: card;
+
 .#{$card} {
     padding: 10px * 2;
     background-color: #f2f2f2;
+
     h2 {
         font-size: 18px;
     }
@@ -424,10 +427,11 @@ $card: card;
     }
 
     @media (min-width: #{1000px + 200}) {
-            padding: 40px;
-            h2 {
-                font-size: 20px + 2;
-            }
+        padding: 40px;
+
+        h2 {
+            font-size: 20px + 2;
+        }
     }
 }
 
@@ -456,13 +460,15 @@ Objetivo final (CSS esperado):*/
 }
 
 //Respuesta
-.btn{
-     padding: 10px 20px;
-     font-size: 14px;
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+
     @media (min-width: 600px) {
         padding: 12px 24px;
-        font-size: 16px; 
+        font-size: 16px;
     }
+
     @media (min-width: 1024px) {
         padding: 14px 28px;
         font-size: 18px;
@@ -503,9 +509,11 @@ CSS esperado:*/
 
 
 //Respuesta
-$content:"content";
-.#{$content}{
+$content: "content";
+
+.#{$content} {
     margin: 20px;
+
     p {
         line-height: 1.2 + 0.2;
         font-size: 14px;
@@ -513,14 +521,143 @@ $content:"content";
 
     @media (min-width: 768px) {
         margin: 30px;
+
         p {
             font-size: 16px;
-        } 
+        }
     }
+
     @media (min-width: #{1200px + 80}) {
         margin: 10px * 4;
+
         p {
             font-size: 18px;
         }
+    }
+}
+
+
+/*Practica 16*/
+.card {
+    width: 300px;
+    height: 150px;
+    margin-top: 20px;
+}
+
+.card h2 {
+    font-size: 24px;
+}
+
+@media (min-width: 768px) {
+    .card {
+        margin-top: 40px;
+    }
+
+    .card h2 {
+        font-size: 28px;
+    }
+}
+
+/*Respuesta 16*/
+
+@mixin ancho-margen {
+    @media (min-width: 768px) {
+        margin-top: 40px;
+
+        h2 {
+            font-size: 28px;
+        }
+    }
+}
+
+.card {
+    width: 300px;
+    height: 150px;
+    margin-top: 20px;
+
+    h2 {
+        font-size: 24px;
+
+
+    }
+
+    @include ancho-margen;
+}
+
+
+
+/*Ejercicio 17*/
+.perfil {
+    width: 200px;
+    height: 100px;
+}
+
+.perfil p {
+    font-size: 14px;
+}
+
+@media (min-width: 800px) {
+    .perfil {
+        width: 300px;
+    }
+
+    .perfil p {
+        font-size: 18px;
+    }
+}
+
+/*Respuesta 17*/
+@mixin ancho {
+    @media (min-width: 800px) {
+        width: 300px;
+
+        p {
+            font-size: 18px;
+        }
+
+    }
+}
+
+.perfil {
+    width: 200px;
+    height: 100px;
+
+    p {
+        font-size: 14px;
+    }
+
+    @include ancho;
+}
+
+/*Ejercicio 18*/
+.card {
+    padding: 10px;
+    background-color: #eee;
+}
+
+@media (min-width: 1024px) {
+    .card {
+        padding: 20px;
+        background-color: #ddd;
+    }
+}
+
+/*respuesta*/
+
+@mixin prueba {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+.card {
+    padding: 10px;
+    background-color: #eee;
+
+
+    @include prueba {
+        padding: 20px;
+        background-color: #ddd;
+
     }
 }

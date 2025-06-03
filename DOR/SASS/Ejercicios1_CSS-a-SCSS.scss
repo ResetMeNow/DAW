@@ -31,6 +31,7 @@ button {
     color: #666;
 }
 
+
 //PASO A SCCS
 .container {
     width: 100%;
@@ -64,32 +65,21 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-//SCSS
+/*Respuesta*/
 nav ul li {
     display: inline-block;
     margin-right: 20px;
 
-    nav {
-        ul {
-            li {
-                display: inline-block;
-                margin-right: 20px;
+    a {
+        color: #333;
+        text-decoration: none;
 
-                a {
-                    color: #333;
-                    text-decoration: none;
-                }
-
-                &:hover {
-                    text-decoration: underline;
-                }
-
-            }
+        &:hover {
+            text-decoration: underline;
         }
-
     }
-
 }
+
 
 //EJERCICIO4
 .container {
@@ -310,6 +300,7 @@ nav {
     padding: 20px;
     margin-bottom: 20px;
 }
+
 
 
 //SCSS
@@ -569,6 +560,36 @@ nav {
     color: #fff;
 }
 
+/*RESPUESTA 14*/
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    a {
+        display: flex;
+        justify-content:
+            space-between;
+    }
+
+    .row {
+
+        .col {
+            width: 30%;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin-bottom: 20px;
+
+            &:first-child {
+                background-color:
+                    #333;
+                color: #fff;
+            }
+        }
+    }
+
+}
+
 //SCSS
 .container {
     width: 100%;
@@ -578,7 +599,7 @@ nav {
     a {
         display: flex;
         justify-content:
-          space-between;
+            space-between;
     }
 
     .row {
@@ -589,8 +610,8 @@ nav {
             margin-bottom: 20px;
 
             &:first-child {
-            background-color: #333;
-            color: #fff;
+                background-color: #333;
+                color: #fff;
             }
         }
 

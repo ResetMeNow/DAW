@@ -14,7 +14,7 @@ EJERCICIOS
 .box {
   width: 100px;
   height: 50px;
-  margin-top: 20px \ 2;
+  margin-top: 10px;
 }
 
 @media (min-width: 800px) {
@@ -65,6 +65,7 @@ EJERCICIOS
   content: "Hello World";
 }
 
+/*Respuesta 4*/
 .content::before {
   content: "Hello World";
 }
@@ -80,7 +81,8 @@ p::before {
   content: "Bienvenido";
 }
 
-p:before {
+/*Respuesta 5*/
+p::before {
   content: "Bienvenido";
 }
 
@@ -92,7 +94,7 @@ h1::before {
 }
 
 h1::before {
-  content: Welcome to SASS;
+  content: "Welcome to SASS";
 }
 
 /*Ejercicio 7
@@ -147,6 +149,7 @@ incluido del tema anterior de Referencias:*/
     font-size: 20px;
   }
 }
+/*Respuesta*/
 .box {
   width: 200px;
   height: 100px;
@@ -402,5 +405,101 @@ CSS esperado:*/
   }
   .content p {
     font-size: 18px;
+  }
+}
+
+/*Practica 16*/
+.card {
+  width: 300px;
+  height: 150px;
+  margin-top: 20px;
+}
+
+.card h2 {
+  font-size: 24px;
+}
+
+@media (min-width: 768px) {
+  .card {
+    margin-top: 40px;
+  }
+  .card h2 {
+    font-size: 28px;
+  }
+}
+/*Respuesta 16*/
+.card {
+  width: 300px;
+  height: 150px;
+  margin-top: 20px;
+}
+.card h2 {
+  font-size: 24px;
+}
+@media (min-width: 768px) {
+  .card {
+    margin-top: 40px;
+  }
+  .card h2 {
+    font-size: 28px;
+  }
+}
+
+/*Ejercicio 17*/
+.perfil {
+  width: 200px;
+  height: 100px;
+}
+
+.perfil p {
+  font-size: 14px;
+}
+
+@media (min-width: 800px) {
+  .perfil {
+    width: 300px;
+  }
+  .perfil p {
+    font-size: 18px;
+  }
+}
+/*Respuesta 17*/
+.perfil {
+  width: 200px;
+  height: 100px;
+}
+.perfil p {
+  font-size: 14px;
+}
+@media (min-width: 800px) {
+  .perfil {
+    width: 300px;
+  }
+  .perfil p {
+    font-size: 18px;
+  }
+}
+
+/*Ejercicio 18*/
+.card {
+  padding: 10px;
+  background-color: #eee;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    padding: 20px;
+    background-color: #ddd;
+  }
+}
+/*respuesta*/
+.card {
+  padding: 10px;
+  background-color: #eee;
+}
+@media (min-width: 1024px) {
+  .card {
+    padding: 20px;
+    background-color: #ddd;
   }
 }/*# sourceMappingURL=Ejercicios2_SASS.css.map */
