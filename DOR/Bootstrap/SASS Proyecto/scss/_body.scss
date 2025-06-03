@@ -1,0 +1,55 @@
+@mixin imagenTarjeta($img) {
+  background-image: url($img);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+
+  .card {
+    display: flex;
+    flex: 1 1 500px;
+    height: 300px;
+    border: 1px solid $dark;
+    border-radius: 10px;
+    box-shadow: 0 0 15px $dark;
+    background-color: $dark;
+    color: $primary;
+    font-family: 'Dancing Script', cursive;
+
+    .imagen {
+      width: 40%;
+
+      &.v1 { @include imagenTarjeta('../img/volcan1.jpeg'); }
+      &.v2 { @include imagenTarjeta('../img/volcan2.jpeg'); }
+      &.v3 { @include imagenTarjeta('../img/volcan3.jpeg'); }
+      &.v4 { @include imagenTarjeta('../img/volcan4.jpeg'); }
+    }
+
+    .contenido {
+      width: 60%;
+      padding: 15px;
+
+      h2 {
+        color: $secondary;
+        margin: 0 0 5px;
+      }
+
+      .fecha {
+        color: $info;
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
