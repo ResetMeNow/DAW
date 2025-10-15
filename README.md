@@ -2,16 +2,16 @@
 ### Repositorio de DAW
 Apuntes y ejercicios correspondientes al temario del CFGS de Desarrollo de Aplicaciones Web.
 
-## BAE .- Base de Datos 🧮
+## BAE .- Base de Datos 🧩
 - ###  [Tareas](https://github.com/ResetMeNow/DAW/tree/main/BAE/Tareas) 
 - ### [MySQL](https://github.com/ResetMeNow/DAW/blob/main/BAE/BBDD%20Apuntes.md)
-## DOR .- Diseño de Interfaces Web 🎨
+## DOR .- Diseño de Interfaces Web 💠
 - ### [SASS](https://github.com/ResetMeNow/DAW/tree/main/DOR/SASS) [^1]
 - ### [Bootstrap](https://github.com/ResetMeNow/DAW/tree/main/DOR/Bootstrap)[^2]
-## DPL .- Despliegue de Aplicaciones Web
+## DPL .- Despliegue de Aplicaciones Web ✴️
 - ### []()
 - ### []()
-## DSW .- Desarrollo web en entorno servidor
+## DSW .- Desarrollo web en entorno servidor 🫟
 - ### []()
 - ### []()
 
