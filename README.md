@@ -12,7 +12,7 @@ Apuntes y ejercicios correspondientes al temario del CFGS de Desarrollo de Aplic
 - ### []()
 - ### []()
 ## DSW .- Desarrollo web en entorno servidor 🫟
-- ### [Actividades](DSW/Actividades)
+- ### [Despliegues](DSW/Actividades)
 - ### []()
 
 ---
