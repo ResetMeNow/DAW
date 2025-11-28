@@ -121,3 +121,95 @@ Por tanto…
 > nginx usará el primer servidor porque tiene la directiva default_server. Como la petición llega por IP y no coincide con ningún server_name, el server por defecto es el que se selecciona.
 
 ---
+# 🧩 ***EJERCICIO 3 — Prioridad del index en raíz vs subdirectorios***
+
+Tenemos este servidor:
+
+server {
+    listen 80 default_server;
+    server_name _;
+    root /var/www/primero;
+
+    index subprimero.html;
+
+    location = / {
+        index primero.html;
+    }
+}
+
+
+Y en el sistema de archivos existen:
+
+/var/www/primero/primero.html
+/var/www/primero/subprimero.html
+/var/www/primero/carpeta/subprimero.html
+
+👉 Preguntas:
+1) Si el cliente pide simplemente:
+http://servidor/
+
+
+¿QUÉ ARCHIVO sirve nginx?
+
+2) Si el cliente pide:
+http://servidor/carpeta/
+
+
+¿QUÉ ARCHIVO sirve nginx?
+
+## 🤓 CÓMO SABER QUÉ INDEX COGE NGINX
+> 📌 Regla 1 — Existe un location = /
+```location = / {
+    index primero.html;
+}```
+
+
+Esto significa:
+
+✔ SOLO se aplica exactamente cuando la URL es /
+❌ No se aplica en subdirectorios
+❌ No se aplica en ninguna otra ruta
+
+
+> 📌 Regla 2 — Fuera del location = /, el servidor usa:
+index subprimero.html;
+
+
+Esto aplica a todos los directorios excepto el raíz exacto.
+
+🎯 AHORA RESPONDEMOS A LAS DOS PREGUNTAS
+1) Petición:
+http://servidor/
+
+
+La URI es exactamente /.
+
+✔ Coincide con location = /
+✔ Por tanto usa:
+
+index primero.html;
+
+
+📌 Respuesta 1: nginx sirve primero.html
+
+2) Petición:
+http://servidor/carpeta/
+
+
+La URI NO es / sino /carpeta/.
+
+❌ No coincide con location = /
+✔ Por tanto se usa la directiva global del server:
+
+index subprimero.html;
+
+
+Como dentro de /var/www/primero/carpeta/ sí existe subprimero.html, ese es el que sirve.
+
+📌 Respuesta 2: nginx sirve carpeta/subprimero.html
+
+🎓 Resumen para memorizar (muy fácil):
+
+/ → primero.html
+
+/loquesea/ → subprimero.html
