@@ -294,30 +294,37 @@ En FileZilla cambia conexión:
 
 ---
 
-# 🟣 12. CHECKLIST antes de entregar
+## 🟧 SECCIÓN EXTRA (Puede caer en examen)
+**🔥 ¿Por qué se descarga un archivo PHP? ¿Cómo provocarlo / evitarlo?** 
 
-* [ ] `nginx -t` OK
-* [ ] `phpinfo()` funciona
-* [ ] `/secreto` funciona
-* [ ] `/secreto/interno` funciona
-* [ ] 404 funciona
-* [ ] imágenes funcionan
-* [ ] server default funciona
-* [ ] `www.miagenda.com` funciona
-* [ ] descargaste todos los archivos con FileZilla
-* [ ] subiste todo al servidor del profesor
+Se descarga cuando nginx no pasa el .php a PHP-FPM. 
+Ocurre si falta: 
+
+```
+location ~ \.php$ {
+    include snippets/fastcgi-php.conf;
+    fastcgi_pass unix:/run/php/php-fpm.sock;
+}
+```
+
+> Para demostrarlo (si el profe pide “haz que el php se descargue”):
+→ Comentar ese bloque y reiniciar nginx.
+
+> Para arreglarlo:
+→ Añadir el bloque php y verificar que php-fpm está activo.
+
+
+## 🟧 ERRORS TÍPICOS DE NGINX
+``sudo nginx -t # Comprueba errores de sintaxis `` 
+
+``sudo tail -n 50 /var/log/nginx/error.log``
+
+
+Muy útil si te equivocas con llaves {}, rutas o nombres.
+
+## 🟧 Probar PHP desde consola
+``curl http://localhost/info.php``
 
 ---
-
 # 🟣 FIN DEL GUION
 
-Este es el guion definitivo que necesitas estudiar.
-Si te aprendes este documento y haces dos prácticas, **APROBASTE**.
-
-Si quieres, puedo ahora generarte:
-
-🔹 **Una versión ultra-resumida (1 página A4)**
-🔹 **Un simulacro de examen EXACTO**
-🔹 **Una versión para memorizar en 10 minutos**
-
-Solo dime cuál quieres.
