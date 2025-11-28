@@ -159,9 +159,11 @@ http://servidor/carpeta/
 
 ## 🤓 CÓMO SABER QUÉ INDEX COGE NGINX
 > 📌 Regla 1 — Existe un location = /
+
 ```location = / {
     index primero.html;
-}```
+}
+```
 
 
 Esto significa:
