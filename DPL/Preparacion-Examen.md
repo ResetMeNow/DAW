@@ -55,7 +55,7 @@ default_type application/octet-stream;
 > Como PHP no está configurado ni existe su MIME, nginx encuentra el archivo info.php pero no lo ejecuta. Usa el tipo por defecto `application/octet-stream`, así que el navegador lo descarga.
 
 ---
-🧩**EJERCICIO 2 — ¿Qué servidor virtual selecciona nginx?**
+# 🧩***EJERCICIO 2 — ¿Qué servidor virtual selecciona nginx?***
 
 Tenemos esta configuración:
 
