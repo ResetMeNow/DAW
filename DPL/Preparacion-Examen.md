@@ -55,4 +55,66 @@ default_type application/octet-stream;
 > Como PHP no está configurado ni existe su MIME, nginx encuentra el archivo info.php pero no lo ejecuta. Usa el tipo por defecto `application/octet-stream`, así que el navegador lo descarga.
 
 ---
+🧩**EJERCICIO 2 — ¿Qué servidor virtual selecciona nginx?**
 
+Tenemos esta configuración:
+
+```
+server {
+    listen 80 default_server;
+    server_name _;
+    root /var/www/primero;
+}
+
+server {
+    listen 80;
+    server_name www.miagenda.com;
+    root /var/www/agenda;
+}
+```
+
+Situación:
+
+El cliente abre en su navegador:
+
+http://10.108.99.100/
+
+
+(no pone dominio, solo la IP)
+
+👉 Tu misión:
+¿Qué server usa nginx? ¿El primero o el segundo?
+Y por qué.
+
+✅ ***Respuesta correcta explicada***
+
+Cuando el cliente escribe solo la IP:
+
+http://10.108.99.100/
+
+
+La cabecera Host será:
+
+Host: 10.108.99.100
+
+
+Y nginx intenta buscar un server_name que coincida con eso.
+Pero en tu configuración:
+
+```server_name _; (guion bajo) → NO coincide con 10.108.99.100```
+
+server_name www.miagenda.com; → tampoco coincide
+
+Por tanto…
+
+👉 No coincide con ningún server_name, así que nginx usa el que tiene:
+
+```listen 80 default_server;```
+
+
+✔ Ese es el servidor “por defecto”
+✔ Siempre se usa cuando no hay coincidencias de nombre
+
+🎯 Respuesta de examen:
+
+nginx usará el primer servidor porque tiene la directiva default_server. Como la petición llega por IP y no coincide con ningún server_name, el server por defecto es el que se selecciona.
