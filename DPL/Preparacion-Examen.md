@@ -1,6 +1,6 @@
 ***Explicaciones del próximo Exámen***
 ---
-🧩 **EJERCICIO 1 — ¿Qué hace nginx cuando piden info.php?**
+# 🧩 ***EJERCICIO 1 — ¿Qué hace nginx cuando piden info.php?***
 
 Situación:
 
@@ -23,7 +23,7 @@ http://www.miservidor.org/info.php
 
 
 
-# ✅ ***Respuesta***
+ ✅ **Respuesta**
 
 1️⃣ El cliente pide:
 `info.php`
@@ -86,7 +86,7 @@ http://10.108.99.100/
 ¿Qué server usa nginx? ¿El primero o el segundo?
 Y por qué.
 
-✅ ***Respuesta correcta explicada***
+✅ **Respuesta correcta explicada**
 
 Cuando el cliente escribe solo la IP:
 
@@ -117,6 +117,6 @@ Por tanto…
 ---
 
 
-* 🎯Respuesta de examen:
+# 🎯Respuesta de examen:
 >
 nginx usará el primer servidor porque tiene la directiva default_server. Como la petición llega por IP y no coincide con ningún server_name, el server por defecto es el que se selecciona.
