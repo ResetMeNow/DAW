@@ -124,7 +124,7 @@ Por tanto…
 # 🧩 ***EJERCICIO 3 — Prioridad del index en raíz vs subdirectorios***
 
 Tenemos este servidor:
-
+```
 server {
     listen 80 default_server;
     server_name _;
@@ -136,7 +136,7 @@ server {
         index primero.html;
     }
 }
-
+```
 
 Y en el sistema de archivos existen:
 
@@ -162,7 +162,7 @@ http://servidor/carpeta/
 
 ```location = / {
     index primero.html;
-}
+} 
 ```
 
 
