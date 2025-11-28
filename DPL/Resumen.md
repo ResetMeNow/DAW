@@ -50,7 +50,7 @@ default_type application/octet-stream;
 
 ---
 
-# 🎯 Respuesta de examen:
+# 🎯 Respuesta:
 
 > Como PHP no está configurado ni existe su MIME, nginx encuentra el archivo info.php pero no lo ejecuta. Usa el tipo por defecto `application/octet-stream`, así que el navegador lo descarga.
 
@@ -117,7 +117,7 @@ Por tanto…
 
 ---
 
-# 🎯Respuesta de examen:
+# 🎯Respuesta:
 > nginx usará el primer servidor porque tiene la directiva default_server. Como la petición llega por IP y no coincide con ningún server_name, el server por defecto es el que se selecciona.
 
 ---
@@ -388,9 +388,9 @@ image/png
 
 Es decir, tratar archivos .img como imágenes PNG.
 
-## 🔥 ¿Por qué hay que hacer esto?
+## 🔥 ¿Por qué?
 
-Imagínate que tienes una imagen:
+Tienes una imagen:
 
 foto.png
 
@@ -560,7 +560,7 @@ pero nginx sí podrá entrar ahí cuando necesite entregar la página 404 person
 
 Este comportamiento es EXACTAMENTE lo que pide el profesor.
 
-# 🟣 Código final completo que debes memorizar
+# 🟣 Código final completo
 # Página de error 404 personalizada
 error_page 404 /internos/p404.html;
 
@@ -569,7 +569,7 @@ location /internos {
     internal;
 }
 
-# 🟢 ¿Qué ocurre paso a paso?
+# 🟢 ¿Qué ocurre?
 📌 Caso 1: El cliente pide un archivo que no existe
 
 Ejemplo:
@@ -605,7 +605,7 @@ Pero nginx responde:
 ¿Por qué?
 ✔ Porque internal bloquea accesos directos de clientes.
 
-# 🟣 Resumen para examen
+# 🟣 Resumen
 - `error_page 404 /internos/p404.html;`
   → nginx usará esa página cuando haya un 404.
 
@@ -638,7 +638,7 @@ Estructura de directorios:
 /var/www/agenda/secreto/interno/secreto.html
 
 
-El profesor quiere:
+Se quiere:
 
 ✔ /secreto
 ✔ /secreto/
@@ -655,14 +655,13 @@ Debe mostrar el que está en /secreto/, no el de interno.
 
 —
 
-# 🟪 Código que se usa en el PDF (y que debes aprender):
+# 🟪 Código que se usa en el PDF:
 location /secreto {
     index secreto.html;
     try_files $uri/interno/ $uri/ $uri =404;
 }
 
 
-Vamos a explicarlo perfectamente:
 
 # 🟣 Explicación completa del try_files
 
@@ -760,6 +759,7 @@ nginx sirve:
 No existe → 404 personalizado si está configurado.
 
 # 🟣 Código completo final para tu repositorio
+```
 location /secreto {
     # Archivo por defecto cuando estemos en un directorio con index
     index secreto.html;
@@ -770,9 +770,4 @@ location /secreto {
     # 3. /secreto/secreto.html → ese archivo directamente
     try_files $uri/interno/ $uri/ $uri =404;
 }
-
-# 🟢 Resumen para examen (muy útil para memorizar)
-- `$uri/interno/` → si entro en /secreto, nginx mira si interno existe.
-- Si existe → /secreto/interno/ → es un directorio → usa index secreto.html.
-- Así se muestra /secreto/interno/secreto.html al entrar en /secreto.
-- Si pido /secreto/secreto.html → nginx sirve ese archivo, no el de interno.
+```
