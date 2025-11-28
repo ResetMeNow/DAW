@@ -294,17 +294,35 @@ En FileZilla cambia conexión:
 
 ---
 
-## 🟧 SECCIÓN EXTRA (Puede caer en examen)
+# 🟧 SECCIÓN EXTRA (Puede caer en examen)
+
+### ✅ “Comprobaciones y logs”  
+**Motivo:** po si algo falla en el examen.**
+
+📌 **Añadir justo después de “Reiniciar nginx” o después de las pruebas del navegador:**
+
+```
+sudo nginx -t            # Detecta errores de sintaxis
+sudo systemctl status nginx
+sudo systemctl status php*-fpm
+sudo tail -n 50 /var/log/nginx/error.log   # Ver errores de nginx
+sudo tail -n 50 /var/log/nginx/access.log  # Peticiones realizadas
+curl http://localhost/info.php              # Probar PHP desde la VM
+ls -l /run/php/                              # Ver socket de PHP-FPM
+```
+
+---
+
 **🔥 ¿Por qué se descarga un archivo PHP? ¿Cómo provocarlo / evitarlo?** 
 
 Se descarga cuando nginx no pasa el .php a PHP-FPM. 
 Ocurre si falta: 
 
 ```
-location ~ \.php$ {
-    include snippets/fastcgi-php.conf;
-    fastcgi_pass unix:/run/php/php-fpm.sock;
-}
+# location ~ \.php$ {
+#    include snippets/fastcgi-php.conf;
+#    fastcgi_pass unix:/run/php/php-fpm.sock;
+#}
 ```
 
 > Para demostrarlo (si el profe pide “haz que el php se descargue”):
@@ -314,7 +332,7 @@ location ~ \.php$ {
 → Añadir el bloque php y verificar que php-fpm está activo.
 
 
-## 🟧 ERRORS TÍPICOS DE NGINX
+### 🟧 ERRORS TÍPICOS DE NGINX
 ``sudo nginx -t # Comprueba errores de sintaxis `` 
 
 ``sudo tail -n 50 /var/log/nginx/error.log``
@@ -322,7 +340,7 @@ location ~ \.php$ {
 
 Muy útil si te equivocas con llaves {}, rutas o nombres.
 
-## 🟧 Probar PHP desde consola
+### 🟧 Probar PHP desde consola
 ``curl http://localhost/info.php``
 
 ---
