@@ -21,7 +21,7 @@ Nginx actúa como intermediario (reverse proxy).
 
 Supongamos que el cliente envía:
 
-GET /login.php?usuario=angel&passwd=1234
+``GET /login.php?usuario=angel&passwd=1234``
 
 
 Nginx debe:
@@ -41,18 +41,19 @@ Nginx no ejecuta PHP —solo lo pasa al backend que lo ejecuta.
 Esto es útil para aprender, pero no se usa en producción.
 
 Ejemplo:
-
+``
 cd /var/www/html
 php -S 0.0.0.0:9000
-
+``
 
 Esto abre un servidor PHP básico escuchando en el puerto 9000.
 
 # 🟪 Configurar nginx para enviarle los .php
+``
 location ~ \.php$ {
     proxy_pass http://localhost:9000;
 }
-
+``
 
 Esto significa:
 
@@ -72,38 +73,38 @@ Es lo que SIEMPRE se usa en producción.
 
 Ejemplo:
 
-apt install php8.2-fpm
+``apt install php8.2-fpm``
 
 
 Esto inicia un servicio llamado:
 
-php8.2-fpm.service
+``php8.2-fpm.service``
 
 ## 🟢 2) Configurar PHP-FPM para que escuche en un puerto (TCP)
 
 Archivo:
 
-/etc/php/8.2/fpm/pool.d/www.conf
+``/etc/php/8.2/fpm/pool.d/www.conf``
 
 
 Cambiar:
 
-listen = 127.0.0.1:9000
+``listen = 127.0.0.1:9000``
 
 
 Reiniciar:
 
-systemctl restart php8.2-fpm
+``systemctl restart php8.2-fpm``
 
 
 Comprobar:
 
-ss -putnl
+``ss -putnl``
 
 # 🟣 2.4 Variables necesarias para que PHP-FPM ejecute PHP
 
 Cuando nginx pasa la petición a FPM vía fastcgi, debe enviar:
-
+```
 SCRIPT_FILENAME
 
 QUERY_STRING
@@ -113,12 +114,12 @@ REQUEST_METHOD
 CONTENT_LENGTH
 
 CONTENT_TYPE
-
+```
 etc.
 
 Para eso nginx usa un archivo predefinido:
 
-/etc/nginx/snippets/fastcgi-php.conf
+``/etc/nginx/snippets/fastcgi-php.conf``
 
 
 Ese archivo contiene las variables que PHP-FPM necesita.
@@ -126,20 +127,20 @@ Ese archivo contiene las variables que PHP-FPM necesita.
 # 🟪 2.5 Configurar nginx correctamente para PHP-FPM
 
 Este bloque es el que debes memorizar para examen:
-
+``
 location ~ \.php$ {
     include snippets/fastcgi-php.conf;
     fastcgi_pass 127.0.0.1:9000;
 }
-
+``
 
 Significado:
 
-location ~ .php$ → detecta archivos .php
+``location ~ .php$`` → detecta archivos .php
 
-include snippets/fastcgi-php.conf → carga variables necesarias
+``include snippets/fastcgi-php.conf`` → carga variables necesarias
 
-fastcgi_pass → envía la petición a PHP-FPM
+``fastcgi_pass`` → envía la petición a PHP-FPM
 
 # 🟣 2.6 Usar un socket UNIX (mejor que TCP)
 
@@ -149,29 +150,30 @@ En vez de usar un puerto TCP (más lento), es mejor usar un socket local.
 
 Cambiar en:
 
-/etc/php/8.2/fpm/pool.d/www.conf
+``/etc/php/8.2/fpm/pool.d/www.conf``
 
 
 De:
 
-listen = 127.0.0.1:9000
+``listen = 127.0.0.1:9000``
 
 
 A:
 
-listen = /run/php/php-fpm.sock
+``listen = /run/php/php-fpm.sock``
 
 
 Reiniciar:
 
-systemctl restart php8.2-fpm
+``systemctl restart php8.2-fpm``
 
 ## 🔥 Nginx con socket UNIX
+``
 location ~ \.php$ {
     include snippets/fastcgi-php.conf;
     fastcgi_pass unix:/run/php/php-fpm.sock;
 }
-
+``
 
 Este bloque es el más usado en producción.
 
