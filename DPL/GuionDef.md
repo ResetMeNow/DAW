@@ -195,6 +195,13 @@ sudo systemctl restart php*-fpm
 sudo systemctl status php*-fpm
 ```
 
+### 📌**IMPORTANTE (REINICIA NGINX)** 
+
+```
+sudo systemctl restart nginx
+``` 
+
+
 ---
 
 # 🟩 7. Probar PHP
