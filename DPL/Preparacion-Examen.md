@@ -23,7 +23,7 @@ http://www.miservidor.org/info.php
 
 
 
-# ✅ **Respuesta**
+# ✅ ***Respuesta***
 
 1️⃣ El cliente pide:
 `info.php`
@@ -115,6 +115,7 @@ Por tanto…
 ✔ Ese es el servidor “por defecto”
 ✔ Siempre se usa cuando no hay coincidencias de nombre
 
-🎯 Respuesta de examen:
-
+---
+*🎯Respuesta de examen:
+>
 nginx usará el primer servidor porque tiene la directiva default_server. Como la petición llega por IP y no coincide con ningún server_name, el server por defecto es el que se selecciona.
