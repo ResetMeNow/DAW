@@ -8,23 +8,26 @@ ssh usuario@IP
 En clase normalmente abrirás la terminal de la VM directamente.
 
 # 🟦 B) Navegar por carpetas (importantísimo)
-cd /etc/nginx
-ls
-cd sites-available
-nano multisite
+> cd /etc/nginx
+ ls
+ cd sites-available
+ nano multisite
 
 
 Comandos:
 
-Comando	Qué hace
-ls	listar archivos
-cd	entrar en carpeta
-pwd	ver dónde estás
-nano archivo	editar archivo
-mkdir nombre	crear carpeta
-rm archivo	borrar
-rm -r carpeta	borrar carpeta
-chown -R www-data:www-data carpeta	cambiar dueño
+> Comando	Qué hace
+- ls	-> listar archivos
+- cd	-> entrar en carpeta
+- pwd	-> ver dónde estás
+- nano archivo	-> editar archivo
+- mkdir nombre	-> crear carpeta
+- rm archivo	-> borrar
+- rm -r carpeta	-> borrar carpeta
+- chown -R www-data:www-data carpeta -> cambiar dueño
+
+--- 
+
 # 🟦 C) Editar un archivo de configuración con nano
 
 Esto lo usarás SIEMPRE:
