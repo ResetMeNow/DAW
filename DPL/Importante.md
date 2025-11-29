@@ -114,6 +114,31 @@ Para usarla en /etc/hosts en el PC del examen.
 
 Para crear carpetas, editar config, reiniciar nginx.
 
+
+## Importantísimo :bangbang:
+
+> [!WARNING]
+> Include snippets/fastcgi-php.conf — comprueba que existe
+
+Antes del examen verifica que el fichero existe:
+
+```
+ls -l /etc/nginx/snippets/fastcgi-php.conf
+```
+
+Si no existe, en Debian suele estar en /etc/nginx/ o se usa /etc/nginx/fastcgi_params. Si falta, tendrás que crear un snippet mínimo o incluir fastcgi_params. Muy raro que falte en la VM del aula, pero compruébalo.
+> [!CAUTION]
+> Socket PHP-FPM: la ruta exacta puede variar por versión
+
+``/run/php/php-fpm.sock`` suele funcionar si tu php-fpm está configurado así.
+Comprueba con:
+
+```
+ls -l /run/php/
+```
+
+y si ves php7.4-fpm.sock o php8.2-fpm.sock, ajusta fastcgi_pass unix:/run/php/php-fpm.sock; al nombre real o cambia el listen en www.conf para coincidir. Tu guion contempla usar el glob php*-fpm para reinicio, así que está bien; sólo revisa el socket.
+
 ---
 
 ### 👉Si Debian NO tuviera sudo (muy raro), entonces:
