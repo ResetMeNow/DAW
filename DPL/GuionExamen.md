@@ -70,6 +70,7 @@ Contenido:
 ```
 <h1>NOMBRE DEL ARCHIVO</h1>
 ```
+
 ### Tip📌
 **En el secreto.html escribe contenidos diferentes en ambos**
 
