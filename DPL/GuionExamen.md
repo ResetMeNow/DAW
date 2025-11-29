@@ -27,6 +27,7 @@ ssh alumno@10.108.99.100
 
 ```
 sudo mkdir -p /var/www/primero
+sudo mkdir -p /var/www/primero/imagenesjpg
 sudo mkdir -p /var/www/agenda/imagenesjpg
 sudo mkdir -p /var/www/agenda/secreto/interno
 sudo mkdir -p /var/www/agenda/internos
