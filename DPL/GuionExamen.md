@@ -186,7 +186,7 @@ Comprobar el socket (importantísimo):
 ```
 ls -l /run/php/
 ```
-
+ 
 Reiniciar:
 
 ```
