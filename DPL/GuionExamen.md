@@ -19,13 +19,13 @@ Incluye **todos los pasos reales del examen**, **todos los comandos**, **toda la
 El examen **no se hace directamente en el PC**, sino en la **VM**,
 pero **accedes a la VM desde la terminal del PC del aula**:
 
-```bash
+```
 ssh alumno@IP_DE_LA_VM
 ```
 
 Ejemplo:
 
-```bash
+```
 ssh alumno@10.108.99.100
 ```
 
@@ -35,7 +35,7 @@ ssh alumno@10.108.99.100
 
 # 🟩 1. Crear las carpetas de la práctica
 
-```bash
+```
 sudo mkdir -p /var/www/primero
 sudo mkdir -p /var/www/agenda/imagenesjpg
 sudo mkdir -p /var/www/agenda/secreto/interno
@@ -51,14 +51,14 @@ sudo chmod -R 755 /var/www
 
 ## 🔹 Primer sitio (`/var/www/primero`)
 
-```bash
+```
 sudo nano /var/www/primero/primero.html
 sudo nano /var/www/primero/subprimero.html
 ```
 
 ## 🔹 Segundo sitio (`/var/www/agenda`)
 
-```bash
+```
 sudo nano /var/www/agenda/index.dpl
 sudo nano /var/www/agenda/index.html
 sudo nano /var/www/agenda/secreto/secreto.html
@@ -68,7 +68,7 @@ sudo nano /var/www/agenda/internos/p404.html
 
 ## 🔹 PHP info
 
-```bash
+```
 sudo nano /var/www/agenda/info.php
 ```
 
@@ -77,7 +77,9 @@ Contenido:
 ```php
 <?php phpinfo(); ?>
 ```
-
+```
+<h1>NOMBRE DEL ARCHIVO</h1>
+```
 ## 🔹 Imágenes falsas
 
 ```bash
