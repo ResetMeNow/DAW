@@ -251,7 +251,12 @@ Prueba en navegador:
 
 # 🟩 9. Logs si algo falla
 
-```bash
+Escribe:
+``
+ss -putnl
+``
+Luego, si algo falla:
+```
 sudo tail -n 50 /var/log/nginx/error.log
 sudo tail -n 50 /var/log/nginx/access.log
 ```
