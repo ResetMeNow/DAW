@@ -180,6 +180,11 @@ Cambiar a:
 listen = /run/php/php-fpm.sock
 ```
 
+Comprobar el socket (importantísimo):
+```
+ls -l /run/php/
+```
+
 Reiniciar:
 
 ```bash
