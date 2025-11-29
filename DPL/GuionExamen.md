@@ -249,15 +249,19 @@ Prueba en navegador:
 
 ---
 
-# 🟩 9. Logs si algo falla
-
-Escribe:
+# 🟩 9. Comprobaciones rápidas (ss) + Logs
+✔ Ver si nginx y php-fpm están escuchando:
 ```
 ss -putnl
-``` 
+```
 
-Luego, si algo falla:
+Buscar:  
 
+nginx → 0.0.0.0:80  
+
+php-fpm → /run/php/php-fpm.sock
+
+✔ Ver errores:
 ```
 sudo tail -n 50 /var/log/nginx/error.log
 sudo tail -n 50 /var/log/nginx/access.log
