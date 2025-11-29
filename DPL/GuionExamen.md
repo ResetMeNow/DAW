@@ -1,16 +1,10 @@
-Aquí lo tienes:
+ # 🎓 GUION DEFINITIVO EXAMEN — DESPLIEGUE DAW — DEBIAN 
 
-# ✅ **GUION DEFINITIVO DEL EXAMEN (1.1.3 + PHP-FPM) — DEBIAN**
+ 
 
----
+*(Punto 1.1.3 + Punto 2 pdf UT2)*
 
-# # 🎓 GUION DEFINITIVO EXAMEN — DESPLIEGUE DAW
-
-*(Punto 1.1.3 + Punto 2)*
-
----
-
-# 🟣 0. Conectarse a la VM desde la terminal del PC (inicio del examen)
+# 🟣 0. Conectarse a la VM desde la terminal del PC
 
 El examen **no se hace directamente en el PC**, sino en la **VM**,
 pero **accedes a la VM desde la terminal del PC del aula**:
@@ -92,7 +86,7 @@ sudo touch /var/www/agenda/img/foto.img
 sudo nano /etc/nginx/sites-available/multisite
 ```
 
-Pega este contenido (versión definitiva y memorizable):
+Contenido para escribir en multisite - versión definitiva:
 
 ```nginx
 server {
