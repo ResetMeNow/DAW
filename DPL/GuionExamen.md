@@ -189,7 +189,7 @@ ls -l /run/php/
 
 Reiniciar:
 
-```bash
+```
 sudo systemctl restart php*-fpm
 sudo systemctl status php*-fpm
 ```
@@ -252,10 +252,12 @@ Prueba en navegador:
 # 🟩 9. Logs si algo falla
 
 Escribe:
-``
+```
 ss -putnl
-``
+``` 
+
 Luego, si algo falla:
+
 ```
 sudo tail -n 50 /var/log/nginx/error.log
 sudo tail -n 50 /var/log/nginx/access.log
