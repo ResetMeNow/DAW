@@ -70,9 +70,12 @@ Contenido:
 ```
 <h1>NOMBRE DEL ARCHIVO</h1>
 ```
+### Tip📌
+**En el secreto.html escribe contenidos diferentes en ambos**
+
 ## 🔹 Imágenes falsas
 
-```bash
+```
 sudo touch /var/www/agenda/imagenesjpg/foto1.jpg
 sudo touch /var/www/agenda/imagenesjpg/foto2.jpeg
 sudo touch /var/www/agenda/img/foto.img
@@ -136,16 +139,25 @@ Guardar:
 ---
 
 # 🟩 4. Activar el multisite
-
-```bash
+Haces el symlink:
+```
 sudo ln -s /etc/nginx/sites-available/multisite /etc/nginx/sites-enabled/
 ```
+**Aquí va el momento crítico:**
+
+``sudo nginx -t``
+
+Si nginx -t dice OK:
+
+``sudo systemctl restart nginx``
+
+Si no → corregir la línea que indique → repetir ``nginx -t.``
 
 ---
 
 # 🟩 5. Comprobar y reiniciar Nginx
 
-```bash
+```
 sudo nginx -t
 sudo systemctl restart nginx
 sudo systemctl status nginx
@@ -157,14 +169,14 @@ Si da error → corregir línea → repetir.
 
 # 🟩 6. Instalar y configurar PHP-FPM (punto 2)
 
-```bash
+```
 sudo apt update
 sudo apt install -y php-fpm
 ```
 
 Editar el pool:
 
-```bash
+```
 sudo nano /etc/php/*/fpm/pool.d/www.conf
 ```
 
@@ -217,7 +229,7 @@ http://www.miagenda.com/info.php
 
 ### ✔ Desde la VM:
 
-```bash
+```
 curl http://localhost/info.php
 ```
 
@@ -227,7 +239,7 @@ curl http://localhost/info.php
 
 Edita hosts en el PC del aula:
 
-```bash
+```
 sudo nano /etc/hosts
 ```
 
