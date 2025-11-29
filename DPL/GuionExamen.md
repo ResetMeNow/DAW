@@ -78,8 +78,9 @@ Contenido:
 ## 🔹 Imágenes falsas
 
 ```
-sudo touch /var/www/agenda/imagenesjpg/foto1.jpg
-sudo touch /var/www/agenda/imagenesjpg/foto2.jpeg
+sudo touch /var/www/primero/imagenesjpg/foto1.jpg
+sudo touch /var/www/agenda/imagenesjpg/foto2.jpg
+sudo touch /var/www/agenda/imagenesjpg/foto3.jpeg
 sudo touch /var/www/agenda/img/foto.img
 ```
 
