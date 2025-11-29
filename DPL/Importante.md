@@ -117,6 +117,21 @@ Para crear carpetas, editar config, reiniciar nginx.
 
 ## Importantísimo :bangbang:
 
+> [!TIP]
+> Flujo recomendado justo antes o durante el examen (rápido)
+
+Comprueba enabled sites:
+
+```
+ls -l /etc/nginx/sites-enabled/
+```
+
+Si default aparece y quieres evitar problemas:
+
+```
+sudo rm /etc/nginx/sites-enabled/default
+```
+
 > [!WARNING]
 > Include snippets/fastcgi-php.conf — comprueba que existe
 
