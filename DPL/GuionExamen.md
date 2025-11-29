@@ -194,7 +194,7 @@ sudo systemctl restart php*-fpm
 sudo systemctl status php*-fpm
 ```
 
-### 📌**IMPORTANTE (REINICIA NGINX)** 
+### 📌**IMPORTANTE (VOLVER A REINICIAR NGINX)** 
 
 ```
 sudo systemctl restart nginx
