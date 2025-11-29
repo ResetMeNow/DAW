@@ -55,6 +55,12 @@ sudo nano /var/www/agenda/secreto/secreto.html
 sudo nano /var/www/agenda/secreto/interno/secreto.html
 sudo nano /var/www/agenda/internos/p404.html
 ```
+Escribir en todos los archivos:
+```
+<h1>NOMBRE DEL ARCHIVO</h1>
+```
+### Tip📌
+**En el ``secreto.html`` escribe contenidos diferentes en ambos**
 
 ## 🔹 PHP info
 
@@ -67,12 +73,6 @@ Contenido:
 ```php
 <?php phpinfo(); ?>
 ```
-```
-<h1>NOMBRE DEL ARCHIVO</h1>
-```
-
-### Tip📌
-**En el secreto.html escribe contenidos diferentes en ambos**
 
 ## 🔹 Imágenes falsas
 
