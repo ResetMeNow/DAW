@@ -144,6 +144,12 @@ Haces el symlink:
 ```
 sudo ln -s /etc/nginx/sites-available/multisite /etc/nginx/sites-enabled/
 ```
+☑️ Nota:
+Puedes usar el siguiente comando de manera OPCIONAL pero evita error si ya existe:
+
+```
+sudo ln -sf /etc/nginx/sites-available/multisite /etc/nginx/sites-enabled/
+```
 
 # 🟩 5. Comprobar y reiniciar Nginx
 
