@@ -298,6 +298,3 @@ Luego conéctate al servidor del profesor (credenciales que te dé él) y subes 
 * `try_files /imagenesjpg/$1.$2 =404;` para servir jpg desde `/imagenesjpg`. 
 * `/secreto` → `try_files $uri/interno/ $uri/ $uri =404;` para forzar que `/secreto` apunte a `/secreto/interno/secreto.html`. 
 * PHP: usa **php-fpm** y `fastcgi_pass unix:/run/php/php-fpm.sock;` (socket unix). Alternativa: `fastcgi_pass 127.0.0.1:9000;` si usan TCP. 
-
----
-
