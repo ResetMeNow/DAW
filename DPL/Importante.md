@@ -1,3 +1,121 @@
+# 🧪 Comprobaciones rápidas ANTES del examen (en tu VM)
+
+### ✔ 1) SSH funcionando
+
+Desde tu PC conéctate a la VM:
+
+``ssh alumno@IP_VM``
+
+### ✔ 2) nginx instalado y funcionando
+``sudo systemctl status nginx``
+
+Debe decir:
+
+``active (running)`` 
+
+Si no:
+
+``sudo apt install nginx`` 
+
+``sudo systemctl start nginx``
+
+### ✔ 3) php-fpm instalado y funcionando
+``sudo systemctl status php*-fpm``
+
+Si no:
+
+``sudo apt install php-fpm``
+
+### ✔ 4) Socket php-fpm existe
+``ls -l /run/php/``
+
+Debe verse algo como:
+
+``php8.2-fpm.sock``
+
+### ✔ 5) curl instalado
+``curl --version``
+
+Si no:
+``sudo apt install curl``
+
+### ✔ 6) nano instalado
+
+Normalmente ya viene:
+
+``nano --version``
+
+### ✔ 7) Comprueba que nginx puede reiniciar
+``sudo nginx -t``
+``sudo systemctl restart nginx``
+
+
+Si nginx -t va bien → perfecto.
+
+### ✔ 8) Comprueba conexión SFTP desde FileZilla
+
+En tu VM:
+
+``sudo systemctl status ssh``
+
+
+Debe decir:
+
+``active (running)``
+
+
+Si no:
+
+``sudo apt install openssh-server``
+``sudo systemctl enable --now ssh``
+
+
+En FileZilla (desde tu PC):
+
+```
+Host: sftp://IP_VM
+
+Usuario: alumno
+
+Puerto: 22
+```
+Debe conectar sin problemas.
+
+## 🟢 TODO LO QUE DEBE FUNCIONAR ANTES DEL EXAMEN
+
+Para que no tengas SORPRESAS el día del examen, asegúrate de:
+
+✔ SSH activo
+
+Puedes entrar a la VM.
+
+✔ nginx instalado y funcionando
+
+systemctl status nginx → running
+
+✔ php-fpm instalado
+
+systemctl status php*-fpm → running
+y el socket existe en /run/php/
+
+✔ curl funcional
+
+Para probar PHP dentro de la VM.
+
+✔ FileZilla conecta por SFTP
+
+Para subir la entrega final.
+
+✔ Máquina tiene IP fija o conocida
+
+Para usarla en /etc/hosts en el PC del examen.
+
+✔ Tu usuario tiene sudo sin errores
+
+Para crear carpetas, editar config, reiniciar nginx.
+
+---
+
 ### 👉Si Debian NO tuviera sudo (muy raro), entonces:
 
 Entras como root:
