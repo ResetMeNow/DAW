@@ -1,10 +1,6 @@
 Aquí lo tienes:
 
-# ✅ **GUION DEFINITIVO DEL EXAMEN (1.1.3 + PHP-FPM) — 100% COMPLETO, 100% DEBIAN, 100% OPERATIVO**
-
-Formato Markdown listo para tu GitHub.
-Este es **EL guion bueno**, el que debes estudiar, memorizar y entrenar.
-Incluye **todos los pasos reales del examen**, **todos los comandos**, **toda la configuración**, **toda la lógica**, **SSH**, **FileZilla**, **PHP-FPM**, **Nginx**, **entrega final**, **casos de error** y **pruebas**.
+# ✅ **GUION DEFINITIVO DEL EXAMEN (1.1.3 + PHP-FPM) — DEBIAN**
 
 ---
 
