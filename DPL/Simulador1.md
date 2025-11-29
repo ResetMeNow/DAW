@@ -1,8 +1,8 @@
-# Simulador **exacto** — Punto **1.1.3** (nginx multisite) + Punto **2** (nginx + PHP-FPM)
+# Simulador **exacto** — nginx multisite + nginx + PHP-FPM
 
 > Reglas: usa **nano** para editar archivos (HTML/DPL/PHP) y **touch** solo para imágenes. Todo en **Debian**. Sigue el orden.
 
----
+
 
 ## 0 — Conexión inicial (inicio del examen)
 
