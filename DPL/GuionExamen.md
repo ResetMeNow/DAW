@@ -144,17 +144,6 @@ Haces el symlink:
 ```
 sudo ln -s /etc/nginx/sites-available/multisite /etc/nginx/sites-enabled/
 ```
-**Aquí va el momento crítico:**
-
-``sudo nginx -t``
-
-Si nginx -t dice OK:
-
-``sudo systemctl restart nginx``
-
-Si no → corregir la línea que indique → repetir ``nginx -t.``
-
----
 
 # 🟩 5. Comprobar y reiniciar Nginx
 
