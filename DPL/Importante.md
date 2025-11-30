@@ -131,8 +131,35 @@ Comprueba enabled sites:
 ```
 ls -l /etc/nginx/sites-enabled/
 ```
+Opción rápida y segura (recomendada)
 
-Si default aparece y quieres evitar problemas:
+Haz esto como root (si estás con su -, sin sudo):
+
+Mover default y pris.daw.com a archivos “.disabled” (los desactivas pero los guardas):
+
+```
+mv /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/default.disabled 2>/dev/null || true
+mv /etc/nginx/sites-enabled/pris.daw.com /etc/nginx/sites-enabled/pris.daw.com.disabled 2>/dev/null || true
+```
+
+Comprobar sintaxis:
+
+``nginx -t``
+
+
+Si nginx -t dice OK → reinicia nginx:
+
+``systemctl restart nginx`` 
+``systemctl status nginx --no-pager``
+
+
+Si algo falla y quieres volver atrás, restaura:
+```
+mv /etc/nginx/sites-enabled/default.disabled /etc/nginx/sites-enabled/default 2>/dev/null || true
+mv /etc/nginx/sites-enabled/pris.daw.com.disabled /etc/nginx/sites-enabled/pris.daw.com 2>/dev/null || true
+nginx -t && systemctl restart nginx
+```
+Si default aparece y quieres evitar problemas(cuidado):
 
 ```
 sudo rm /etc/nginx/sites-enabled/default
