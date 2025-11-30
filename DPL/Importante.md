@@ -6,6 +6,12 @@ Desde tu PC conéctate a la VM:
 
 ``ssh alumno@IP_VM``
 
+El comando hostname -I te confirma cuál usa realmente como principal:
+
+``hostname -I`` 
+
+192.168.1.17 [...]
+
 ### ✔ 2) nginx instalado y funcionando
 ``sudo systemctl status nginx``
 
