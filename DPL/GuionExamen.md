@@ -247,6 +247,13 @@ Añade:
 IP_VM   www.miagenda.com
 ```
 
+Comprobar y reiniciar Nginx
+
+```
+sudo nginx -t
+sudo systemctl restart nginx
+sudo systemctl status nginx
+```
 Prueba en navegador:
 
 * `http://IP_VM/`
