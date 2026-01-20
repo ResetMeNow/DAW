@@ -14,7 +14,7 @@ php -v
 ```
 ✔️ Debe salir **PHP 8.x**
 
----
+
 
 ## Comprueba Composer
 
@@ -25,7 +25,7 @@ composer --version
 ✔️ Si aparece versión → perfecto
 ❌ Si no existe → lo instalamos
 
----
+
 
 ## 4️⃣ Comprueba Laravel Installer
 
@@ -36,18 +36,15 @@ laravel --version
 ✔️ Si aparece versión → **PASO 1 HECHO**
 ❌ Si no → lo instalamos con Composer
 
----
-
-
 
 Si ves eso → **Composer YA ESTÁ PERFECTO** 🎉
 
----
 > [!TIP]
 > Guía de como instalar.
 <details>
 
 <summary>Instalaciones</summary>
+
 # 🧩 PASO 1 — Instalar COMPOSER en LINUX 
 
 ## 🔹 1️⃣ Descargar el instalador de Composer
