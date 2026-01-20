@@ -209,6 +209,14 @@ code .
 
 # 💡 PASO 3 — Configuración inicial del proyecto
 
+## 0️⃣ Instalar dependencias del proyecto
+
+Algunos proyectos necesitan instalar las dependencias manualmente.
+
+```bash
+composer install
+```
+
 ## 1️⃣ Comprobar que el proyecto funciona
 
 Desde la carpeta del proyecto:
