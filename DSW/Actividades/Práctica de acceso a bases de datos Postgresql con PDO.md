@@ -1,118 +1,133 @@
-```md
-# Práctica: Acceso a bases de datos PostgreSQL con PDO
+````md
+# Práctica de acceso a bases de datos PostgreSQL con PDO
 
-Práctica de **Desarrollo Web en Entorno Servidor** cuyo objetivo es establecer una conexión desde PHP a una base de datos PostgreSQL utilizando la extensión **PDO**, realizar una consulta SQL de selección y procesar los datos obtenidos.
+## Objetivo
 
----
-
-## 🎯 Objetivo de la práctica
-
-- Conectarse a una base de datos PostgreSQL desde PHP.
-- Ejecutar una consulta SQL de tipo `SELECT`.
-- Procesar y mostrar los datos devueltos por la consulta.
-- Utilizar la extensión **PDO para PostgreSQL (pdo_pgsql)**.
+El objetivo de esta práctica es conectarse a una base de datos PostgreSQL desde PHP utilizando la extensión **PDO**, ejecutar una sentencia SQL de selección y procesar los datos devueltos por dicha consulta.
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## Tareas a realizar
 
-- PHP 8
-- PostgreSQL
-- PDO (`php8.3-pdo-pgsql`)
-- Linux (entorno de desarrollo)
+### Tarea 1: Descarga e instalación de PostgreSQL
 
----
+Para la realización de la práctica se debe instalar el gestor de bases de datos PostgreSQL en el sistema Linux.
 
-## 📂 Estructura del proyecto
+Una vez instalado PostgreSQL, se accede a la consola de administración ejecutando:
 
-```
-
-acceso-bbdd-pdo/
-├── index.php
-├── README.md
-└── database/
-└── script.sql
-
+```bash
+sudo -u postgres psql
 ````
 
-- `index.php`: script PHP que realiza la conexión y la consulta.
-- `database/script.sql`: script de creación de la base de datos, tablas y datos.
-- `README.md`: documentación de la práctica.
+A continuación, se cambia la contraseña del usuario `postgres`:
+
+```sql
+ALTER USER postgres PASSWORD '123456';
+```
 
 ---
 
-## 🗄️ Base de datos
+### Tarea 2: Creación de la base de datos y tablas
 
-La base de datos utilizada se llama **`tienda`** y contiene las siguientes tablas:
-
-- `fabricante`
-- `producto`
-
-### Creación de la base de datos
-
-Desde la consola de PostgreSQL:
+Se crea la base de datos `tienda` asignando como propietario al usuario `postgres`:
 
 ```sql
 CREATE DATABASE tienda OWNER postgres;
-````
+```
 
-### Ejecución del script SQL
+Una vez creada, se accede a la base de datos:
 
 ```sql
 \c tienda
-\i database/script.sql
 ```
 
-Para comprobar que los datos se han cargado correctamente:
+A continuación, se ejecuta el script SQL que crea las tablas `fabricante` y `producto` e inserta los datos iniciales:
+
+```sql
+\i ruta_absoluta/script.sql
+```
+
+Para comprobar que los datos se han insertado correctamente, se puede ejecutar la siguiente consulta:
 
 ```sql
 SELECT * FROM producto;
 ```
 
+Para salir de la consola de PostgreSQL:
+
+```sql
+exit;
+```
+
 ---
 
-## ⚙️ Configuración del entorno
+### Tarea 3: Instalación del controlador PDO para PostgreSQL
 
-### Instalación de PostgreSQL
-
-```bash
-sudo apt install postgresql
-```
-
-### Instalación del controlador PDO para PostgreSQL
+Se instala el paquete necesario para poder acceder a PostgreSQL desde PHP mediante PDO:
 
 ```bash
-sudo apt install php8.3-pdo-pgsql
+sudo apt-get install php8.3-pdo-pgsql
 ```
 
-### Configuración de PHP
+Después, se debe comprobar que la extensión está habilitada en el archivo `php.ini`, ubicado en:
 
-En el archivo `php.ini` se debe comprobar que la extensión está habilitada:
+```
+/etc/php/8.3/fpm/php.ini
+```
+
+Se verifica que la siguiente línea esté activa:
 
 ```
 extension=pdo_pgsql
 ```
 
-Tras la modificación, reiniciar el servidor web:
+Tras realizar los cambios, se reinicia el servidor web para que la configuración tenga efecto:
 
 ```bash
-sudo systemctl restart apache2
-# o
 sudo systemctl restart nginx
+```
+
+(o Apache, en caso de utilizarlo).
+
+---
+
+### Tarea 4: Implementación del script PHP
+
+Se crea un script PHP que realice las siguientes acciones:
+
+* Conexión a la base de datos PostgreSQL mediante PDO.
+* Ejecución de una consulta SQL de selección sobre la tabla `producto`.
+* Procesamiento y visualización de los datos devueltos por la consulta.
+
+El script debe manejar correctamente los posibles errores de conexión o ejecución de la consulta.
+
+---
+
+## Resultado esperado
+
+* Conexión correcta a la base de datos `tienda`.
+* Ejecución de una consulta `SELECT`.
+* Visualización de los datos obtenidos de la tabla `producto`.
+
+---
+
+## Observaciones
+
+Esta práctica sirve como base para prácticas posteriores en las que se desarrollará una API REST en PHP reutilizando la conexión a la base de datos y las consultas SQL realizadas.
+
 ```
 
 ---
 
-## 🔌 Conexión a la base de datos desde PHP
+🔹 Sigue **exactamente el PDF**  
+🔹 Orden correcto  
+🔹 Lenguaje académico  
+🔹 No añade API, Postman ni Git (todavía)
 
-El script PHP realiza:
+👉 **Siguiente paso**, cuando tú digas:  
+empezamos **solo** con la **Tarea 4** y escribimos el `index.php` paso a paso.
 
-* La conexión a PostgreSQL mediante PDO.
-* La ejecución de una consulta de selección sobre la tabla `producto`.
-* La visualización de los resultados obtenidos.
-
-La conexión se realiza utilizando los parámetros de conexión adecuados (servidor, base de datos, usuario y contraseña).
-
----
+Avísame cuando estés lista.
+```
 
 
