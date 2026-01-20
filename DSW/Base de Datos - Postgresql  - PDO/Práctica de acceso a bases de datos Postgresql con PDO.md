@@ -116,17 +116,5 @@ Esta práctica sirve como base para prácticas posteriores en las que se desarro
 
 ```
 
----
-
-🔹 Sigue **exactamente el PDF**  
-🔹 Orden correcto  
-🔹 Lenguaje académico  
-🔹 No añade API, Postman ni Git (todavía)
-
-👉 **Siguiente paso**, cuando tú digas:  
-empezamos **solo** con la **Tarea 4** y escribimos el `index.php` paso a paso.
-
-Avísame cuando estés lista.
-```
 
 
