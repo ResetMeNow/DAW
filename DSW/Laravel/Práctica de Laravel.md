@@ -37,7 +37,7 @@ laravel --version
 ❌ Si no → lo instalamos con Composer
 
 
-### Si ves eso → **Composer YA ESTÁ PERFECTO** 🎉
+### Si ves eso → **Ready** 
 
 > [!TIP]
 > Guía de como instalar.
@@ -117,8 +117,7 @@ Composer version 2.9.3
 ```
 > Importante: `exit` de root para continuar con Laravel.
 
-# ⏭️ PASO 2 — Instalar Laravel Installer (YA)
-
+# ⏭️ PASO 2 — Instalar Laravel Installer 
 Ejecuta:
 
 ```bash
@@ -164,9 +163,6 @@ source ~/.bashrc
 ```bash
 laravel --version
 ```
-
-Si sale versión →
-🎉 **PASO 1 COMPLETADO AL 100 %** 🎉
 
 
 </details>
