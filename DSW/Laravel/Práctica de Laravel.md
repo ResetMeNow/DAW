@@ -168,3 +168,40 @@ laravel --version
 </details>
 
 
+# 🚀 PASO 2 — Crear el proyecto Laravel
+
+(esto ya es la práctica como tal)
+
+## 1️⃣ Elige carpeta de trabajo
+
+```bash
+cd ~
+```
+
+## 2️⃣ Crear el proyecto **GestorProductos**
+
+
+```bash
+laravel new GestorProductos
+```
+
+⏳ Tardará 1–2 minutos.
+
+Cuando termine, debería aparecer una carpeta:
+
+```bash
+GestorProductos/
+```
+
+## 3️⃣ Entra al proyecto y ábrelo en VS Code
+
+```bash
+cd GestorProductos
+code .
+```
+
+## 🧠
+
+> *He creado un nuevo proyecto Laravel usando el instalador oficial, que genera la estructura MVC completa del framework.*
+
+---
