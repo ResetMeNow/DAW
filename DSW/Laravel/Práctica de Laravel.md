@@ -235,8 +235,6 @@ php8.3-bcmath
 
 ⏳ Tarda poco.
 
----
-
 ### ⚠️ Comprueba que PHP ya las tiene
 
 ```bash
@@ -245,7 +243,6 @@ php -m | grep -E "mbstring|xml|curl|zip|sqlite"
 
 Si ves nombres → ✔️ correcto.
 
----
 ### ⚠️ Problema detectado durante la instalación
 
 Composer requiere `git` para descargar ciertas dependencias.
@@ -262,19 +259,18 @@ composer install
 ```
 Si la instalación de composer da problemas, sigue estos pasos:
 
-⚠️ Borra vendor (limpio)
+### ⚠️ Borra vendor (limpio)
 
 ```bash
 rm -rf vendor
 ```
-Instala **SIN dependencias de desarrollo
+### Instala **SIN** dependencias de desarrollo
 
 Ejecuta **tal cual**:
 
 ```bash
 composer install --no-dev --ignore-platform-reqs --prefer-dist --no-interaction --no-progress
 ```
-
 💡 Esto **salta completamente `laravel/pint`**.
 
 </details>
