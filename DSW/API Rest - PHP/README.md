@@ -61,7 +61,9 @@ Perfecto, te lo explico **muy simple y práctico**, solo lo justo para **esta AP
 * Pulsa **Send**
 
 👉 Debe devolver **un solo producto en JSON**.
-![Postman](image.png)
+
+<img src="![Postman](image.png)" width="100" height="100"/>
+
 ---
 
 </details>
