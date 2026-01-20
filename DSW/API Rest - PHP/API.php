@@ -9,45 +9,40 @@ $password = '123456';
 $TOKEN = "123ABC";
 
 try {
-    $dsn = "pgsql:host=$host;dbname=$dbname";
-    $pdo = new PDO($dsn, $user, $password, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-    ]);
+    $pdo = new PDO(
+        "pgsql:host=$host;dbname=$dbname",
+        $user,
+        $password,
+        [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        ]
+    );
 
     $method = $_SERVER['REQUEST_METHOD'];
 
-    // ===== GET =====
+    /* ========= GET ========= */
     if ($method === 'GET') {
-
         if (isset($_GET['id'])) {
             $stmt = $pdo->prepare("SELECT * FROM producto WHERE id = :id");
             $stmt->execute(['id' => $_GET['id']]);
-            $data = $stmt->fetch();
+            echo json_encode($stmt->fetch());
         } else {
             $stmt = $pdo->query("SELECT * FROM producto");
-            $data = $stmt->fetchAll();
+            echo json_encode($stmt->fetchAll());
         }
-
-        echo json_encode($data);
     }
 
-    // ===== POST =====
+    /* ========= POST ========= */
     elseif ($method === 'POST') {
-
-        if (!isset($_SERVER['HTTP_AUTHORIZATION'])) {
-            http_response_code(401);
-            echo json_encode(["error" => "Token no proporcionado"]);
-            exit;
-        }
-
-        if ($_SERVER['HTTP_AUTHORIZATION'] !== "Bearer $TOKEN") {
+        if (!isset($_SERVER['HTTP_AUTHORIZATION']) ||
+            $_SERVER['HTTP_AUTHORIZATION'] !== "Bearer $TOKEN") {
             http_response_code(403);
-            echo json_encode(["error" => "Token incorrecto"]);
+            echo json_encode(["error" => "Token inválido"]);
             exit;
         }
 
-        $input = json_decode(file_get_contents("php://input"), true);
+        $data = json_decode(file_get_contents("php://input"), true);
 
         $stmt = $pdo->prepare(
             "INSERT INTO producto (nombre, precio, id_fabricante)
@@ -55,12 +50,64 @@ try {
         );
 
         $stmt->execute([
-            'nombre' => $input['nombre'],
-            'precio' => $input['precio'],
-            'id_fabricante' => $input['id_fabricante']
+            'nombre' => $data['nombre'],
+            'precio' => $data['precio'],
+            'id_fabricante' => $data['id_fabricante']
         ]);
 
         echo json_encode(["mensaje" => "Producto insertado correctamente"]);
+    }
+
+    /* ========= PUT ========= */
+    elseif ($method === 'PUT') {
+        if (!isset($_SERVER['HTTP_AUTHORIZATION']) ||
+            $_SERVER['HTTP_AUTHORIZATION'] !== "Bearer $TOKEN") {
+            http_response_code(403);
+            echo json_encode(["error" => "Token inválido"]);
+            exit;
+        }
+
+        if (!isset($_GET['id'])) {
+            echo json_encode(["error" => "ID no proporcionado"]);
+            exit;
+        }
+
+        $data = json_decode(file_get_contents("php://input"), true);
+
+        $stmt = $pdo->prepare(
+            "UPDATE producto
+             SET nombre = :nombre, precio = :precio, id_fabricante = :id_fabricante
+             WHERE id = :id"
+        );
+
+        $stmt->execute([
+            'nombre' => $data['nombre'],
+            'precio' => $data['precio'],
+            'id_fabricante' => $data['id_fabricante'],
+            'id' => $_GET['id']
+        ]);
+
+        echo json_encode(["mensaje" => "Producto actualizado correctamente"]);
+    }
+
+    /* ========= DELETE ========= */
+    elseif ($method === 'DELETE') {
+        if (!isset($_SERVER['HTTP_AUTHORIZATION']) ||
+            $_SERVER['HTTP_AUTHORIZATION'] !== "Bearer $TOKEN") {
+            http_response_code(403);
+            echo json_encode(["error" => "Token inválido"]);
+            exit;
+        }
+
+        if (!isset($_GET['id'])) {
+            echo json_encode(["error" => "ID no proporcionado"]);
+            exit;
+        }
+
+        $stmt = $pdo->prepare("DELETE FROM producto WHERE id = :id");
+        $stmt->execute(['id' => $_GET['id']]);
+
+        echo json_encode(["mensaje" => "Producto eliminado correctamente"]);
     }
 
 } catch (PDOException $e) {

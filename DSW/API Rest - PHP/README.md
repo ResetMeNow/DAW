@@ -161,7 +161,7 @@ Dentro de `psql`:
 \d producto;
 ```
 
-## ✅ Problemas con el id, PASO 1.
+## ✅ Problemas con el id.
 
 ### Opción recomendada (PostgreSQL moderno):
 
@@ -204,9 +204,66 @@ Esto:
 
 ---
 
+# API REST – Tarea evaluable (PUT y DELETE)
 
+Se amplía la API REST para permitir la modificación y eliminación de productos mediante los verbos HTTP PUT y DELETE.
 
+### Características
+- Método PUT: modifica todos los campos de un producto dado su id
+- Método DELETE: elimina un producto dado su id
+- Uso obligatorio de Bearer Token
+- El id del producto se pasa por parámetro GET
+- Respuesta en formato JSON indicando éxito o error
 
+---
+## 📮 Postman – Cómo probar (OBLIGATORIO)
+<details>
+<summary>Desplegar para ver pasos a seguir</summary>
 
+### 🔁 PUT
+
+* Método: **PUT**
+* URL:
+
+```
+http://192.168.1.13/API.php?id=1
+```
+
+* Authorization → Bearer Token → `123ABC`
+* Body → raw → JSON:
+
+```json
+{
+  "nombre": "Producto modificado",
+  "precio": 999,
+  "id_fabricante": 1
+}
+```
+
+Respuesta esperada:
+
+```json
+{ "mensaje": "Producto actualizado correctamente" }
+```
+
+---
+
+### ❌ DELETE
+
+* Método: **DELETE**
+* URL:
+
+```
+http://192.168.1.13/API.php?id=1
+```
+
+* Authorization → Bearer Token → `123ABC`
+
+Respuesta esperada:
+
+```json
+{ "mensaje": "Producto eliminado correctamente" }
+```
+</details>
 
 
