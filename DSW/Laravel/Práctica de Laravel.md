@@ -167,6 +167,7 @@ laravel --version
 
 </details>
 
+---
 
 # 🚀 PASO 2 — Crear el proyecto Laravel
 
