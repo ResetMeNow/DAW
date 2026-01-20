@@ -114,7 +114,6 @@ El script debe manejar correctamente los posibles errores de conexión o ejecuci
 
 Esta práctica sirve como base para prácticas posteriores en las que se desarrollará una API REST en PHP reutilizando la conexión a la base de datos y las consultas SQL realizadas.
 
-```
 
 
 
