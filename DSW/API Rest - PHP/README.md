@@ -8,7 +8,7 @@ API REST en PHP que permite consultar los productos almacenados en la base de da
 
 La respuesta se devuelve en formato JSON.
 
-## 📮Postman – Cómo probar el GET
+## 📮Postman – Cómo probar el GET 
 
 <details>
 
@@ -80,7 +80,7 @@ Se amplía la API REST para permitir la inserción de nuevos productos en la bas
 
 Las peticiones POST se realizan usando la herramienta Postman.
 
-## 📮 Postman – Cómo probar el POST (OBLIGATORIO)
+## 📮 Postman – Cómo probar el POST 
 
 <details>
 
@@ -216,7 +216,7 @@ Se amplía la API REST para permitir la modificación y eliminación de producto
 - Respuesta en formato JSON indicando éxito o error
 
 ---
-## 📮 Postman – Cómo probar (OBLIGATORIO)
+## 📮 Postman – Cómo probar PUT y DELETE
 <details>
 <summary>Desplegar para ver pasos a seguir</summary>
 
