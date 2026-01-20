@@ -99,7 +99,8 @@ Se crea un script PHP que realice las siguientes acciones:
 * Procesamiento y visualización de los datos devueltos por la consulta.
 
 El script debe manejar correctamente los posibles errores de conexión o ejecución de la consulta.
-
+> [!IMPORTANT]
+> Script aquí: [script-tarea.php](https://github.com/ResetMeNow/DAW/blob/main/DSW/Base%20de%20Datos%20-%20Postgresql%20%20-%20PDO/script-tarea.php).
 ---
 
 ## Resultado esperado
@@ -113,6 +114,21 @@ El script debe manejar correctamente los posibles errores de conexión o ejecuci
 ## Observaciones
 
 Esta práctica sirve como base para prácticas posteriores en las que se desarrollará una API REST en PHP reutilizando la conexión a la base de datos y las consultas SQL realizadas.
+
+---
+
+## Práctica 2: Acceso a BBDD con PDO usando formulario
+
+En esta práctica se modifica el script anterior para que la conexión a la base de datos se realice a partir de los datos introducidos por el usuario mediante un formulario HTML.
+
+### Funcionamiento
+- Se muestra un formulario con los campos de conexión.
+- Al enviar el formulario (método POST), el script intenta conectarse a PostgreSQL mediante PDO.
+- Si la conexión falla, se muestra un mensaje de error.
+- Si la conexión es correcta:
+  - Se ejecuta una consulta `SELECT * FROM producto`
+  - Se muestran los datos obtenidos
+  - Se indica el número total de filas devueltas por la consulta
 
 
 
