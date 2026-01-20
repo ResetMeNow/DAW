@@ -45,7 +45,7 @@ laravel --version
 
 <summary>Instalaciones</summary>
 
-# 🧩 PASO 1 — Instalar COMPOSER en LINUX 
+# ⏭️ PASO 1 — Instalar COMPOSER en LINUX 
 
 ## 🔹 1️⃣ Descargar el instalador de Composer
 
