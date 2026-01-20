@@ -20,7 +20,8 @@ Perfecto, te lo explico **muy simple y práctico**, solo lo justo para **esta AP
 
 ### 1️⃣ Abrir Postman
 
-* Abre **Postman** en Windows (no en la MV)
+* Abre **Postman** en el sistema principal si estas conectado a la ip de la MV.
+* Abre **Postman** en el sistema que estés usando en cualquier otro caso.
 
 ---
 
