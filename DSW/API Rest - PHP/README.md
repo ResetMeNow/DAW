@@ -1,4 +1,4 @@
-# API REST PHP – Paso 1 (GET)
+# 1️⃣ API REST PHP – Paso 1 (GET)
 
 API REST en PHP que permite consultar los productos almacenados en la base de datos `tienda`.
 
@@ -67,7 +67,7 @@ La respuesta se devuelve en formato JSON.
 
 ---
 
-# API REST – Paso 2 (POST con Bearer Token)
+# 2️⃣ API REST – Paso 2 (POST con Bearer Token)
 
 Se amplía la API REST para permitir la inserción de nuevos productos en la base de datos mediante peticiones HTTP POST.
 
@@ -204,7 +204,7 @@ Esto:
 
 ---
 
-# API REST – Tarea evaluable (PUT y DELETE)
+# 3️⃣ API REST – Tarea evaluable (PUT y DELETE)
 
 Se amplía la API REST para permitir la modificación y eliminación de productos mediante los verbos HTTP PUT y DELETE.
 
