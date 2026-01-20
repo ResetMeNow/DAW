@@ -143,11 +143,11 @@ GET /API.php
 ---
 
 > [!WARNING]
-> Soluciones ⬇️
+> ❌Posibles problemas con la BBDD
 <details>
-<summary>❌Posibles problemas con la BBDD</summary>
+<summary>Soluciones ⬇️</summary>
 
- 
+---
 
 Dentro de `psql`:
 
