@@ -215,6 +215,7 @@ code .
 <details>
 
 <summary>Desplegar</summary>
+
 ## 0️⃣ Instalar dependencias del proyecto
 
 Algunos proyectos necesitan instalar las dependencias manualmente.
@@ -252,6 +253,8 @@ Luego:
 composer install
 ```
 </details>
+
+---
 
 ## 1️⃣ Comprobar que el proyecto funciona
 
