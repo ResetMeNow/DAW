@@ -88,7 +88,7 @@ composer --version
 
 ## ✅ SOLUCIÓN 
 
-Estás como `root`, así que ejecuta **tal cual**:
+Si estás como `root`, ejecuta **tal cual** si no, usa root:
 
 ```bash
 mv /usr/local/bin/composer.phar /usr/local/bin/composer
@@ -115,11 +115,58 @@ composer --version
 ```
 Composer version 2.9.3
 ```
+> Importante: `exit` de root para continuar con Laravel.
 
+# ⏭️ PASO 2 — Instalar Laravel Installer (YA)
 
+Ejecuta:
 
+```bash
+composer global require laravel/installer
+```
 
+⏳ Tardará un poco.
 
+---
+
+## 🔧 Añadir Laravel al PATH (MUY IMPORTANTE)
+
+Cuando termine, ejecuta:
+
+```bash
+echo $HOME/.config/composer/vendor/bin
+```
+
+Ahora abre tu `~/.bashrc`:
+
+```bash
+nano ~/.bashrc
+```
+
+Y **al final del archivo** añade:
+
+```bash
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+```
+
+Guarda (`Ctrl+O` → Enter) y sal (`Ctrl+X`).
+
+Luego recarga:
+
+```bash
+source ~/.bashrc
+```
+
+---
+
+## 🔎 Comprobación final del PASO 1
+
+```bash
+laravel --version
+```
+
+Si sale versión →
+🎉 **PASO 1 COMPLETADO AL 100 %** 🎉
 
 
 </details>
