@@ -50,7 +50,7 @@ default_type application/octet-stream;
 
 ---
 
-# 🎯 Respuesta de examen:
+# 🎯 Respuesta:
 
 > Como PHP no está configurado ni existe su MIME, nginx encuentra el archivo info.php pero no lo ejecuta. Usa el tipo por defecto `application/octet-stream`, así que el navegador lo descarga.
 
@@ -117,7 +117,7 @@ Por tanto…
 
 ---
 
-# 🎯Respuesta de examen:
+# 🎯Respuesta:
 > nginx usará el primer servidor porque tiene la directiva default_server. Como la petición llega por IP y no coincide con ningún server_name, el server por defecto es el que se selecciona.
 
 ---
@@ -140,19 +140,21 @@ server {
 
 Y en el sistema de archivos existen:
 
+```
 /var/www/primero/primero.html
 /var/www/primero/subprimero.html
 /var/www/primero/carpeta/subprimero.html
+```
 
 👉 Preguntas:
 1) Si el cliente pide simplemente:
-http://servidor/
+```http://servidor/```
 
 
 ¿QUÉ ARCHIVO sirve nginx?
 
 2) Si el cliente pide:
-http://servidor/carpeta/
+```http://servidor/carpeta/```
 
 
 ¿QUÉ ARCHIVO sirve nginx?
@@ -160,7 +162,8 @@ http://servidor/carpeta/
 ## 🤓 CÓMO SABER QUÉ INDEX COGE NGINX
 > 📌 Regla 1 — Existe un location = /
 
-```location = / {
+```
+location = / {
     index primero.html;
 } 
 ```
@@ -233,23 +236,25 @@ server {
 
 Y en tu sistema tienes:
 
+```
 /var/www/agenda/imagenesjpg/foto1.jpg
 /var/www/agenda/imagenesjpg/foto2.jpeg
+```
 
 
 Quieres que si el cliente pide:
 
-http://www.miagenda.com/foto1.jpg
+``http://www.miagenda.com/foto1.jpg``
 
 
 o
 
-http://www.miagenda.com/foto2.jpeg
+``http://www.miagenda.com/foto2.jpeg``
 
 
 nginx siempre use la carpeta:
 
-/var/www/agenda/imagenesjpg/
+``/var/www/agenda/imagenesjpg/``
 
 
 para localizar la imagen.
@@ -257,11 +262,11 @@ Eso implica usar:
 
 location con expresión regular
 
-~* (case-insensitive)
+``~* (case-insensitive)``
 
 Captura del nombre y la extensión
 
-try_files con $1 y $2
+``try_files con $1 y $2``
 
 --- 
 
@@ -278,7 +283,7 @@ Si el usuario pide:
 da igual dónde estén esos archivos:
 nginx debe buscarlos siempre en:
 
-/var/www/agenda/imagenesjpg/
+``/var/www/agenda/imagenesjpg/``
 
 
 Y si no existen → 404.
@@ -288,11 +293,11 @@ Y si no existen → 404.
 Con una expresión regular dentro del location.
 
 La sintaxis es:
-
+``
 location ~* REGEX {
     ...
 }
-
+``
 
 ~ → regex
 
@@ -306,32 +311,24 @@ El nombre del archivo
 
 La extensión (jpg o jpeg)
 
-La regex:
-
-/([[:alnum:]]+)\.(jpe?g)$
-
-Desglose:
-Parte	Significado
-/	La ruta empieza por /
-([[:alnum:]]+)	Captura el nombre del archivo (letras y números). Se guarda en $1.
-\.	Un punto literal.
-(jpe?g)	Captura la extensión (jpg o jpeg). ? significa que la "e" es opcional. Se guarda en $2.
-$	Fin de la cadena.
 ## 4️⃣ ¿Qué hace try_files?
-try_files /imagenesjpg/$1.$2 =404;
+
+``try_files /imagenesjpg/$1.$2 =404;``
 
 
 nginx probará:
 
-/var/www/agenda/imagenesjpg/NOMBRE.EXT
+``/var/www/agenda/imagenesjpg/NOMBRE.EXT``
 
 si no existe → error 404
 
 ## 5️⃣ Bloque entero explicado línea por línea
+
+``
 location ~* /([[:alnum:]]+)\.(jpe?g)$ {
     try_files /imagenesjpg/$1.$2 =404;
 }
-
+``
 ✔ location ~* ...
 
 Captura cualquier petición a un .jpg o .jpeg, sin importar mayúsculas.
@@ -347,20 +344,21 @@ Extensión capturada (jpg o jpeg).
 ✔ try_files /imagenesjpg/...
 
 Obliga a nginx a buscar siempre dentro de la carpeta imagenesjpg, aunque el usuario pida:
-
+``
 /foto.jpg
 /carpeta/otra/foto.jpg
 /loquesea/foto.jpeg
-
+``
 ✔ =404
 
 Si el archivo no existe → nginx responde 404 Not Found.
 
-🎯 Resumen (lo que debes grabarte para el examen)
+🎯 Resumen
+``
 location ~* /([[:alnum:]]+)\.(jpe?g)$ {
     try_files /imagenesjpg/$1.$2 =404;
 }
-
+``
 
 ~* → regex sin distinguir mayúsculas
 
@@ -377,38 +375,38 @@ si no existe → 404
 # 🟣 Añadir un tipo MIME personalizado (para .img como si fueran .png)
 
 En el ejercicio del PDF, se pide que en el segundo servidor, cualquier archivo con extensión:
-
-.img
+``
+.img``
 
 
 sea enviado al cliente como si fuera:
-
-image/png
+``
+image/png``
 
 
 Es decir, tratar archivos .img como imágenes PNG.
 
-## 🔥 ¿Por qué hay que hacer esto?
+## 🔥 ¿Por qué?
 
-Imagínate que tienes una imagen:
+Tienes una imagen:
 
-foto.png
+``foto.png``
 
 
 pero le cambias el nombre a:
 
-foto.img
+``foto.img``
 
 
 Al pedirla desde el navegador…
 
-/img/foto.img
+``/img/foto.img``
 
 
 El navegador no sabrá qué tipo de contenido es, porque .img NO existe en mime.types.
 Entonces nginx usaría:
 
-default_type application/octet-stream;
+``default_type application/octet-stream;``
 
 
 ➡ Eso provoca que el navegador la descargue, en lugar de mostrarla.
@@ -418,25 +416,26 @@ Por eso necesitamos enseñar a nginx que .img es lo mismo que un .png.
 ## 🟣 ¿Cómo se añade un tipo MIME en nginx?
 
 Se usa la directiva:
-
+``
 types {
     MIME_TYPE extension;
 }
-
+``
 
 Ejemplo general:
-
+``
 types {
     text/html dpl;
     image/png img;
 }
-
-## 🟢 Explicación del bloque exacto que debes memorizar
+``
+## 🟢 Explicación
+``
 types {
     text/html dpl;
     image/png img;
 }
-
+``
 ✔ types { ... }
 
 Esta directiva permite añadir o modificar tipos MIME solo dentro del server en el que se define.
@@ -449,7 +448,7 @@ para cualquier archivo con extensión .img
 
 nginx enviará el encabezado:
 
-Content-Type: image/png
+``Content-Type: image/png``
 
 
 ➡ El navegador recibirá foto.img pero lo interpretará como una imagen PNG, y la mostrará correctamente.
@@ -462,19 +461,19 @@ Porque también hacía falta que .dpl sea interpretado como HTML.
 
 En nginx, si tú usas:
 
-types { ... }
+``types { ... }``
 
 
 dentro de un server, se anulan todos los MIME heredados del contexto global a menos que los incluyas otra vez.
 
 Por eso el PDF utiliza:
 
-include mime.types;
+``include mime.types;``
 
-types {
+``types {
     text/html dpl;
     image/png img;
-}
+}``
 
 
 Esto significa:
@@ -487,16 +486,18 @@ Añadir MIME extra para nuevas extensiones (dpl, img)
 
 ## 🟢 Resultado final
 # Añadir MIME personalizados dentro del server
-
+```
 include mime.types;
 >
 types {
     # Interpretar archivos .dpl como páginas HTML
     text/html dpl;
-
     # Interpretar archivos .img como imágenes PNG
     image/png img;
 }
+>
+```
+
 # 🟣 Directiva internal + Página de error personalizada (404)
 
 Te lo explico todo directamente, claro y perfecto para examen.
@@ -524,7 +525,7 @@ pero que el usuario NO pueda visitar directamente
 
 La página era:
 
-/internos/p404.html
+``/internos/p404.html``
 
 
 Queremos:
@@ -536,7 +537,7 @@ si el usuario visita /internos/p404.html → 403 Forbidden
 Para eso usamos error_page + internal.
 
 # 🟪 Paso 1 — Definir la página de error 404
-error_page 404 /internos/p404.html;
+``error_page 404 /internos/p404.html;``
 
 
 Esto significa:
@@ -548,10 +549,11 @@ en vez de mostrar la típica página fea
 servirá el archivo p404.html que está en /internos
 
 # 🟪 Paso 2 — Proteger la ruta usando internal
+``
 location /internos {
     internal;
 }
-
+``
 ✔ Significado:
 
 cualquier intento del usuario de entrar a /internos/... dará 403 Forbidden
@@ -560,28 +562,30 @@ pero nginx sí podrá entrar ahí cuando necesite entregar la página 404 person
 
 Este comportamiento es EXACTAMENTE lo que pide el profesor.
 
-# 🟣 Código final completo que debes memorizar
+# 🟣 Código final completo
 # Página de error 404 personalizada
-error_page 404 /internos/p404.html;
+``error_page 404 /internos/p404.html;``
 
 # Directorio interno: solo accesible por nginx, no por el cliente
+``
 location /internos {
     internal;
 }
+``
 
-# 🟢 ¿Qué ocurre paso a paso?
+# 🟢 ¿Qué ocurre?
 📌 Caso 1: El cliente pide un archivo que no existe
 
 Ejemplo:
 
-/noexiste.html
+``/noexiste.html``
 
 
 nginx ve que no existe → 404
 
 busca la página de error definida en:
 
-/internos/p404.html
+``/internos/p404.html``
 
 
 aunque está en un location internal, nginx sí puede acceder
@@ -594,7 +598,7 @@ el cliente NO ve la URL real del archivo interno
 
 El navegador pide:
 
-/internos/p404.html
+``/internos/p404.html``
 
 
 Pero nginx responde:
@@ -605,7 +609,7 @@ Pero nginx responde:
 ¿Por qué?
 ✔ Porque internal bloquea accesos directos de clientes.
 
-# 🟣 Resumen para examen
+# 🟣 Resumen
 - `error_page 404 /internos/p404.html;`
   → nginx usará esa página cuando haya un 404.
 
@@ -617,13 +621,11 @@ Pero nginx responde:
 
 # 🟣 Redirección interna con try_files dentro de /secreto
 
-Este es el ejercicio donde el profesor pide que:
-
 Cuando entres a /secreto o /secreto/
 
 nginx te lleve automáticamente a:
 
-/secreto/interno/secreto.html
+``/secreto/interno/secreto.html``
 
 
 Independientemente de si el usuario pone el archivo o no.
@@ -633,42 +635,41 @@ Vamos a explicarlo todo clarísimo, con el código final y la lógica interna pa
 # 🟪 Situación inicial
 
 Estructura de directorios:
-
+``
 /var/www/agenda/secreto/secreto.html
 /var/www/agenda/secreto/interno/secreto.html
+``
 
-
-El profesor quiere:
+Se quiere:
 
 ✔ /secreto
 ✔ /secreto/
 ❗ ambos deben mostrar automáticamente:
-/secreto/interno/secreto.html
+``/secreto/interno/secreto.html``
 
 
 Pero si el usuario pide:
 
-/secreto/secreto.html
+``/secreto/secreto.html``
 
 
 Debe mostrar el que está en /secreto/, no el de interno.
 
 —
 
-# 🟪 Código que se usa en el PDF (y que debes aprender):
+# 🟪 Código que se usa en el PDF:
+``
 location /secreto {
     index secreto.html;
     try_files $uri/interno/ $uri/ $uri =404;
 }
-
-
-Vamos a explicarlo perfectamente:
+``
 
 # 🟣 Explicación completa del try_files
 
 El bloque es:
 
-try_files $uri/interno/ $uri/ $uri =404;
+``try_files $uri/interno/ $uri/ $uri =404;``
 
 
 Cada opción se prueba en orden.
@@ -677,9 +678,9 @@ Cada opción se prueba en orden.
 
 Esto significa:
 
-si $uri es /secreto
+si ``$uri`` es /secreto
 
-nginx prueba: /secreto/interno/
+nginx prueba: ``/secreto/interno/``
 
 Si existe un directorio llamado interno dentro de secreto, nginx hace una redirección implícita y vuelve a evaluar /secreto/interno/.
 
@@ -689,17 +690,17 @@ Si existe un directorio llamado interno dentro de secreto, nginx hace una redire
 
 Si ahora la URI es:
 
-/secreto/interno/
+``/secreto/interno/``
 
 
 nginx prueba:
 
-/secreto/interno/
+``/secreto/interno/``
 
 
 Esto sí es un directorio, así que nginx añade el index:
 
-/secreto/interno/secreto.html
+``/secreto/interno/secreto.html``
 
 
 Y lo sirve al cliente.
@@ -708,16 +709,16 @@ Y lo sirve al cliente.
 
 Si el usuario pide:
 
-/secreto/secreto.html
+``/secreto/secreto.html``
 
 
 Entonces:
 
-$uri/interno/ → no existe
+``$uri/interno/`` → no existe
 
-$uri/ → no tiene / final, no existe
+``$uri/`` → no tiene / final, no existe
 
-$uri → es un archivo real → se sirve
+``$uri`` → es un archivo real → se sirve
 
 Esto es EXACTAMENTE lo que pide el profesor:
 ✔ /secreto/secreto.html muestra la versión “normal”
@@ -732,13 +733,15 @@ Si todo lo anterior falla → error 404.
 
 nginx hace:
 
+```
 /secreto/interno/ → existe
 
 /secreto/interno/ es un directorio → usa index secreto.html
+```
 
 Sirve:
 
-/secreto/interno/secreto.html
+``/secreto/interno/secreto.html``
 
 ✔ Si entras a /secreto/
 
@@ -746,20 +749,21 @@ Resultado idéntico al anterior.
 
 ✔ Si entras a /secreto/secreto.html
 
-$uri/interno/ no existe
+``$uri/interno/`` no existe
 
-$uri/ no existe
+``$uri/`` no existe
 
-$uri existe →
+``$uri`` existe →
 nginx sirve:
 
-/secreto/secreto.html
+``/secreto/secreto.html``
 
 ✔ Si entras a /secreto/inexistente
 
 No existe → 404 personalizado si está configurado.
 
 # 🟣 Código completo final para tu repositorio
+```
 location /secreto {
     # Archivo por defecto cuando estemos en un directorio con index
     index secreto.html;
@@ -770,9 +774,4 @@ location /secreto {
     # 3. /secreto/secreto.html → ese archivo directamente
     try_files $uri/interno/ $uri/ $uri =404;
 }
-
-# 🟢 Resumen para examen (muy útil para memorizar)
-- `$uri/interno/` → si entro en /secreto, nginx mira si interno existe.
-- Si existe → /secreto/interno/ → es un directorio → usa index secreto.html.
-- Así se muestra /secreto/interno/secreto.html al entrar en /secreto.
-- Si pido /secreto/secreto.html → nginx sirve ese archivo, no el de interno.
+```

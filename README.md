@@ -9,7 +9,7 @@ Apuntes y ejercicios correspondientes al temario del CFGS de Desarrollo de Aplic
 - ### [SASS](https://github.com/ResetMeNow/DAW/tree/main/DOR/SASS) [^1]
 - ### [Bootstrap](https://github.com/ResetMeNow/DAW/tree/main/DOR/Bootstrap)[^2]
 ## DPL .- Despliegue de Aplicaciones Web ✴️
-- ### [Despliegues](DSW/Actividades)
+- ### [Apuntes](https://github.com/ResetMeNow/DAW/tree/5dd8cded6982e22b6ac931673a7841da812bddbb/DPL)
 ## DSW .- Desarrollo web en entorno servidor 🫟
 - ### [PHP]()
 
