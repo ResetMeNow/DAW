@@ -37,7 +37,7 @@ laravel --version
 ❌ Si no → lo instalamos con Composer
 
 
-Si ves eso → **Composer YA ESTÁ PERFECTO** 🎉
+### Si ves eso → **Composer YA ESTÁ PERFECTO** 🎉
 
 > [!TIP]
 > Guía de como instalar.
@@ -115,6 +115,13 @@ composer --version
 ```
 Composer version 2.9.3
 ```
+
+
+
+
+
+
+
 </details>
 
 
