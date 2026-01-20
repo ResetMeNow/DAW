@@ -143,9 +143,9 @@ GET /API.php
 ---
 
 > [!WARNING]
-> <summary>❌Posibles problemas con la BBDD</summary>
+> 
 <details>
-
+<summary>❌Posibles problemas con la BBDD</summary>
 
  
 
