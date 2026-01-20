@@ -66,6 +66,82 @@ Perfecto, te lo explico **muy simple y práctico**, solo lo justo para **esta AP
    <img src="image.png" style="width:600px;">
 </p>
 
-
-
 </details>
+
+---
+
+## API REST – Paso 2 (POST con Bearer Token)
+
+Se amplía la API REST para permitir la inserción de nuevos productos en la base de datos mediante peticiones HTTP POST.
+
+### Características
+- Método POST
+- Inserción en la tabla `producto`
+- Uso de consultas parametrizadas (PDO)
+- Autorización mediante Bearer Token
+- Respuesta en formato JSON indicando éxito o error
+
+Las peticiones POST se realizan usando la herramienta Postman.
+
+---
+
+## 📮 Postman – Cómo probar el POST (OBLIGATORIO)
+
+<details>
+
+<summary>Desplegar para ver pasos a seguir</summary>
+### 1️⃣ Método y URL
+
+* Method: **POST**
+* URL:
+
+```
+http://192.168.1.13/API.php
+```
+
+---
+
+### 2️⃣ Authorization
+
+* Tipo: **Bearer Token**
+* Token:
+
+```
+123ABC
+```
+
+---
+
+### 3️⃣ Body
+
+* Tipo: **raw**
+* Formato: **JSON**
+
+```json
+{
+  "nombre": "Producto prueba API",
+  "precio": 99.99,
+  "id_fabricante": 1
+}
+```
+
+---
+
+### 4️⃣ Send
+
+Respuesta esperada:
+
+```json
+{
+  "mensaje": "Producto insertado correctamente"
+}
+```
+
+Compruébalo luego con:
+
+```
+GET /API.php
+```
+<details>
+---
+
