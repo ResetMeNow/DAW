@@ -45,7 +45,7 @@ laravel --version
 
 <summary>Instalaciones</summary>
 
-# ⏭️ PASO 1 — Instalar COMPOSER en LINUX 
+# ⏭️ Instalar COMPOSER en LINUX 
 
 ## 🔹 1️⃣ Descargar el instalador de Composer
 
@@ -117,7 +117,7 @@ Composer version 2.9.3
 ```
 > Importante: `exit` de root para continuar con Laravel.
 
-# ⏭️ PASO 2 — Instalar Laravel Installer 
+# ⏭️ Instalar Laravel Installer 
 Ejecuta:
 
 ```bash
