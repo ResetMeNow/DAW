@@ -209,13 +209,49 @@ code .
 
 # 💡 PASO 3 — Configuración inicial del proyecto
 
+> [!CAUTION]
+> En caso de errores
+
+<details>
+
+<summary>Desplegar</summary>
 ## 0️⃣ Instalar dependencias del proyecto
 
 Algunos proyectos necesitan instalar las dependencias manualmente.
 
+En la **terminal de la MV** (no Git Bash):
+
+```bash
+sudo apt update
+sudo apt install -y \
+php8.3-mbstring \
+php8.3-xml \
+php8.3-curl \
+php8.3-zip \
+php8.3-sqlite3 \
+php8.3-bcmath
+```
+
+⏳ Tarda poco.
+
+---
+
+### 2️⃣ Comprueba que PHP ya las tiene
+
+```bash
+php -m | grep -E "mbstring|xml|curl|zip|sqlite"
+```
+
+Si ves nombres → ✔️ correcto.
+
+---
+
+Luego: 
+
 ```bash
 composer install
 ```
+</details>
 
 ## 1️⃣ Comprobar que el proyecto funciona
 
