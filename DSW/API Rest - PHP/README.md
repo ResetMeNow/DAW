@@ -62,7 +62,7 @@ Perfecto, te lo explico **muy simple y práctico**, solo lo justo para **esta AP
 
 👉 Debe devolver **un solo producto en JSON**.
 
-<img src="![Postman](image.png)" width="100" height="100"/>
+<img src="image.png" width="100" height="100"/>
 
 
 
