@@ -179,29 +179,34 @@ ALTER COLUMN id SET DEFAULT nextval('producto_id_seq');
 ```
 ---
 
-👉 Si el autoincremento existe, pero el contador interno va mal.
+## 👉 Si el autoincremento existe, pero el contador interno va mal.
 PostgreSQL intenta volver a usar un id que ya existe.
 
 ### ✅ Solución
 
-En psql, conectada a tienda:
+En `psql`, **conectada a `tienda`**:
 
-```
+```sql
 SELECT setval(
   pg_get_serial_sequence('producto','id'),
   (SELECT MAX(id) FROM producto)
 );
 
 ```
+
 Esto:
 
-busca el id más alto
+* busca el `id` más alto
+* ajusta el contador interno
+* evita duplicados
 
-ajusta el contador interno
-
-evita duplicados
 </details>
 
 ---
+
+
+
+
+
 
 
