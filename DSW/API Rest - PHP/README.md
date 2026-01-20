@@ -67,7 +67,7 @@ La respuesta se devuelve en formato JSON.
 
 ---
 
-## API REST – Paso 2 (POST con Bearer Token)
+# API REST – Paso 2 (POST con Bearer Token)
 
 Se amplía la API REST para permitir la inserción de nuevos productos en la base de datos mediante peticiones HTTP POST.
 
