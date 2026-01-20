@@ -1,4 +1,3 @@
-````md
 # Práctica de acceso a bases de datos PostgreSQL con PDO
 
 ## Objetivo
