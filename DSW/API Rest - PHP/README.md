@@ -138,6 +138,12 @@ Compruébalo luego con:
 ```
 GET /API.php
 ```
+<p align="center">
+   <img src="image-1.png" style="width:600px;">
+</p>
+
+</details>
+
 </details>
 
 ---
@@ -264,6 +270,17 @@ Respuesta esperada:
 ```json
 { "mensaje": "Producto eliminado correctamente" }
 ```
+### PUT
+<p align="center">
+   <img src="image-2.png" style="width:600px;">
+</p> 
+
+### DELETE
+<p align="center">
+   <img src="image-3.png" style="width:600px;">
+</p>
+
+
 </details>
 
 
