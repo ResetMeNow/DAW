@@ -8,7 +8,7 @@ API REST en PHP que permite consultar los productos almacenados en la base de da
 
 La respuesta se devuelve en formato JSON.
 
-## 📮 Cómo usar Postman (PASO 1 – GET)
+## 📮Postman – Cómo probar el GET
 
 <details>
 
