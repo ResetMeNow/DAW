@@ -206,3 +206,97 @@ code .
 > *He creado un nuevo proyecto Laravel usando el instalador oficial, que genera la estructura MVC completa del framework.*
 
 ---
+
+# 💡 PASO 3 — Configuración inicial del proyecto
+
+## 1️⃣ Comprobar que el proyecto funciona
+
+Desde la carpeta del proyecto:
+
+```bash
+php artisan serve
+```
+
+Salida esperada:
+
+```
+Starting Laravel development server: http://127.0.0.1:8000
+```
+
+🔎 Abre en el navegador:
+
+```
+http://127.0.0.1:8000
+```
+
+✔️ Si aparece la página de bienvenida de Laravel → **servidor funcionando**
+
+---
+
+## 2️⃣ Crear el archivo `.env`
+
+Laravel no usa directamente `.env.example`, hay que copiarlo.
+
+```bash
+cp .env.example .env
+```
+
+✔️ Se crea el archivo de configuración real del proyecto.
+
+---
+
+## 3️⃣ Generar la clave de la aplicación
+
+```bash
+php artisan key:generate
+```
+
+Salida esperada:
+
+```
+Application key set successfully.
+```
+
+🧠
+
+> *La clave APP_KEY se utiliza para cifrado y seguridad interna del framework.*
+
+---
+
+## 4️⃣ Revisar configuración básica del `.env`
+
+Abrimos el archivo:
+
+```
+.env
+```
+
+Y comprobamos que existen las siguientes variables (sin modificarlas todavía):
+
+```env
+APP_NAME=Laravel
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost
+```
+
+Y la configuración de base de datos:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+```
+
+> ⚠️ La base de datos **se configurará más adelante**, según indique la práctica.
+
+---
+
+## 🧠
+
+> *El proyecto Laravel está correctamente configurado, con servidor funcional, archivo de entorno creado y clave de aplicación generada.*
+
+---
