@@ -62,8 +62,11 @@ Perfecto, te lo explico **muy simple y práctico**, solo lo justo para **esta AP
 
 👉 Debe devolver **un solo producto en JSON**.
 
-<img src="image.png" width="500" height="500"/>
 
+
+<div style="text-align:center">
+<img src="image.png" width="500" height="500"/>
+</div>
 
 
 </details>
