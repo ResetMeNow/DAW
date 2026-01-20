@@ -131,7 +131,7 @@ En esta práctica se modifica el script anterior para que la conexión a la base
   - Se indica el número total de filas devueltas por la consulta
 
 > [!NOTE]
-> La contraseña será la anterior usada para conectarnos a Postgres ´´´123456´´´.
+> La contraseña será la anterior usada para conectarnos a Postgres `123456`.
 
 > [!IMPORTANT]
 > Script 2 aquí: [script-formulario.php](https://github.com/ResetMeNow/DAW/blob/main/DSW/Base%20de%20Datos%20-%20Postgresql%20%20-%20PDO/script-formulario.php).
