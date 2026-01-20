@@ -138,6 +138,8 @@ Compruébalo luego con:
 ```
 GET /API.php
 ```
-<details>
+</details>
+
 ---
+
 
