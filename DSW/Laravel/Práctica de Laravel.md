@@ -216,7 +216,7 @@ code .
 
 <summary>Desplegar</summary>
 
-## 0️⃣ Instalar dependencias del proyecto
+### ⚠️ Instalar dependencias del proyecto
 
 Algunos proyectos necesitan instalar las dependencias manualmente.
 
@@ -237,7 +237,7 @@ php8.3-bcmath
 
 ---
 
-### 2️⃣ Comprueba que PHP ya las tiene
+### ⚠️ Comprueba que PHP ya las tiene
 
 ```bash
 php -m | grep -E "mbstring|xml|curl|zip|sqlite"
