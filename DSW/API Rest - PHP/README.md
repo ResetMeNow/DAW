@@ -142,4 +142,65 @@ GET /API.php
 
 ---
 
+> [!WARNING]
+> <details>
+<summary>❌Posibles problemas con la BBDD</summary>
+
+ 
+
+Dentro de `psql`:
+
+```sql
+\c tienda
+```
+
+## ✅ Ejecuta esto
+
+```sql
+\d producto;
+```
+
+## ✅ Problemas con el id, PASO 1.
+
+### Opción recomendada (PostgreSQL moderno):
+
+```sql
+ALTER TABLE producto
+ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
+```
+
+### Si da error, alternativa segura:
+
+```sql
+CREATE SEQUENCE producto_id_seq;
+ALTER TABLE producto
+ALTER COLUMN id SET DEFAULT nextval('producto_id_seq');
+```
+---
+
+👉 Si el autoincremento existe, pero el contador interno va mal.
+PostgreSQL intenta volver a usar un id que ya existe.
+
+### ✅ Solución
+
+En psql, conectada a tienda:
+
+```
+SELECT setval(
+  pg_get_serial_sequence('producto','id'),
+  (SELECT MAX(id) FROM producto)
+);
+
+```
+Esto:
+
+busca el id más alto
+
+ajusta el contador interno
+
+evita duplicados
+</details>
+
+---
+
 
