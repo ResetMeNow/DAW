@@ -143,7 +143,8 @@ GET /API.php
 ---
 
 > [!WARNING]
-> <details>
+> Soluciones
+<details>
 <summary>❌Posibles problemas con la BBDD</summary>
 
  
