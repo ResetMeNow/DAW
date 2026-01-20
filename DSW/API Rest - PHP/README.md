@@ -12,11 +12,11 @@ Perfecto, te lo explico **muy simple y práctico**, solo lo justo para **esta AP
 
 ---
 
-
+## 📮 Cómo usar Postman (PASO 1 – GET)
 
 <details>
 
-<summary> ## 📮 Cómo usar Postman (PASO 1 – GET) </summary>
+<summary>Desplegar para ver pasos a seguir</summary>
 
 ### 1️⃣ Abrir Postman
 
