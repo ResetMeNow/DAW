@@ -57,6 +57,7 @@ Perfecto, te lo explico **muy simple y práctico**, solo lo justo para **esta AP
 
   ```
   http://192.168.1.13/API.php?id=1
+
   ```
 * Pulsa **Send**
 
@@ -90,6 +91,7 @@ Las peticiones POST se realizan usando la herramienta Postman.
 <details>
 
 <summary>Desplegar para ver pasos a seguir</summary>
+
 ### 1️⃣ Método y URL
 
 * Method: **POST**
