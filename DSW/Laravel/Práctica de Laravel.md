@@ -260,6 +260,23 @@ rm -rf vendor
 composer install
 
 ```
+Si la instalación de composer da problemas, sigue estos pasos:
+
+⚠️ Borra vendor (limpio)
+
+```bash
+rm -rf vendor
+```
+Instala **SIN dependencias de desarrollo
+
+Ejecuta **tal cual**:
+
+```bash
+composer install --no-dev --ignore-platform-reqs --prefer-dist --no-interaction --no-progress
+```
+
+💡 Esto **salta completamente `laravel/pint`**.
+
 </details>
 
 
