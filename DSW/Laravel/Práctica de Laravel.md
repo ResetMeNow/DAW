@@ -246,13 +246,22 @@ php -m | grep -E "mbstring|xml|curl|zip|sqlite"
 Si ves nombres → ✔️ correcto.
 
 ---
+### ⚠️ Problema detectado durante la instalación
 
-Luego: 
+Composer requiere `git` para descargar ciertas dependencias.
+Si `git` no está instalado, la carpeta `vendor/` se crea incompleta
+y Laravel no puede arrancar.
+
+Solución:
 
 ```bash
+sudo apt install git
+rm -rf vendor
 composer install
+
 ```
 </details>
+
 
 ---
 
