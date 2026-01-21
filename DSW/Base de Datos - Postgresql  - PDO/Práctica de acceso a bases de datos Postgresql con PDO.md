@@ -100,7 +100,7 @@ Se crea un script PHP que realice las siguientes acciones:
 
 El script debe manejar correctamente los posibles errores de conexión o ejecución de la consulta.
 > [!IMPORTANT]
-> Script aquí: [script-tarea.php](https://github.com/ResetMeNow/DAW/blob/main/DSW/Base%20de%20Datos%20-%20Postgresql%20%20-%20PDO/script-tarea.php).
+> Script aquí: [script-listaBD.php](https://github.com/ResetMeNow/DAW/blob/main/DSW/Base%20de%20Datos%20-%20Postgresql%20%20-%20PDO/script-listaBD.php).
 ---
 
 ## Resultado esperado
