@@ -741,3 +741,115 @@ Guarda:
 
 ---
 
+
+
+# 🔗 PASO 8 — Usar el MODELO en el CONTROLADOR
+
+Ahora toca **leer datos reales de la base de datos `tienda`** usando el modelo y enviarlos a la vista.
+
+---
+
+## 1️⃣ Editar el controlador
+
+Abre:
+
+```bash
+nano app/Http/Controllers/ControladorProductos.php
+```
+
+---
+
+## 2️⃣ Código del controlador (según PDF)
+
+Déjalo así:
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\ModeloProductos;
+
+class ControladorProductos extends Controller
+{
+    public function index()
+    {
+        $productos = ModeloProductos::all();
+
+        return view('productos.VistaProductos', compact('productos'));
+    }
+}
+```
+
+📌 Qué hace esto:
+
+* Usa el modelo `ModeloProductos`
+* Consulta la tabla `producto`
+* Pasa los datos a la vista como `$productos`
+
+Guarda (`Ctrl + O` → Enter, `Ctrl + X`).
+
+---
+
+## 3️⃣ Ajustar la vista para mostrar datos
+
+Edita la vista:
+
+```bash
+nano resources/views/productos/VistaProductos.blade.php
+```
+
+Cambia el contenido por:
+
+```blade
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+</head>
+<body>
+
+<h1>Listado de productos</h1>
+
+<ul>
+    @foreach ($productos as $producto)
+        <li>{{ $producto->nombre }}</li>
+    @endforeach
+</ul>
+
+</body>
+</html>
+```
+
+⚠️ `nombre` debe existir como columna en la tabla `producto`
+(si en tu BD se llama distinto, me lo dices y lo adaptamos).
+
+Guarda.
+
+---
+
+## 4️⃣ Probar en el navegador
+
+Con el servidor activo:
+
+```bash
+php artisan serve
+```
+
+Abre:
+
+```
+http://127.0.0.1:8000/productos
+```
+
+### Resultado esperado:
+
+* ✅ Si hay datos → lista de productos
+* ❌ Si da error de columna → nombre del campo no coincide
+* ❌ Si sale vacío → la tabla no tiene registros (también es válido)
+
+---
+
+> *En el controlador se utiliza el modelo ModeloProductos para obtener todos los registros de la tabla `producto` y enviarlos a la vista VistaProductos, donde se muestran en un listado.*
+
