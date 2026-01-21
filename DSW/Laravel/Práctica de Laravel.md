@@ -691,3 +691,53 @@ http://127.0.0.1:8000/productos
 ✔️ Debes ver el texto de la vista
 
 ---
+
+
+
+# 🎯 PASO 7 — Conectar el MODELO con la base de datos `tienda`
+
+Ahora toca **lo que indica exactamente el PDF**:
+👉 decirle al **modelo** qué tabla de la BD va a usar.
+
+---
+
+## 1️⃣ Editar el modelo `ModeloProductos`
+
+Abre el archivo:
+
+```bash
+nano app/Models/ModeloProductos.php
+```
+
+---
+
+## 2️⃣ Déjalo así (muy importante el `$table`)
+
+```php
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class ModeloProductos extends Model
+{
+    protected $table = 'producto';
+}
+```
+
+📌 Esto **NO lo habíamos hecho antes**, así que **sí es nuevo**.
+
+* `producto` debe llamarse **igual que la tabla** en la BD `tienda`
+* No añadimos nada más por ahora (tal como el PDF)
+
+Guarda:
+
+* `Ctrl + O` → Enter
+* `Ctrl + X`
+
+
+> *Se ha configurado el modelo ModeloProductos para que esté asociado a la tabla `producto` de la base de datos `tienda`.*
+
+---
+
