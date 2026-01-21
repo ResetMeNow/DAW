@@ -613,3 +613,81 @@ http://127.0.0.1:8000/productos
 
 ---
 
+
+# 🎲 PASO 6 — Lógica del controlador (según PDF)
+
+### 1️⃣ Abrir el controlador
+
+```bash
+nano app/Http/Controllers/ControladorProductos.php
+```
+
+### 2️⃣ Añadir el método `index`
+
+Déjalo **así de simple**, sin BD todavía (tal como indica la práctica):
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class ControladorProductos extends Controller
+{
+    public function index()
+    {
+        return view('productos.VistaProductos');
+    }
+}
+```
+
+Guarda: **Ctrl + O → Enter**
+Sal: **Ctrl + X**
+
+---
+
+### 3️⃣ Editar la vista
+
+```bash
+nano resources/views/productos/VistaProductos.blade.php
+```
+
+Contenido mínimo para probar:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+</head>
+<body>
+    <h1>Listado de productos</h1>
+    <p>VistaProductos funcionando correctamente.</p>
+</body>
+</html>
+```
+
+Guarda y sal.
+
+---
+
+### 4️⃣ Probar en el navegador
+
+Con el servidor levantado:
+
+```bash
+php artisan serve
+```
+
+Abre:
+
+```
+http://127.0.0.1:8000/productos
+```
+
+✔️ **Ahora YA NO debe haber error**
+✔️ Debes ver el texto de la vista
+
+---
