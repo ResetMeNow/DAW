@@ -364,9 +364,7 @@ DB_PASSWORD=
 
 ---
 
-## 🧠
-
-> *El proyecto Laravel está correctamente configurado, con servidor funcional, archivo de entorno creado y clave de aplicación generada.*
+> 🧠 *El proyecto Laravel está correctamente configurado, con servidor funcional, archivo de entorno creado y clave de aplicación generada.*
 
 > [!CAUTION]
 > En caso de errores 2
@@ -543,3 +541,75 @@ nano resources/views/productos/VistaProductos.blade.php
 (El contenido lo rellenaremos en el siguiente paso, tal y como indica el PDF.)
 
 ---
+
+
+## 🧭 PASO 5 — Definir las rutas de la aplicación
+
+Ahora necesitamos decirle a Laravel **qué URL llama a qué controlador**.
+
+---
+
+### 1️⃣ Abrir el archivo de rutas
+
+Edita el archivo:
+
+```bash
+nano routes/web.php
+```
+
+---
+
+### 2️⃣ Añadir la ruta de productos
+
+Dentro del archivo, añade **debajo de la ruta existente**:
+
+```php
+use App\Http\Controllers\ControladorProductos;
+
+Route::get('/productos', [ControladorProductos::class, 'index']);
+```
+
+📌 El archivo debería quedar parecido a esto:
+
+```php
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControladorProductos;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/productos', [ControladorProductos::class, 'index']);
+```
+
+Guarda (`Ctrl + O` → Enter) y sal (`Ctrl + X`).
+
+---
+
+
+> Se ha definido una ruta `/productos` que llama al método `index` del controlador `ControladorProductos`.
+> Cuando el usuario acceda a esa URL, Laravel ejecutará dicho método.
+
+---
+
+### 4️⃣ Probar la ruta (aún dará error, es normal)
+
+Con el servidor levantado:
+
+```bash
+php artisan serve
+```
+
+Abre en el navegador:
+
+```
+http://127.0.0.1:8000/productos
+```
+
+❌ Verás un error porque **el método `index` todavía no existe**.
+👉 Eso es correcto y esperado.
+
+---
+
