@@ -373,6 +373,7 @@ DB_PASSWORD=
 
 <details>
 <summary>Desplegar</summary>
+
 ## ⚠️ Problemas encontrados y soluciones
 
 ### ❌ Error 1 — No existía la carpeta `vendor`
@@ -473,5 +474,72 @@ php artisan serve
 ✔️ **Servidor funcionando correctamente**
 
 </details>
+
+---
+
+# 🧱 PASO 4 — Crear controlador, modelo y vista
+
+Según el enunciado de la práctica:
+
+> *Para desarrollar nuestro proyecto crearemos un controlador, un modelo y una vista.*
+
+* **Controlador**: `ControladorProductos`
+* **Modelo**: `ModeloProductos`
+* **Vista**: `VistaProductos`
+
+---
+
+### 1️⃣ Crear el controlador
+
+Desde la raíz del proyecto, ejecuta:
+
+```bash
+php artisan make:controller ControladorProductos
+```
+
+✔️ Se crea el archivo:
+
+```
+app/Http/Controllers/ControladorProductos.php
+```
+
+🧠
+
+> El controlador será el encargado de recibir las peticiones del usuario, comunicarse con el modelo y devolver la vista correspondiente.
+
+---
+
+### 2️⃣ Crear el modelo
+
+Ejecuta:
+
+```bash
+php artisan make:model ModeloProductos
+```
+
+✔️ Se crea el archivo:
+
+```
+app/Models/ModeloProductos.php
+```
+
+🧠
+
+> El modelo representará la tabla de productos de la base de datos `tienda` y permitirá realizar consultas desde Laravel.
+
+---
+
+### 3️⃣ Crear la vista
+
+Las vistas se crean **manualmente** dentro de `resources/views`.
+
+Ejecuta:
+
+```bash
+mkdir resources/views/productos
+nano resources/views/productos/VistaProductos.blade.php
+```
+
+(El contenido lo rellenaremos en el siguiente paso, tal y como indica el PDF.)
 
 ---
