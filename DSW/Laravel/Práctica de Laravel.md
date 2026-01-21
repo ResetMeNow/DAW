@@ -850,6 +850,9 @@ http://127.0.0.1:8000/productos
 
 > *En el controlador se utiliza el modelo ModeloProductos para obtener todos los registros de la tabla `producto` y enviarlos a la vista VistaProductos, donde se muestran en un listado.*
 
+--- 
+
+# OPCIONAL 🔚
 
 > [!NOTE]
 > Posible ampliación de nuestro proyecto
