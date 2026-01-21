@@ -871,9 +871,7 @@ http://127.0.0.1:8000/productos/3
 
 y que muestre **ese producto concreto**.
 
----
-
-## 🧩 PASO 8 — Mostrar un producto individual (ampliación)
+## Mostrar un producto individual (ampliación)
 
 ### 1️⃣ Añadir nueva ruta
 
