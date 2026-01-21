@@ -372,4 +372,110 @@ DB_PASSWORD=
 
 > *El proyecto Laravel está correctamente configurado, con servidor funcional, archivo de entorno creado y clave de aplicación generada.*
 
+> [!CAUTION]
+> En caso de errores 2
+
+<details>
+<summary>Desplegar</summary>
+## ⚠️ Problemas encontrados y soluciones
+
+### ❌ Error 1 — No existía la carpeta `vendor`
+
+**Síntoma:**
+
+```text
+Failed opening required 'vendor/autoload.php'
+```
+
+**Causa:**
+El proyecto Laravel se creó correctamente, pero **no se habían instalado las dependencias**.
+
+**Solución:**
+
+```bash
+composer install
+```
+
+Esto creó la carpeta `vendor/` necesaria para que Laravel funcione.
+
+---
+
+### ❌ Error 2 — Archivo `.env` inexistente
+
+**Síntoma:**
+Laravel no encontraba configuración de entorno ni base de datos.
+
+**Causa:**
+Solo existía el archivo `.env.example`.
+
+**Solución:**
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+---
+
+### ❌ Error 3 — Error 500: base de datos SQLite inexistente
+
+**Síntoma:**
+
+```text
+Database file does not exist
+```
+
+**Causa:**
+Laravel venía configurado por defecto con **SQLite**, pero la práctica usa una base de datos llamada `tienda`.
+
+**Solución:**
+Modificar el archivo `.env` para conectar con la base de datos **tienda** usada en prácticas anteriores:
+
+```env
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=tienda
+DB_USERNAME=postgres
+DB_PASSWORD=123456
+```
+
+---
+
+### ❌ Error 4 — Tablas `sessions` y `cache` no existen
+
+**Síntoma:**
+
+```text
+relation "sessions" does not exist
+relation "cache" does not exist
+```
+
+**Causa:**
+Laravel intentaba guardar sesiones y caché en base de datos, pero esas tablas no existen en la BD `tienda`.
+
+**Solución:**
+Cambiar el sistema de sesiones a archivos (modo simple):
+
+```env
+SESSION_DRIVER=file
+```
+
+---
+
+### ✅ Resultado final
+
+* Laravel arranca correctamente
+* Se muestra la página de bienvenida
+* La conexión a la base de datos `tienda` funciona
+* El entorno queda listo para continuar la práctica
+
+```bash
+php artisan serve
+```
+
+✔️ **Servidor funcionando correctamente**
+
+</details>
+
 ---
