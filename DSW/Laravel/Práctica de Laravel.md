@@ -822,9 +822,6 @@ Cambia el contenido por:
 </html>
 ```
 
-⚠️ `nombre` debe existir como columna en la tabla `producto`
-(si en tu BD se llama distinto, me lo dices y lo adaptamos).
-
 Guarda.
 
 ---
@@ -853,3 +850,122 @@ http://127.0.0.1:8000/productos
 
 > *En el controlador se utiliza el modelo ModeloProductos para obtener todos los registros de la tabla `producto` y enviarlos a la vista VistaProductos, donde se muestran en un listado.*
 
+
+> [!NOTE]
+> Posible ampliación de nuestro proyecto
+
+<details>
+<summary>Desplegar</summary>
+
+## ➕ AMPLIACIÓN: mostrar **un solo producto por ID**
+
+Objetivo:
+Acceder a una URL tipo:
+
+```
+http://127.0.0.1:8000/productos/3
+```
+
+y que muestre **ese producto concreto**.
+
+---
+
+## 🧩 PASO 8 — Mostrar un producto individual (ampliación)
+
+### 1️⃣ Añadir nueva ruta
+
+Abre `routes/web.php` y añade **debajo de la de `/productos`**:
+
+```php
+Route::get('/productos/{id}', [ControladorProductos::class, 'show']);
+```
+
+📌 `{id}` será el identificador del producto.
+
+---
+
+### 2️⃣ Añadir método `show` al controlador
+
+Abre:
+
+```
+app/Http/Controllers/ControladorProductos.php
+```
+
+Añade este método:
+
+```php
+public function show($id)
+{
+    $producto = ModeloProductos::find($id);
+    return view('productos.VistaProducto', compact('producto'));
+}
+```
+
+🧠
+
+* `find($id)` busca el producto por su id
+* Se envía a la vista como `$producto`
+
+---
+
+### 3️⃣ Crear la nueva vista
+
+Crea el archivo:
+
+```
+resources/views/productos/VistaProducto.blade.php
+```
+
+Contenido **muy simple**:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Producto</title>
+</head>
+<body>
+
+<h1>Producto</h1>
+
+@if ($producto)
+    <p><strong>ID:</strong> {{ $producto->id }}</p>
+    <p><strong>Nombre:</strong> {{ $producto->nombre }}</p>
+@else
+    <p>Producto no encontrado.</p>
+@endif
+
+<a href="/productos">Volver al listado</a>
+
+</body>
+</html>
+```
+
+---
+
+### 4️⃣ Probar la ampliación
+
+Con el servidor activo:
+
+```bash
+php artisan serve
+```
+
+Abre en el navegador:
+
+```
+http://127.0.0.1:8000/productos/1
+```
+
+🔁 Prueba distintos IDs.
+
+---
+
+## ✅ Resultado esperado
+
+* `/productos` → listado completo ✔️
+* `/productos/{id}` → producto individual ✔️
+
+</details>
